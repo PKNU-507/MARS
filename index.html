@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARS Lab | Multi-Agent Robotics & Control Systems Laboratory</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Background Canvas for Particles -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="mars">MARS</span> <span class="lab">Lab</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#professor">Professor</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page (Hero + Research Info) -->
+    <div id="home" class="page-section">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="MARS LAB">MARS LAB</h1>
+                <h2><span class="highlight">M</span>ulti-<span class="highlight">A</span>gent <span
+                        class="highlight">R</span>obotics & Control <span class="highlight">S</span>ystems Laboratory
+                </h2>
+                <p class="kor-subtitle">[국립부경대학교] 다개체 로보틱스 및 제어시스템 연구실</p>
+                <div class="hero-buttons">
+                    <a href="#publications" class="btn btn-primary">Recent Publications <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p>Scroll Down</p>
+            </div>
+        </section>
+
+        <!-- Research Info Section -->
+        <section class="section" style="padding-top: 50px;">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Research Areas</h2>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="research-grid">
+                    <!-- Area 1 -->
+                    <div class="research-card">
+                        <img src="images/research1.jpg" alt="Multi-Agent Systems Diagram" class="research-img">
+                        <h3>Multi-Agent Systems</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Formation control</li>
+                            <li><i class="fas fa-check-circle"></i> Cooperative control</li>
+                            <li><i class="fas fa-check-circle"></i> Cooperative localization</li>
+                            <li><i class="fas fa-check-circle"></i> Heterogeneous coordination</li>
+                        </ul>
+                    </div>
+                    <!-- Area 2 -->
+                    <div class="research-card">
+                        <img src="images/research2.jpg" alt="Integrated Robotic Systems Diagram" class="research-img">
+                        <h3>Integrated Robotic Systems</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Physical AI integration</li>
+                            <li><i class="fas fa-check-circle"></i> Intelligent robotic systems</li>
+                            <li><i class="fas fa-check-circle"></i> Task planning and allocation</li>
+                            <li><i class="fas fa-check-circle"></i> Autonomous robotic platforms</li>
+                        </ul>
+                    </div>
+                    <!-- Area 3 -->
+                    <div class="research-card">
+                        <img src="images/research3.jpg" alt="Network Control Systems Diagram" class="research-img">
+                        <h3>Network Control Systems</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Network controllability</li>
+                            <li><i class="fas fa-check-circle"></i> Graph-based system modeling</li>
+                            <li><i class="fas fa-check-circle"></i> Energy-aware control</li>
+                            <li><i class="fas fa-check-circle"></i> Optimal & distributed control</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="research-description glass-panel">
+                    <p>
+                        <strong>MARS Lab</strong>은 여러 대의 드론과 로봇이 협력하여 하나의 통합된 시스템으로 동작하도록 만드는 연구를 수행합니다. 단일 로봇 중심 접근의
+                        한계를
+                        다개체·이종 시스템 협력으로 확장하고, 그 과정에서 발생하는 다양한 상호작용 및 통합 문제를 <strong>시스템 수준에서 설계하고 해결</strong>하는 것이 핵심
+                        목표입니다.
+                    </p>
+                    <p>
+                        우리는 <strong>다개체 편대제어(Formation control)</strong>, <strong>협력 위치 추정(Localization)</strong>,
+                        <strong>환경 인지(Perception)</strong>, 그리고 <strong>로봇 제어 알고리즘</strong>을 연구하며, 개별 기술들을 하나의 시스템으로
+                        통합하고
+                        실험을 통해 검증합니다. 이 과정에서 학생들은 이론적 기초를 바탕으로 <strong>HW/SW 통합 설계, 구현, 실험 검증</strong>까지 이어지는 전 과정을 경험하게
+                        됩니다. 또한 <strong>생성형 인공지능(Generative AI)</strong>, AI 기반 개발 도구, 지능형 에이전트 기술 등을 활용하여 복잡한 시스템을 보다
+                        효율적으로
+                        설계하고 분석하는 방법도 함께 학습합니다.
+                    </p>
+                    <p>
+                        다가오는 인공지능 시대의 자율 드론, 스마트 로봇, UAM, 자율 이동체 산업에서는 <strong>다양한 이종(Heterogeneous) 시스템을 통합적으로
+                            설계</strong>할
+                        수 있는 역량이 더욱 중요해지고 있습니다. MARS Lab은 이론과 실증을 연결하고, 인공지능 기반 개발 환경을 적극 활용하여 새로운 시스템과 환경 변화에도 무한히
+                        <strong>확장·적응할 수 있는 통합형 시스템 엔지니어</strong>를 양성합니다.
+                    </p>
+                </div>
+
+                <div class="research-details-grid">
+                    <div class="details-list glass-panel">
+                        <h3><i class="fas fa-laptop-code"></i> MARS Lab에서 무엇을 할 수 있나요?</h3>
+                        <ul class="styled-list">
+                            <li>다개체 드론 편대제어 및 협력제어 시스템 설계</li>
+                            <li>GPS/UWB 기반 협력 위치 추정(Localization) 시스템 개발</li>
+                            <li>Vision/LiDAR 기반 환경 인지(Perception) 시스템 구현</li>
+                            <li>3D modeling 및 동역학 기반 로봇 제어 알고리즘 설계</li>
+                            <li>실제 하드웨어 기반 프로토타입 제작 및 실험 검증</li>
+                            <li>Physical AI 기반 지능형 로봇 제어 (휴머노이드, 로봇팔 등)</li>
+                            <li>국내외 제어 및 로보틱스 학회 참가 및 논문 발표</li>
+                        </ul>
+                    </div>
+                    <div class="details-list glass-panel">
+                        <h3><i class="fas fa-briefcase"></i> 졸업 후 진로 및 산업 분야</h3>
+                        <ul class="styled-list">
+                            <li><strong>드론/UAM 및 자율 이동체 제어 알고리즘 엔지니어</strong> <br><span>(자율 드론, UAM, 자율주행, 모빌리티
+                                    기업)</span>
+                            </li>
+                            <li><strong>로봇 제어 및 스마트 자동화 시스템 개발자</strong> <br><span>(산업용 로봇, 물류-스마트팩토리 기업)</span></li>
+                            <li><strong>AI 기반 로보틱스 소프트웨어 엔지니어</strong> <br><span>(로보틱스 스타트업, 임베디드-제어 소프트웨어 기업)</span>
+                            </li>
+                            <li><strong>정부출연연구소 연구원</strong> <br><span>(항공우주, 국방, 로봇-자동화, 통신-네트워크 분야)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Research Section -->
+    <section id="research" class="section page-section hidden-page">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Research</h2>
+                <div class="underline"></div>
+            </div>
+
+            <!-- R1. Multi-Drone Formation Control -->
+            <div class="research-topic mb-5">
+                <h3 class="topic-title">R1. Multi-Drone Formation Control</h3>
+                <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                        다수 드론의 편대 비행 및 제어에 대한 개괄적인 소개
+                    </p>
+                </div>
+
+                <!-- R1_1. Position-based Control -->
+                <div class="sub-topic mb-4 pl-4"
+                    style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 1.3rem;">R1_1. Position-based Control</h4>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px;">GPS 기반의 위치 제어를 통한 드론
+                        자율 편대 비행</p>
+
+                    <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div class="media-container glass-panel text-center"
+                            style="padding: 20px; flex: 1; min-width: 300px;">
+                            <video class="content-media" controls autoplay loop muted>
+                                <source src="videos/R1_1_one.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="media-container glass-panel text-center"
+                            style="padding: 20px; flex: 1; min-width: 300px;">
+                            <video class="content-media" controls autoplay loop muted>
+                                <source src="videos/R1_1_two.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R1_2. Distance-based Control -->
+                <div class="sub-topic mb-4 pl-4"
+                    style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 1.3rem;">R1_2. Distance-based Control</h4>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px;">ROS 기반 통신 및 UWB 기반 거리
+                        측정 시스템을 활용한 협력 제어</p>
+
+
+
+                    <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div class="media-container glass-panel text-center"
+                            style="padding: 20px; flex: 1; min-width: 300px;">
+                            <video class="content-media" controls autoplay loop muted>
+                                <source src="videos/R1_2_one.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="media-container glass-panel text-center"
+                            style="padding: 20px; flex: 1; min-width: 300px;">
+                            <video class="content-media" controls autoplay loop muted>
+                                <source src="videos/R1_2_two.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R1_3. Network-based Control -->
+                <div class="sub-topic mb-4 pl-4"
+                    style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 1.3rem;">R1_3. Network-based Control</h4>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px;">드론 간 최대 거리 제약을 고려한
+                        Optimization-based 위치 결정 및 제어네트워크 연구</p>
+                    <div class="media-container glass-panel text-center" style="padding: 20px;">
+                        <video class="content-media" controls autoplay loop muted>
+                            <source src="videos/R1_3_one.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr
+                style="border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); margin: 60px 0;">
+
+            <!-- R2. Delta robot System -->
+            <div class="research-topic mb-5">
+                <h3 class="topic-title">R2. Delta robot System</h3>
+                <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                        델타로봇 모델링, 시뮬레이션, 제어기 개발, 프로토타입 제작, 실제 제어성능 평가까지
+                    </p>
+                </div>
+
+                <div class="media-column"
+                    style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 20px;">
+                    <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div class="media-container glass-panel text-center"
+                            style="padding: 20px; flex: 1; min-width: 300px;">
+                            <img src="images/R2_3Dmodeling.png" alt="3D Modeling" class="content-media">
+                            <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">3D Modeling</p>
+                        </div>
+                        <div class="media-container glass-panel text-center"
+                            style="padding: 20px; flex: 1; min-width: 300px;">
+                            <img src="images/R2_CNC_prototype.png" alt="CNC Prototype" class="content-media">
+                            <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">CNC 공정 프로토타입</p>
+                        </div>
+                    </div>
+                    <div class="media-container glass-panel text-center" style="padding: 20px;">
+                        <img src="images/R2_controller_Architucture_perdormance.png"
+                            alt="Controller Architecture and Performance" class="content-media bg-white">
+                        <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">제어기 구조 및 제어 성능 결과</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr
+                style="border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); margin: 60px 0;">
+
+            <!-- R3. Pick & Place Automation System -->
+            <div class="research-topic mb-5">
+                <h3 class="topic-title">R3. Pick & Place Automation System</h3>
+                <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                        비전 인식 기반의 고속 Pick & Place 자동화 물류 시스템 구축 및 제어 알고리즘 검증
+                    </p>
+                </div>
+                <div class="media-container glass-panel text-center" style="padding: 20px;">
+                    <video class="content-media" controls autoplay loop muted>
+                        <source src="videos/R3_exp.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">실험 영상</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <hr
+            style="border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); margin: 60px 0;">
+
+        <!-- R4. Aerial Manipulator System -->
+        <div class="research-topic mb-5">
+            <h3 class="topic-title">R4. Aerial Manipulator System</h3>
+            <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                    (추가 예정) 로봇팔이 장착된 드론의 비행 제어 및 매니퓰레이터 조작을 연동한 복합 동역학 시스템 연구
+                </p>
+            </div>
+            <div class="media-container glass-panel text-center"
+                style="padding: 60px 20px; border: 1px dashed rgba(255,255,255,0.2);">
+                <i class="fas fa-tools" style="font-size: 3rem; color: rgba(255,255,255,0.3); margin-bottom: 10px;"></i>
+                <p style="color: rgba(255,255,255,0.5);">Contents will be updated soon.</p>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <!-- Professor Section -->
+    <section id="professor" class="section alt-bg page-section hidden-page">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Professor</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="profile-container glass-panel">
+                <div class="profile-image-wrapper">
+                    <img src="images/professor2.png" alt="Professor Nam-Jin Park" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h2>Nam-Jin Park</h2>
+                    <h3 class="accent-text">Assistant Professor</h3>
+                    <p class="department">Department of Control and Instrumentation Engineering, Pukyong National
+                        University (PKNU)</p>
+                    <div class="contact-badges">
+                        <div class="badge"><i class="fas fa-map-marker-alt"></i> Room 507, Gaon Bldg., PKNU, 45
+                            Yongso-ro, Nam-gu, Busan, Republic of Korea</div>
+                        <div class="badge"><i class="fas fa-phone-alt"></i> +82-51-629-6331</div>
+                        <div class="badge"><i class="fas fa-envelope"></i> pnj@pknu.ac.kr</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="career-timeline mt-5">
+                <h3 class="subsection-title">Career</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025. 03. - Present</div>
+                        <div class="timeline-content glass-panel">
+                            <h4>Assistant Professor</h4>
+                            <p><strong>Pukyong National University (PKNU)</strong></p>
+                            <p class="small-text">Dept. of Control & Instrumentation Engineering</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023. 03. - 2025. 02.</div>
+                        <div class="timeline-content glass-panel">
+                            <h4>Assistant Professor</h4>
+                            <p><strong>Kunsan National University (KSNU)</strong></p>
+                            <p class="small-text">Dept. of Electrical Engineering</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024. 03. - 2025. 02.</div>
+                        <div class="timeline-content glass-panel">
+                            <h4>Postdoctoral Fellow</h4>
+                            <p><strong>Gwangju Institute of Science and Technology (GIST)</strong></p>
+                            <p class="small-text">Distributed Control and Automation Systems Lab.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024. 02.</div>
+                        <div class="timeline-content glass-panel">
+                            <h4>Ph.D.</h4>
+                            <p><strong>Gwangju Institute of Science and Technology (GIST)</strong></p>
+                            <p class="small-text">Dept. of Mechanical Engineering - <span class="accent-text">Top
+                                    Student Award</span></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018. 02.</div>
+                        <div class="timeline-content glass-panel">
+                            <h4>B.S.</h4>
+                            <p><strong>Pukyong National University (PKNU)</strong></p>
+                            <p class="small-text">Dept. of Control and Instrumentation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="academic-activities mt-5">
+                <h3 class="subsection-title">Academic Activities</h3>
+                <div class="activities-grid">
+                    <div class="activity-card glass-panel">
+                        <div class="activity-header">
+                            <h4>Associate Editor</h4>
+                            <span class="activity-date">2025. 10. - Present</span>
+                        </div>
+                        <ul>
+                            <li>International Journal of Control, Automation, and Systems (IJCAS)</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card glass-panel">
+                        <div class="activity-header">
+                            <h4>Journal Reviewer</h4>
+                            <span class="activity-date">2024. 08. - Present</span>
+                        </div>
+                        <ul>
+                            <li>IEEE Transactions on Automatic Control</li>
+                            <li>IEEE Systems</li>
+                            <li>Automatica</li>
+                            <li>Journal of the Franklin Institute</li>
+                            <li>IET Control Theory & Applications</li>
+                            <li>International Journal of Control, Automation, and Systems</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card glass-panel">
+                        <div class="activity-header">
+                            <h4>Conference Reviewer</h4>
+                            <span class="activity-date">2024. 08. - Present</span>
+                        </div>
+                        <ul>
+                            <li>Conference on Decision and Control (CDC)</li>
+                            <li>Asian Control Conference (ASCC)</li>
+                            <li>European Control Conference (ECC)</li>
+                            <li>Chinese Control and Decision Conference (CCDC)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section page-section hidden-page">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Publications</h2>
+                <div class="underline"></div>
+                <div class="author-legend">
+                    <span><strong>*</strong> : First author</span>
+                    <span><strong>†</strong> : Corresponding author</span>
+                </div>
+            </div>
+
+            <div class="major-papers mb-5">
+                <h3 class="subsection-title">Major Papers</h3>
+                <div class="paper-group glass-panel">
+                    <div class="group-header">
+                        <h4>IEEE Transactions on Automatic Control</h4>
+                        <span class="jcr-badge">JCR Top 8.8%</span>
+                    </div>
+                    <ul class="paper-list">
+                        <li><strong>N.-J. Park*</strong>, Y.-U. Kim, K.-H. Oh, and H.-S. Ahn†, "Controllable Subspaces
+                            in Structured Networks of Hierarchical Directed Acyclic Graphs: Controllability of
+                            Individual Nodes," <em>IEEE Transactions on Automatic Control</em>, 2025.</li>
+                        <li><strong>N.-J. Park*</strong>, Y.-U. Kim, Kevin L. Moore, and H.-S. Ahn†, "Strong Structural
+                            Controllability and Observability of Individual Nodes: A Graph-Theoretical Approach,"
+                            <em>IEEE Transactions on Automatic Control</em>, 2024.
+                        </li>
+                    </ul>
+                </div>
+                <div class="paper-group glass-panel">
+                    <div class="group-header">
+                        <h4>Journal of the Franklin Institute</h4>
+                        <span class="jcr-badge">JCR Top 8.5%</span>
+                    </div>
+                    <ul class="paper-list">
+                        <li><strong>N.-J. Park*</strong>, S.-H. Kwon, Y.-B. Bae, B.-Y. Kim, and H.-S. Ahn†, "Merging
+                            Rules for Strong Structural Controllability and Minimum Input Problem in Undirected Graphs,"
+                            <em>Journal of the Franklin Institute</em>, 2025.
+                        </li>
+                        <li><strong>N.-J. Park*</strong>, Y.-U. Kim, and H.-S. Ahn†, "A Distributed Framework for the
+                            Minimum Cost Problem Based on Graph Decomposition," <em>Journal of the Franklin
+                                Institute</em>, 2025.</li>
+                        <li><strong>N.-J. Park*</strong>, Y.-U. Kim, and H.-S. Ahn†, "Fixed node determination and
+                            analysis in directed acyclic graphs of structured networks," <em>Journal of the Franklin
+                                Institute</em>, 2024.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="publications-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'journal')">Journal</button>
+                <button class="tab-btn" onclick="openTab(event, 'conference')">Conferences</button>
+            </div>
+
+            <div id="journal" class="tab-content glass-panel" style="display: block;">
+                <h4 class="year-heading">Under Review</h4>
+                <ul class="paper-list">
+                    <li><strong>N. J. Park*</strong>, and H.-S. Ahn†, "Cluster Based Controllability in Structured
+                        Networks".</li>
+                    <li>S.-H. Kwon* and <strong>N.-J. Park†</strong>, "Platoon Control of Virtually Coupled Trains under
+                        Time-Varying Disturbances".</li>
+                    <li>T.-W. Um* and <strong>N.-J. Park†</strong>, "Deployable Unmanned Water-based Pollutant/Waste
+                        Automation System".</li>
+                    <li>Y. U. Kim* and <strong>N. J. Park†</strong>, "Energy-Optimal Target Control: Control Backbone in
+                        Structured Networks".</li>
+                    <li>S.-S. Won* and <strong>N.-J. Park†</strong>,"A Construction of Connected Dominating Set with
+                        Predetermined Nodes".</li>
+                    <li>J.-H. Son*, <strong>N.-J. Park</strong>, and H.-S. Ahn†, "Ad-Hoc Network for Unmanned Mobile
+                        Vehicles".</li>
+                </ul>
+
+                <h4 class="year-heading mt-4">2025</h4>
+                <ul class="paper-list">
+                    <li><strong>N.-J. Park*</strong>, Y.-U. Kim, K.-H. Oh, and H.-S. Ahn†, "Controllable Subspaces in
+                        Structured Networks of Hierarchical Directed Acyclic Graphs: Controllability of Individual
+                        Nodes," <em>IEEE Transactions on Automatic Control</em>, 2025.</li>
+                    <li>H.-C. Lee, J.-M. Ma, <strong>N.-J. Park</strong>, and H.-S. Ahn†, "A Distributed Influence
+                        Measurement Algorithm in Leader-Follower Networks," <em>Systems & Control Letters</em>, 2025.
+                    </li>
+                    <li><strong>N.-J. Park*</strong>, Y. U. Kim, and H. S. Ahn†, "Bio-inspired Projected Gradient Method
+                        for Leader Selection in Minimum Cost Problem," <em>Journal of Control, Artificial Life and
+                            Robotics</em>, 2025 (<strong>Invited Paper</strong>).</li>
+                    <li><strong>N.-J. Park*</strong>, Y. U. Kim, and H. S. Ahn†, "A Distributed Framework for the
+                        Minimum Cost Problem based on Graph Decomposition," <em>Journal of the Franklin Institute</em>,
+                        2025.</li>
+                    <li><strong>N.-J. Park*</strong>, S. H. Kwon, Y. B. Bae, B. Y. Kim, and H. S. Ahn†, "Merging Rules
+                        for Strong Structural Controllability and Minimum Input Problem in Undirected Graphs,"
+                        <em>Journal of the Franklin Institute</em>, 2025.
+                    </li>
+                    <li><strong>N.-J. Park*</strong> and H. S. Ahn†, "Network Controllability of Structured Networks: A
+                        Survey on Graph Theoretical Approaches," <em>SICE Journal of Control, Measurement, and System
+                            Integration</em>, 2025 (<strong>Invited Paper</strong>).</li>
+                </ul>
+
+                <h4 class="year-heading mt-4">2024</h4>
+                <ul class="paper-list">
+                    <li><strong>N.-J. Park*</strong>, K.-H. Kim, J.-M. Ma, J.-H. Son, and H.-S. Ahn†, "Implementation of
+                        a Multi-Drone System for UWB-Based Onboard Localization with Free Structural Anchors,"
+                        <em>Mechatronics</em>, 2024.
+                    </li>
+                    <li><strong>N.-J. Park*</strong>, Y.-U. Kim, and H.-S. Ahn†, "Fixed Node Determination and Analysis
+                        in Directed Acyclic Graphs of Structured Networks," <em>Journal of the Franklin Institute</em>,
+                        2024.</li>
+                    <li><strong>N.-J. Park*</strong>, Y.-U. Kim, Kevin L. Moore, and H.-S. Ahn†, "Strong Structural
+                        Controllability and Observability of Individual Nodes: A Graph Theoretical Approach," <em>IEEE
+                            Transactions on Automatic Control</em>, 2024.</li>
+                    <li>J.-M. Ma, <strong>N.-J. Park</strong>, H.-C. Lee, and H.-S. Ahn†, "Comments on ‘On
+                        Multi-Consensus and Almost Equitable Graph Partitions [Automatica 103 (2019) 53–61]’,"
+                        <em>Automatica</em>, 2024.
+                    </li>
+                    <li>K.-H. Kim, <strong>N.-J. Park</strong>, H.-C. Lee, and H.-S. Ahn†, "3-D Localization With
+                        Coplanar Anchors," <em>IEEE Communications Letters</em>, 2024.</li>
+                </ul>
+            </div>
+
+            <div id="conference" class="tab-content glass-panel" style="display: none;">
+                <h4 class="year-heading">Conferences</h4>
+                <ul class="paper-list">
+                    <li>S. W. Kong, <strong>N.-J. Park</strong>, T. W. Um, and H. S. Ahn†, "Implementation of
+                        Intelligent Robotic Systems for Mall and Place Based on Image Processing," <em>Asian Control
+                            Conference (ASCC)</em>, Dalian, China, 2024.</li>
+                    <li><strong>N.-J. Park*</strong>, Y. B. Bae, Kevin L. Moore, and H. S. Ahn†, "Controllability Matrix
+                        Analysis of Structured Networks: A Tight Lower Bound on the Dimension of Controllable Subspace,"
+                        <em>European Control Conference (ECC)</em>, Stockholm, Sweden, 2024.
+                    </li>
+                    <li><strong>N.-J. Park*</strong>, Y. U. Kim, and H. S. Ahn†, "Strong Structural Controllability of
+                        Directed Graphs via Zero Forcing Sets," <em>IFAC World Congress</em>, Yokohama, Japan, 2023.
+                    </li>
+                    <li>Y. U. Kim, <strong>N.-J. Park</strong>, J. W. Lee, and H. S. Ahn†, "Distributed Continuous-Time
+                        Newton Method via Blended Dynamics," <em>IFAC Conference on Networked Systems (NECSYS)</em>,
+                        Zurich, Switzerland, 2022.</li>
+                    <li><strong>N. J. Park*</strong>, H. C. Lee, and H. S. Ahn†, "Building Temperature Control Using
+                        Central Centrality," <em>International Conference on Control, Automation and Systems
+                            (ICCAS)</em>, Busan, Korea, 2020.</li>
+                    <li>S. H. Park, <strong>N.-J. Park</strong>, and H. S. Ahn†, "Distance-Based Localization Using
+                        Ultra Wideband Sensors and Implementation of a UAV Control Platform," <em>Institute of Control,
+                            Robotics, and Systems (ICROS) Conference</em>, Busan, Korea, 2019.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <span class="mars">MARS</span> <span class="lab">Lab</span>
+                </div>
+                <p>Multi-Agent Robotics & Control Systems Laboratory</p>
+                <div class="contact-details mt-4">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> <strong>E-mail:</strong> <a
+                            href="mailto:pnj@pknu.ac.kr">pnj@pknu.ac.kr</a></p>
+                    <p><i class="fas fa-phone-alt"></i> <strong>Tel:</strong> +82-51-629-6331</p>
+                    <p><i class="fas fa-building"></i> <strong>Office:</strong> Room 507, Gaon Building (가온관 507호),
+                        Pukyong National University</p>
+                </div>
+            </div>
+            <div class="footer-map glass-panel hidden-page">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MARS Laboratory. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
