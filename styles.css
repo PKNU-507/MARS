@@ -886,16 +886,19 @@ h6 {
     height: 350px;
     object-fit: cover;
     border-radius: 16px;
-    border: 1px solid var(--surface-border);
+    /* Apply previous hover border as base state */
+    border: 1px solid rgba(255, 59, 0, 0.3);
+    /* Keep previous base shadow or upgrade slightly */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     filter: brightness(0.75) contrast(1.05) grayscale(0.1);
     transition: var(--transition);
 }
 
 .profile-img:hover {
-    box-shadow: 0 10px 40px var(--primary-glow);
-    border-color: rgba(255, 59, 0, 0.3);
-    filter: brightness(0.85) contrast(1.1);
+    /* More pronounced hover effect */
+    box-shadow: 0 10px 40px rgba(255, 59, 0, 0.6);
+    border-color: rgba(255, 59, 0, 0.8);
+    filter: brightness(0.95) contrast(1.1);
     transform: translateY(-5px);
 }
 
