@@ -241,3 +241,37 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// --- Research Modals (Bento Box Layout) ---
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+    // Play any videos inside the modal
+    const videos = modal.querySelectorAll('video');
+    videos.forEach(v => {
+        if (v.paused) v.play().catch(e => console.log("Auto-play prevented", e));
+    });
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore background scrolling
+
+    // Pause any videos inside the modal when closed
+    const videos = modal.querySelectorAll('video');
+    videos.forEach(v => v.pause());
+}
+
+// Close modal if user clicks outside the modal content area
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('research-modal')) {
+        closeModal(e.target.id);
+    }
+});
