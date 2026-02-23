@@ -131,8 +131,8 @@ function init() {
     particlesArray = [];
     let numberOfParticles = (canvas.height * canvas.width) / 12000;
 
-    // Scale particles based on screen size, limit maximum
-    if (numberOfParticles > 150) numberOfParticles = 150;
+    // Scale particles based on screen size, limit maximum strictly for performance
+    if (numberOfParticles > 90) numberOfParticles = 90;
 
     for (let i = 0; i < numberOfParticles; i++) {
         let size = (Math.random() * 2) + 1;
@@ -152,15 +152,19 @@ function init() {
 // Connect particles (simulating network control / multi-agent communication)
 function connect() {
     let opacityValue = 1;
+    ctx.lineWidth = 1;
+
     for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-            let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
-                ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-            if (distance < (canvas.width / 8) * (canvas.height / 8)) {
-                opacityValue = 1 - (distance / 20000);
+        for (let b = a + 1; b < particlesArray.length; b++) { // Start b from a + 1 to avoid double checking and self-checking
+            let dx = particlesArray[a].x - particlesArray[b].x;
+            let dy = particlesArray[a].y - particlesArray[b].y;
+            let distance = (dx * dx) + (dy * dy);
+
+            // Reduced connection distance threshold for performance
+            if (distance < (canvas.width / 10) * (canvas.height / 10)) {
+                opacityValue = 1 - (distance / 15000);
                 // Draw connecting line
                 ctx.strokeStyle = `rgba(255, 69, 0, ${opacityValue * 0.2})`;
-                ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
                 ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
@@ -184,3 +188,36 @@ function animate() {
 // Initialize and start animation
 init();
 animate();
+
+// --- Performance Optimization: Lazy Video Playing ---
+// Use Intersection Observer to only play videos when they are visible on screen
+document.addEventListener("DOMContentLoaded", function () {
+    const videos = document.querySelectorAll("video.content-media");
+
+    // Check if browser supports IntersectionObserver
+    if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    // Video is in viewport, play it
+                    video.play().catch(e => console.log("Auto-play prevented", e));
+                } else {
+                    // Video is out of viewport, pause it to save CPU/GPU
+                    video.pause();
+                }
+            });
+        }, {
+            // Start playing slightly before it comes fully into view
+            rootMargin: "0px 0px 50px 0px",
+            threshold: 0.1
+        });
+
+        videos.forEach(video => {
+            // First stop autoplay behavior if it's already started
+            video.pause();
+            // Start observing
+            videoObserver.observe(video);
+        });
+    }
+});
