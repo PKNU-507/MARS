@@ -29,7 +29,8 @@ body {
     font-family: var(--font-body);
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.7;
+    /* Increased for better readability */
     overflow-x: hidden;
 }
 
@@ -51,7 +52,8 @@ body {
     /* Replaced backdrop-filter blur with near-solid dark background to fix scroll jank */
     border: 1px solid var(--surface-border);
     border-radius: 16px;
-    padding: 30px;
+    padding: 40px;
+    /* Increased internal padding for breathing room */
     transition: var(--transition);
 }
 
@@ -368,8 +370,10 @@ h6 {
 
 /* General Sections */
 .section {
-    padding: 100px 20px;
+    padding: 100px 0;
+    /* Increased from 80px to 100px for more whitespace */
     position: relative;
+    z-index: 1;
 }
 
 .alt-bg {
@@ -387,7 +391,9 @@ h6 {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    /* Increased from 2.5rem to 3rem for stronger hierarchy */
+    margin-bottom: 20px;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -402,10 +408,18 @@ h6 {
     box-shadow: 0 0 10px var(--primary-glow);
 }
 
-.subsection-title {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    color: #fff;
+/* Research Section */
+.research-topic {
+    margin-bottom: 80px;
+    /* Increased from 50px */
+}
+
+.topic-title {
+    font-size: 2.2rem;
+    /* Increased from 1.8rem */
+    margin-bottom: 25px;
+    /* Standardized spacing */
+    color: var(--primary-color);
     border-left: 4px solid var(--primary-color);
     padding-left: 15px;
 }
