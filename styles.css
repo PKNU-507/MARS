@@ -224,8 +224,10 @@ h6 {
 }
 
 .hero-content {
-    max-width: 900px;
+    max-width: 1000px;
     z-index: 2;
+    margin-top: 30vh;
+    /* 🎯 바로 여기! 이 값이 타이틀들을 위아래로 움직이는 핵심입니다 */
 }
 
 .glitch {
