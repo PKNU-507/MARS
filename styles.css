@@ -213,21 +213,25 @@ h6 {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    /* Changed from fixed height to allow expansion */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* Centers the content block */
     align-items: center;
     text-align: center;
     position: relative;
-    padding: 0 20px;
+    padding: 100px 20px 20px;
+    /* Added top padding to clear the navbar securely */
+    z-index: 10;
 }
 
 .hero-content {
     max-width: 1000px;
     z-index: 2;
-    margin-top: 30vh;
-    /* 🎯 바로 여기! 이 값이 타이틀들을 위아래로 움직이는 핵심입니다 */
+    margin-top: auto;
+    /* Pushes content down towards center dynamically */
 }
 
 .glitch {
@@ -303,11 +307,13 @@ h6 {
 }
 
 .scroll-indicator {
-    position: absolute;
-    bottom: -10px;
-    /* Moved down closer to the next section */
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    /* Removed absolute positioning */
+    margin-top: auto;
+    /* Pushes indicator to the very bottom securely */
+    padding-top: 40px;
+    /* Space above it so it doesn't touch the banner */
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
