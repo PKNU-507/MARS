@@ -425,6 +425,11 @@ h6 {
 }
 
 /* Research Section */
+.topic-intro {
+    margin-bottom: 50px !important;
+    /* Spacing between intro box and first sub-topic */
+}
+
 .research-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
