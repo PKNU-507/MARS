@@ -242,28 +242,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// --- Collapsible Research Topics ---
-function toggleResearch(contentId, headerElement) {
-    const content = document.getElementById(contentId);
-    const btn = headerElement.querySelector('.btn');
+// --- Research Modals (Bento Box Layout) ---
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
 
-    if (content.style.display === "none" || !content.style.display) {
-        // Expand
-        content.style.display = "block";
-        btn.innerHTML = 'Close Details <i class="fas fa-chevron-up ml-2"></i>';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
 
-        // Trigger lazy-loaded videos inside this section if any
-        const videos = content.querySelectorAll('video');
-        videos.forEach(v => {
-            if (v.paused) v.play().catch(e => console.log("Auto-play prevented", e));
-        });
-    } else {
-        // Collapse
-        content.style.display = "none";
-        btn.innerHTML = 'Detail Project <i class="fas fa-chevron-down ml-2"></i>';
-
-        // Pause videos inside when collapsing
-        const videos = content.querySelectorAll('video');
-        videos.forEach(v => v.pause());
-    }
+    // Play any videos inside the modal
+    const videos = modal.querySelectorAll('video');
+    videos.forEach(v => {
+        if (v.paused) v.play().catch(e => console.log("Auto-play prevented", e));
+    });
 }
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore background scrolling
+
+    // Pause any videos inside the modal when closed
+    const videos = modal.querySelectorAll('video');
+    videos.forEach(v => v.pause());
+}
+
+// Close modal if user clicks outside the modal content area
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('research-modal')) {
+        closeModal(e.target.id);
+    }
+});
