@@ -41,6 +41,16 @@ function navigateToSection(targetId) {
     });
     targetSection.classList.remove('hidden-page');
 
+    // Toggle global recruitment banner visibility
+    const globalBanner = document.getElementById('global-recruitment-banner');
+    if (globalBanner) {
+        if (targetId === '#home') {
+            globalBanner.style.display = 'none';
+        } else {
+            globalBanner.style.display = 'block';
+        }
+    }
+
     // Scroll to top
     window.scrollTo(0, 0);
 
