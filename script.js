@@ -152,19 +152,22 @@ function init() {
 // Connect particles (simulating network control / multi-agent communication)
 function connect() {
     let opacityValue = 1;
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 1.2; // Slightly thicker for better visibility
+
+    // Optimization: Pre-calculate threshold to avoid calculating inside the nested loop
+    const maxDistance = (canvas.width / 10) * (canvas.height / 10);
+    const divisor = 20000; // Increased to make connections form slightly earlier/smoother
 
     for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a + 1; b < particlesArray.length; b++) { // Start b from a + 1 to avoid double checking and self-checking
+        for (let b = a + 1; b < particlesArray.length; b++) {
             let dx = particlesArray[a].x - particlesArray[b].x;
             let dy = particlesArray[a].y - particlesArray[b].y;
             let distance = (dx * dx) + (dy * dy);
 
-            // Reduced connection distance threshold for performance
-            if (distance < (canvas.width / 10) * (canvas.height / 10)) {
-                opacityValue = 1 - (distance / 15000);
-                // Draw connecting line
-                ctx.strokeStyle = `rgba(255, 69, 0, ${opacityValue * 0.2})`;
+            if (distance < maxDistance) {
+                opacityValue = 1 - (distance / divisor);
+                // Draw connecting line (Increased opacity multiplier from 0.2 to 0.55 for better emphasis)
+                ctx.strokeStyle = `rgba(255, 80, 0, ${opacityValue * 0.55})`;
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
                 ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
@@ -174,13 +177,10 @@ function connect() {
     }
 }
 
-// Animation loop with pause functionality
+// Animation loop
 let animationFrameId;
-let isAnimating = true;
 
 function animate() {
-    if (!isAnimating) return; // Stop drawing if paused
-
     ctx.clearRect(0, 0, innerWidth, innerHeight);
 
     for (let i = 0; i < particlesArray.length; i++) {
@@ -189,21 +189,6 @@ function animate() {
     connect();
     animationFrameId = requestAnimationFrame(animate);
 }
-
-// Pause canvas animation when scrolled past the hero section (e.g., > 500px)
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 600) {
-        if (isAnimating) {
-            isAnimating = false;
-            cancelAnimationFrame(animationFrameId);
-        }
-    } else {
-        if (!isAnimating) {
-            isAnimating = true;
-            animate();
-        }
-    }
-});
 
 // Initialize and start animation
 init();
