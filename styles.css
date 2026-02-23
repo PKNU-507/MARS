@@ -47,9 +47,8 @@ body {
 
 /* Utilities */
 .glass-panel {
-    background: var(--surface-color);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(18, 20, 24, 0.95);
+    /* Replaced backdrop-filter blur with near-solid dark background to fix scroll jank */
     border: 1px solid var(--surface-border);
     border-radius: 16px;
     padding: 30px;

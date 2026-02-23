@@ -174,16 +174,36 @@ function connect() {
     }
 }
 
-// Animation loop
+// Animation loop with pause functionality
+let animationFrameId;
+let isAnimating = true;
+
 function animate() {
-    requestAnimationFrame(animate);
+    if (!isAnimating) return; // Stop drawing if paused
+
     ctx.clearRect(0, 0, innerWidth, innerHeight);
 
     for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
     }
     connect();
+    animationFrameId = requestAnimationFrame(animate);
 }
+
+// Pause canvas animation when scrolled past the hero section (e.g., > 500px)
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) {
+        if (isAnimating) {
+            isAnimating = false;
+            cancelAnimationFrame(animationFrameId);
+        }
+    } else {
+        if (!isAnimating) {
+            isAnimating = true;
+            animate();
+        }
+    }
+});
 
 // Initialize and start animation
 init();
