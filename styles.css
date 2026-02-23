@@ -423,30 +423,38 @@ h6 {
     border-radius: 24px;
     overflow: hidden;
     cursor: pointer;
-    background: #111;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Faint border to show card edges without a solid background */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .bento-item:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(255, 69, 0, 0.25);
+    box-shadow: 0 20px 40px rgba(255, 69, 0, 0.15);
+    border-color: rgba(255, 69, 0, 0.3);
     z-index: 10;
 }
 
 .bento-media {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.5;
+    top: 50%;
+    right: 5%;
+    left: auto;
+    transform: translateY(-50%);
+    width: 28%;
+    height: 85%;
+    object-fit: contain;
+    object-position: center right;
+    opacity: 0.9;
+    mix-blend-mode: lighten;
+    /* Flawlessly blends absolute blacks and hides any dark artifacts */
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .bento-item:hover .bento-media {
-    opacity: 0.8;
-    transform: scale(1.05);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
 }
 
 .bento-overlay {
@@ -463,7 +471,8 @@ h6 {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 65%;
+    /* Prevent text from overlapping right side image */
     padding: 35px;
     pointer-events: none;
     display: flex;
@@ -557,8 +566,21 @@ h6 {
         grid-auto-rows: 350px;
     }
 
-    .bento-large {
-        grid-row: span 1;
+    .bento-content {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .bento-media {
+        width: 45%;
+        height: 70%;
+        opacity: 0.25;
+        right: -5%;
+    }
+
+    .bento-item:hover .bento-media {
+        opacity: 0.35;
+        transform: translateY(-50%) scale(1.02);
     }
 }
 

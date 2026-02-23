@@ -49,7 +49,7 @@
                 <h2><span class="highlight">M</span>ulti-<span class="highlight">A</span>gent <span
                         class="highlight">R</span>obotics & Control <span class="highlight">S</span>ystems Laboratory
                 </h2>
-                <p class="kor-subtitle">[국립부경대학교] 다개체 로보틱스 및 제어시스템 연구실</p>
+                <p class="kor-subtitle">다개체 로보틱스 및 제어시스템 연구실</p>
             </div>
             <div class="scroll-indicator">
                 <div class="mouse">
@@ -171,10 +171,8 @@
             <!-- Bento Box Grid -->
             <div class="bento-grid">
                 <!-- R1: Multi-Drone -->
-                <div class="bento-item bento-large" onclick="openModal('modal-r1')">
-                    <video class="bento-media" autoplay loop muted playsinline>
-                        <source src="videos/R1_1_one.mp4" type="video/mp4">
-                    </video>
+                <div class="bento-item bento-wide" onclick="openModal('modal-r1')">
+                    <img src="images/icon_multi_drone_v4.png" class="bento-media" alt="Multi-Drone Formation Control">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <span class="bento-badge">Core Project</span>
@@ -184,42 +182,41 @@
                     </div>
                 </div>
 
-                <!-- R3: Pick & Place -->
-                <div class="bento-item bento-medium" onclick="openModal('modal-r3')">
-                    <video class="bento-media" autoplay loop muted playsinline>
-                        <source src="videos/R3_exp.mp4" type="video/mp4">
-                    </video>
-                    <div class="bento-overlay"></div>
-                    <div class="bento-content">
-                        <h3>Pick & Place Automation</h3>
-                        <p>비전 센서 기반 고속 물류 자동화 및 제어 알고리즘 검증 시스템 (그리핑 성공률 96.16%)</p>
-                        <div class="bento-action">View Details <i class="fas fa-arrow-right"></i></div>
-                    </div>
-                </div>
-
                 <!-- R2: Delta Robot -->
-                <div class="bento-item bento-medium" onclick="openModal('modal-r2')">
-                    <img src="images/R2_3Dmodeling.png" class="bento-media">
+                <div class="bento-item bento-wide" onclick="openModal('modal-r2')">
+                    <img src="images/icon_delta_robot_v3.png" class="bento-media" alt="Delta Robot System">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
+                        <span class="bento-badge" style="background: var(--primary-color);">Ongoing</span>
                         <h3>Delta Robot System</h3>
-                        <p>고속 병렬 로봇 설계부터 다개체 작업 할당 알고리즘까지 전주기 자체 개발 시스템</p>
+                        <p>고속 병렬 로봇 설계부터 다개체 작업 할당 알고리즘까지 전주기 자체 개발</p>
                         <div class="bento-action">View Details <i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
 
                 <!-- R4: Aerial Manipulator -->
-                <div class="bento-item bento-wide" onclick="openModal('modal-r4')"
-                    style="background: linear-gradient(135deg, #151515, #000);">
-                    <i class="fas fa-tools bento-media"
-                        style="font-size: 15rem; color: #fff; opacity: 0.02; left: auto; right: -50px; top: -50px; width: auto; height: auto;"></i>
+                <div class="bento-item bento-wide" onclick="openModal('modal-r4')">
+                    <img src="images/icon_aerial_manipulator_v3.png" class="bento-media"
+                        alt="Aerial Manipulator System">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
-                        <span class="bento-badge" style="background: #444;">In Progress</span>
+                        <span class="bento-badge" style="background: var(--primary-color);">Ongoing</span>
                         <h3>Aerial Manipulator System</h3>
                         <p>로봇팔이 장착된 드론의 비행 제어 및 매니퓰레이터 조작을 연동한 복합 동역학 시스템 연구</p>
-                        <div class="bento-action" style="color: #ccc;">View Details <i class="fas fa-arrow-right"></i>
+                        <div class="bento-action">View Details <i class="fas fa-arrow-right"></i>
                         </div>
+                    </div>
+                </div>
+
+                <!-- R3: Pick & Place (Completed) -->
+                <div class="bento-item bento-wide" onclick="openModal('modal-r3')">
+                    <img src="images/icon_pick_place_v3.png" class="bento-media" alt="Pick & Place Automation">
+                    <div class="bento-overlay"></div>
+                    <div class="bento-content">
+                        <span class="bento-badge" style="background: #555555;">Done</span>
+                        <h3>Pick & Place Automation</h3>
+                        <p>비전 센서 기반 산업용 고속 물류 자동화 시스템</p>
+                        <div class="bento-action">View Details <i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
             </div>
@@ -468,8 +465,6 @@
                                 <source src="videos/R3_exp.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">
-                                실험 영상</p>
                         </div>
                     </div>
                 </div>
