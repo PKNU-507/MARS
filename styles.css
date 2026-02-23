@@ -425,9 +425,9 @@ h6 {
 }
 
 /* Research Section */
-.topic-intro {
-    margin-bottom: 100px !important;
-    /* Spacing between intro box and first sub-topic */
+.sub-topic {
+    margin-top: 50px;
+    /* Spacing above each sub-topic */
 }
 
 .research-grid {
@@ -607,8 +607,8 @@ h6 {
 }
 
 .profile-img {
-    width: 250px;
-    height: 320px;
+    width: 270px;
+    height: 350px;
     object-fit: cover;
     border-radius: 16px;
     border: 1px solid var(--surface-border);

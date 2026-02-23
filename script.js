@@ -241,3 +241,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// --- Collapsible Research Topics ---
+function toggleResearch(contentId, headerElement) {
+    const content = document.getElementById(contentId);
+    const btn = headerElement.querySelector('.btn');
+
+    if (content.style.display === "none" || !content.style.display) {
+        // Expand
+        content.style.display = "block";
+        btn.innerHTML = 'Close Details <i class="fas fa-chevron-up ml-2"></i>';
+
+        // Trigger lazy-loaded videos inside this section if any
+        const videos = content.querySelectorAll('video');
+        videos.forEach(v => {
+            if (v.paused) v.play().catch(e => console.log("Auto-play prevented", e));
+        });
+    } else {
+        // Collapse
+        content.style.display = "none";
+        btn.innerHTML = 'Detail Project <i class="fas fa-chevron-down ml-2"></i>';
+
+        // Pause videos inside when collapsing
+        const videos = content.querySelectorAll('video');
+        videos.forEach(v => v.pause());
+    }
+}
