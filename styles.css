@@ -287,8 +287,8 @@
         align-items: center;
         text-align: center;
         position: relative;
-        padding: 100px 20px 20px;
-        /* Added top padding to clear the navbar securely */
+        padding: 170px 20px 20px;
+        /* Added top padding to clear the navbar securely and balance spacing */
         z-index: 10;
     }
 
