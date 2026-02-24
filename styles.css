@@ -310,6 +310,24 @@
         margin-bottom: 10px;
     }
 
+    .univ-title {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+
+    .univ-logo {
+        height: 1.4em;
+        width: auto;
+        vertical-align: middle;
+        margin-right: 8px;
+        position: relative;
+        top: -2px;
+    }
+
     .hero h2 {
         font-size: 2rem;
         font-weight: 400;
@@ -740,8 +758,11 @@
         }
 
         .bento-grid {
-            grid-auto-rows: minmax(var(--bento-height), auto);
-            /* Changed to allow dynamic height on expanding */
+            grid-auto-rows: minmax(300px, auto);
+        }
+
+        .bento-item {
+            height: 300px;
         }
 
         .bento-content {
@@ -1408,6 +1429,10 @@
     }
 
     @media (max-width: 768px) {
+        .univ-title {
+            font-size: 1rem;
+        }
+
         .nav-links {
             display: none;
             position: absolute;
@@ -1481,12 +1506,23 @@
         }
 
         .bento-content h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .bento-content p {
+            font-size: 0.95rem;
+        }
+
+        .bento-grid {
+            /* allow larger mobile bento boxes to prevent content pushing up */
+            grid-auto-rows: minmax(310px, auto);
         }
 
         .bento-item {
             margin-top: 5px;
             /* Added spacing to stop mobile overlap from above text */
+            height: 310px;
         }
 
         .profile-img {
@@ -1497,6 +1533,10 @@
     }
 
     @media (max-width: 480px) {
+        .univ-title {
+            font-size: 0.85rem;
+        }
+
         .glitch {
             font-size: 2.5rem;
         }
