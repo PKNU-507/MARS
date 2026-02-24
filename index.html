@@ -76,40 +76,17 @@
             </div>
 
             <!-- Recruitment Banner -->
-            <div class="recruitment-banner"
-                style="background: linear-gradient(90deg, rgba(255,59,0,0.1) 0%, rgba(20,22,30,0.8) 50%, rgba(255,140,0,0.1) 100%); border-top: 1px solid rgba(255,59,0,0.2); border-bottom: 1px solid rgba(255,59,0,0.2); padding: 40px 20px; text-align: center; margin-top: 40px; margin-bottom: 40px; z-index: 5; position: relative; backdrop-filter: blur(10px); width: 100%; max-width: 100%;">
-                <div class="banner-content"
-                    style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-                        <span class="pulse-dot"
-                            style="width: 10px; height: 10px; background-color: #ff3b00; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px #ff3b00; animation: pulse 2s infinite;"></span>
-                        <h3 style="color: #fff; font-size: 1.5rem; margin: 0; letter-spacing: 0.5px;">학부 연구생 및 대학원생 상시
-                            모집</h3>
+            <div class="recruitment-banner" style="margin-top: 40px; margin-bottom: 40px;">
+                <div class="banner-content">
+                    <div class="banner-content-header">
+                        <span class="pulse-dot"></span>
+                        <h3 class="banner-title">학부 연구생 및 대학원생 상시 모집</h3>
                     </div>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin: 0;">MARS Lab에서 <strong
-                            style="color: #fff;">다개체 제어 및 로보틱스 연구</strong>를 함께 이끌어갈 열정적인 학생을 찾습니다.</p>
-                    <a href="#contact" class="btn btn-primary" onclick="navigateToSection('#contact')"
-                        style="margin-top: 10px; padding: 10px 25px; font-size: 0.95rem;">Join MARS Lab <i
-                            class="fas fa-paper-plane" style="margin-left: 5px;"></i></a>
+                    <p class="banner-desc">MARS Lab에서 <strong>다개체 제어 및 로보틱스 연구</strong>를 함께 이끌어갈 열정적인 학생을 찾습니다.</p>
+                    <a href="#contact" class="btn btn-primary banner-btn" onclick="navigateToSection('#contact')">
+                        Join MARS Lab <i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
+                    </a>
                 </div>
-                <style>
-                    @keyframes pulse {
-                        0% {
-                            transform: scale(0.95);
-                            box-shadow: 0 0 0 0 rgba(255, 59, 0, 0.7);
-                        }
-
-                        70% {
-                            transform: scale(1);
-                            box-shadow: 0 0 0 10px rgba(255, 59, 0, 0);
-                        }
-
-                        100% {
-                            transform: scale(0.95);
-                            box-shadow: 0 0 0 0 rgba(255, 59, 0, 0);
-                        }
-                    }
-                </style>
             </div>
 
             <div class="scroll-indicator">
@@ -298,280 +275,274 @@
             </div>
 
         </div>
+    </section>
 
-        <!-- Modals Container -->
-        <div class="modals-container">
+    <!-- Modals Container -->
+    <div class="modals-container">
 
-            <!-- Modal R1 -->
-            <div id="modal-r1" class="research-modal">
-                <div class="modal-inner">
-                    <div class="modal-header">
-                        <h2>Multi-Drone Formation Control</h2>
-                        <button class="modal-close" onclick="closeModal('modal-r1')"><i
-                                class="fas fa-times"></i></button>
+        <!-- Modal R1 -->
+        <div id="modal-r1" class="research-modal">
+            <div class="modal-inner">
+                <div class="modal-header">
+                    <h2>Multi-Drone Formation Control</h2>
+                    <button class="modal-close" onclick="closeModal('modal-r1')"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                            <span
+                                style="display: block; font-weight: 600; font-size: 1.25rem; color: #fff; margin-bottom: 10px;">다수
+                                드론의 협력 임무 수행을 위한 <strong class="accent-text">편대 제어(Formation Control)</strong> 및
+                                <strong class="accent-text">측위(Localization)</strong> 기술 연구</span>
+                            다개체 편대 제어는 여러 대의 드론이 일정한 형태를 유지하며 협력 임무를 수행하도록 만드는 핵심 기술입니다. 이를 위해서는 각 드론의 위치를 실시간으로
+                            추정하고
+                            제어하는
+                            측위(Localization) 기술이 필수적입니다.<br><br>
+                            측위 방식은 크게 두 가지로 나뉩니다. 첫째는 GPS와 같이 지구상 위도/경도를 활용하는 <strong class="accent-text">전역
+                                정보(Global
+                                Information)</strong> 방식입니다. 이 경우 각 드론의 절대적인 위치를 눈으로 보듯 정확히 알 수 있어 원하는 대형과 경로로
+                            제어하기 비교적
+                            용이합니다.<br><br>
+                            하지만 터널, 빌딩 숲, 저고도 비행 등 GPS 신호가 끊기거나 오차가 커지는 <strong class="accent-text">GPS 음영
+                                지역(GPS-denied
+                                environment)</strong>에서는 다른 접근이 필요합니다. 이때는 인접 드론들과의 거리나 통신 강도 등 <strong
+                                class="accent-text">지역 정보(Local Information)</strong>만을 활용하여 대형을 유지하는 기술이
+                            요구됩니다.<br><br>
+                            MARS Lab은 이러한 다양한 극한 상황에 유연하게 대응하기 위해, 전역 정보와 지역 정보를 상황에 맞게 융합하는 최적의 솔루션을 개발합니다. 드론
+                            하드웨어
+                            설계부터 군집
+                            관제를 위한 통신망, 그리고 분산 제어를 위한 수학적/네트워크 시스템 소프트웨어까지 아우르는 독자적인 기술력을 바탕으로, 이를 크게 세
+                            가지(Position,
+                            Distance, Network-based) 연구로 세분화하여 진행하고 있습니다.
+                        </p>
                     </div>
-                    <div class="modal-body">
-                        <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
-                            <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
-                                <span
-                                    style="display: block; font-weight: 600; font-size: 1.25rem; color: #fff; margin-bottom: 10px;">다수
-                                    드론의 협력 임무 수행을 위한 <strong class="accent-text">편대 제어(Formation Control)</strong> 및
-                                    <strong class="accent-text">측위(Localization)</strong> 기술 연구</span>
-                                다개체 편대 제어는 여러 대의 드론이 일정한 형태를 유지하며 협력 임무를 수행하도록 만드는 핵심 기술입니다. 이를 위해서는 각 드론의 위치를 실시간으로
-                                추정하고
-                                제어하는
-                                측위(Localization) 기술이 필수적입니다.<br><br>
-                                측위 방식은 크게 두 가지로 나뉩니다. 첫째는 GPS와 같이 지구상 위도/경도를 활용하는 <strong class="accent-text">전역
-                                    정보(Global
-                                    Information)</strong> 방식입니다. 이 경우 각 드론의 절대적인 위치를 눈으로 보듯 정확히 알 수 있어 원하는 대형과 경로로
-                                제어하기 비교적
-                                용이합니다.<br><br>
-                                하지만 터널, 빌딩 숲, 저고도 비행 등 GPS 신호가 끊기거나 오차가 커지는 <strong class="accent-text">GPS 음영
-                                    지역(GPS-denied
-                                    environment)</strong>에서는 다른 접근이 필요합니다. 이때는 인접 드론들과의 거리나 통신 강도 등 <strong
-                                    class="accent-text">지역 정보(Local Information)</strong>만을 활용하여 대형을 유지하는 기술이
-                                요구됩니다.<br><br>
-                                MARS Lab은 이러한 다양한 극한 상황에 유연하게 대응하기 위해, 전역 정보와 지역 정보를 상황에 맞게 융합하는 최적의 솔루션을 개발합니다. 드론
-                                하드웨어
-                                설계부터 군집
-                                관제를 위한 통신망, 그리고 분산 제어를 위한 수학적/네트워크 시스템 소프트웨어까지 아우르는 독자적인 기술력을 바탕으로, 이를 크게 세
-                                가지(Position,
-                                Distance, Network-based) 연구로 세분화하여 진행하고 있습니다.
-                            </p>
-                        </div>
 
-                        <!-- R1_1. Position-based Control -->
-                        <div class="sub-topic mb-4 pl-4"
-                            style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
-                            <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 0.5px;">
-                                Position-based Control</h4>
-                            <p
-                                style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.6;">
-                                전역 정보(GPS)를 이용한 사전 정의 경로(Predetermined Trajectory) 기반 자율 편대 비행 시스템입니다.<br>
-                                각 드론에 장착된 LED 패턴 또한 사전에 프로그래밍되어 야간 <strong>군집 비행(Drone Show)</strong> 등에 응용될 수 있습니다.
-                                전체 시스템은 중앙 지상 통제국(GCS, Ground Control Station) 서버를 통해 제어되며, GCS의 단일 명령(모드 변경)으로 전체
-                                편대 시스템을 한
-                                번에
-                                제어할 수 있습니다.
-                                또한 직관적인 GUI 상태 모니터링 툴을 통해 비행 중인 모든 드론의 개별 상태를 실시간으로 확인할 수 있습니다.
-                            </p>
+                    <!-- R1_1. Position-based Control -->
+                    <div class="sub-topic mb-4 pl-4"
+                        style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
+                        <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 0.5px;">
+                            Position-based Control</h4>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.6;">
+                            전역 정보(GPS)를 이용한 사전 정의 경로(Predetermined Trajectory) 기반 자율 편대 비행 시스템입니다.<br>
+                            각 드론에 장착된 LED 패턴 또한 사전에 프로그래밍되어 야간 <strong>군집 비행(Drone Show)</strong> 등에 응용될 수 있습니다.
+                            전체 시스템은 중앙 지상 통제국(GCS, Ground Control Station) 서버를 통해 제어되며, GCS의 단일 명령(모드 변경)으로 전체
+                            편대 시스템을 한
+                            번에
+                            제어할 수 있습니다.
+                            또한 직관적인 GUI 상태 모니터링 툴을 통해 비행 중인 모든 드론의 개별 상태를 실시간으로 확인할 수 있습니다.
+                        </p>
 
-                            <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                <div class="media-container glass-panel text-center"
-                                    style="padding: 20px; flex: 1; min-width: 300px;">
-                                    <video class="content-media" controls loop muted preload="metadata">
-                                        <source src="videos/R1_1_one.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                                <div class="media-container glass-panel text-center"
-                                    style="padding: 20px; flex: 1; min-width: 300px;">
-                                    <video class="content-media" controls loop muted preload="metadata">
-                                        <source src="videos/R1_1_two.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- R1_2. Distance-based Control -->
-                        <div class="sub-topic mb-4 pl-4"
-                            style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
-                            <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 0.5px;">
-                                Distance-based Control</h4>
-                            <p
-                                style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.6;">
-                                <span style="display: block; font-weight: 500; margin-bottom: 8px;">지역 정보 및 거리 측정을
-                                    활용한 협력 측위
-                                    시스템
-                                    (GPS-Denied 환경 대응)</span>
-                                이 시스템은 고정된 위치 기준점이 되는 <strong class="accent-text">4대의 앵커(Anchor) 드론</strong>과 측위의
-                                대상이 되는
-                                <strong class="accent-text">1대의 태그(Tag) 드론</strong>으로 구성됩니다. 직관적으로 비유하자면, 4대의 앵커 드론이
-                                띄워놓은
-                                '인공위성' 역할을
-                                하고, 태그 드론이 위성 신호를 받아 <strong>'현재 나의 위치를 지도 앱(Map App)에 띄워주는 스마트폰'</strong> 역할을 하는 것과
-                                같습니다.<br><br>
-                                태그 드론은 자체 GPS 센서 없이도(전역 정보 부재), 인접한 앵커 드론들의 위치 정보와 UWB 센서를 통한 거리 정보를 융합하여 스스로의 위치를
-                                비행
-                                제어기(FC)
-                                내부에서 실시간으로 계산해 냅니다. 이를 통해 지상 통제국(GCS) 시스템의 개입 없이도 5대의 드론이 <strong
-                                    class="accent-text">ROS 기반
-                                    분산
-                                    제어</strong>를 통해 정밀한 군집 편대를 형성할 수 있습니다.
-                            </p>
-                            <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                <div class="media-container glass-panel text-center"
-                                    style="padding: 20px; flex: 1; min-width: 300px;">
-                                    <video class="content-media" controls loop muted preload="metadata">
-                                        <source src="videos/R1_2_one.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                                <div class="media-container glass-panel text-center"
-                                    style="padding: 20px; flex: 1; min-width: 300px;">
-                                    <video class="content-media" controls loop muted preload="metadata">
-                                        <source src="videos/R1_2_two.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- R1_3. Network-based Control -->
-                        <div class="sub-topic mb-4 pl-4"
-                            style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
-                            <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 0.5px;">
-                                Network-based Control</h4>
-                            <p
-                                style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.6;">
-                                <span style="display: block; font-weight: 500; margin-bottom: 8px;">인접 드론 간 상대 정보를
-                                    활용한
-                                    <strong class="accent-text">분산 최적화(Distributed Optimization)</strong> 및 자율 네트워크
-                                    제어
-                                    시스템</span>
-                                드론 간의 물리적 통신 거리 제약과 통신 강도 등 다양한 네트워크 변수들을 목적 함수(Objective Function)로 구성하여 제어하는
-                                시스템입니다. 각 드론은
-                                전체
-                                시스템을 총괄하는 중앙 관제 없이, 오직 인접한 드론과의 정보 교환만으로 자신의 위치를 스스로 결정(Distributed
-                                Optimization)합니다.<br><br>
-                                이는 마치 여러 관절로 이루어진 로봇팔이 움직이는 원리와 유사하며, 편대의 가장 끝에서 임무를 수행하는 드론을 <strong
-                                    class="accent-text">End-effector</strong>라고 정의합니다. 이 기술은 터널이나 저고도 환경처럼 통신과 GPS가
-                                모두 불안정한
-                                상황에서도, 중계 드론들을 이용한 임시 통신망(Ad-hoc Network)을 구축하여 끊김 없는 안정적인 측위와 군집 제어를 가능하게 합니다.
-                            </p>
-                            <div class="media-container glass-panel text-center" style="padding: 20px;">
+                        <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <div class="media-container glass-panel text-center"
+                                style="padding: 20px; flex: 1; min-width: 300px;">
                                 <video class="content-media" controls loop muted preload="metadata">
-                                    <source src="videos/R1_3_one.mp4" type="video/mp4">
+                                    <source src="videos/R1_1_one.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="media-container glass-panel text-center"
+                                style="padding: 20px; flex: 1; min-width: 300px;">
+                                <video class="content-media" controls loop muted preload="metadata">
+                                    <source src="videos/R1_1_two.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Modal R2 -->
-            <div id="modal-r2" class="research-modal">
-                <div class="modal-inner">
-                    <div class="modal-header">
-                        <h2>Delta Robot System</h2>
-                        <button class="modal-close" onclick="closeModal('modal-r2')"><i
-                                class="fas fa-times"></i></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
-                            <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
-                                <span
-                                    style="display: block; font-weight: 600; font-size: 1.25rem; color: #fff; margin-bottom: 10px;">델타
-                                    로봇 전주기(A to Z) 자체 개발 및 다개체 작업 할당(Task Assignment) 연구 (진행 중)</span>
-                                본 연구는 고속 병렬 로봇인 델타 로봇의 3D 모델링 설계부터 정밀 제어기 개발, 시뮬레이션, CNC 공정을 통한 프로토타입 제작, 그리고 실제 제어
-                                성능 평가까지
+                    <!-- R1_2. Distance-based Control -->
+                    <div class="sub-topic mb-4 pl-4"
+                        style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
+                        <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 0.5px;">
+                            Distance-based Control</h4>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.6;">
+                            <span style="display: block; font-weight: 500; margin-bottom: 8px;">지역 정보 및 거리 측정을
+                                활용한 협력 측위
                                 시스템
-                                구축의 <strong class="accent-text">A to Z</strong>를 독자적으로 수행합니다. 나아가 단일 로봇 제어를 넘어, 여러
-                                대의 델타 로봇이
-                                협력하여 공정을 처리하는 다개체 작업 할당(Task Assignment Problem)까지 연구 범위를 확장하여 진행 중입니다.
-                            </p>
-                        </div>
-
-                        <div class="media-column"
-                            style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 20px;">
-                            <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                <div class="media-container glass-panel text-center"
-                                    style="padding: 20px; flex: 1; min-width: 300px;">
-                                    <img src="images/R2_3Dmodeling.png" alt="3D Modeling" class="content-media"
-                                        loading="lazy">
-                                    <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">3D
-                                        Modeling</p>
-                                </div>
-                                <div class="media-container glass-panel text-center"
-                                    style="padding: 20px; flex: 1; min-width: 300px;">
-                                    <img src="images/R2_CNC_prototype.png" alt="CNC Prototype" class="content-media"
-                                        loading="lazy">
-                                    <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">CNC 공정
-                                        프로토타입</p>
-                                </div>
+                                (GPS-Denied 환경 대응)</span>
+                            이 시스템은 고정된 위치 기준점이 되는 <strong class="accent-text">4대의 앵커(Anchor) 드론</strong>과 측위의
+                            대상이 되는
+                            <strong class="accent-text">1대의 태그(Tag) 드론</strong>으로 구성됩니다. 직관적으로 비유하자면, 4대의 앵커 드론이
+                            띄워놓은
+                            '인공위성' 역할을
+                            하고, 태그 드론이 위성 신호를 받아 <strong>'현재 나의 위치를 지도 앱(Map App)에 띄워주는 스마트폰'</strong> 역할을 하는 것과
+                            같습니다.<br><br>
+                            태그 드론은 자체 GPS 센서 없이도(전역 정보 부재), 인접한 앵커 드론들의 위치 정보와 UWB 센서를 통한 거리 정보를 융합하여 스스로의 위치를
+                            비행
+                            제어기(FC)
+                            내부에서 실시간으로 계산해 냅니다. 이를 통해 지상 통제국(GCS) 시스템의 개입 없이도 5대의 드론이 <strong class="accent-text">ROS 기반
+                                분산
+                                제어</strong>를 통해 정밀한 군집 편대를 형성할 수 있습니다.
+                        </p>
+                        <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <div class="media-container glass-panel text-center"
+                                style="padding: 20px; flex: 1; min-width: 300px;">
+                                <video class="content-media" controls loop muted preload="metadata">
+                                    <source src="videos/R1_2_one.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
-                            <div class="media-container glass-panel text-center" style="padding: 20px;">
-                                <img src="images/R2_controller_Architucture_perdormance.png"
-                                    alt="Controller Architecture and Performance" class="content-media bg-white"
+                            <div class="media-container glass-panel text-center"
+                                style="padding: 20px; flex: 1; min-width: 300px;">
+                                <video class="content-media" controls loop muted preload="metadata">
+                                    <source src="videos/R1_2_two.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- R1_3. Network-based Control -->
+                    <div class="sub-topic mb-4 pl-4"
+                        style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
+                        <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 0.5px;">
+                            Network-based Control</h4>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.6;">
+                            <span style="display: block; font-weight: 500; margin-bottom: 8px;">인접 드론 간 상대 정보를
+                                활용한
+                                <strong class="accent-text">분산 최적화(Distributed Optimization)</strong> 및 자율 네트워크
+                                제어
+                                시스템</span>
+                            드론 간의 물리적 통신 거리 제약과 통신 강도 등 다양한 네트워크 변수들을 목적 함수(Objective Function)로 구성하여 제어하는
+                            시스템입니다. 각 드론은
+                            전체
+                            시스템을 총괄하는 중앙 관제 없이, 오직 인접한 드론과의 정보 교환만으로 자신의 위치를 스스로 결정(Distributed
+                            Optimization)합니다.<br><br>
+                            이는 마치 여러 관절로 이루어진 로봇팔이 움직이는 원리와 유사하며, 편대의 가장 끝에서 임무를 수행하는 드론을 <strong
+                                class="accent-text">End-effector</strong>라고 정의합니다. 이 기술은 터널이나 저고도 환경처럼 통신과 GPS가
+                            모두 불안정한
+                            상황에서도, 중계 드론들을 이용한 임시 통신망(Ad-hoc Network)을 구축하여 끊김 없는 안정적인 측위와 군집 제어를 가능하게 합니다.
+                        </p>
+                        <div class="media-container glass-panel text-center" style="padding: 20px;">
+                            <video class="content-media" controls loop muted preload="metadata">
+                                <source src="videos/R1_3_one.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal R2 -->
+        <div id="modal-r2" class="research-modal">
+            <div class="modal-inner">
+                <div class="modal-header">
+                    <h2>Delta Robot System</h2>
+                    <button class="modal-close" onclick="closeModal('modal-r2')"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                            <span
+                                style="display: block; font-weight: 600; font-size: 1.25rem; color: #fff; margin-bottom: 10px;">델타
+                                로봇 전주기(A to Z) 자체 개발 및 다개체 작업 할당(Task Assignment) 연구 (진행 중)</span>
+                            본 연구는 고속 병렬 로봇인 델타 로봇의 3D 모델링 설계부터 정밀 제어기 개발, 시뮬레이션, CNC 공정을 통한 프로토타입 제작, 그리고 실제 제어
+                            성능 평가까지
+                            시스템
+                            구축의 <strong class="accent-text">A to Z</strong>를 독자적으로 수행합니다. 나아가 단일 로봇 제어를 넘어, 여러
+                            대의 델타 로봇이
+                            협력하여 공정을 처리하는 다개체 작업 할당(Task Assignment Problem)까지 연구 범위를 확장하여 진행 중입니다.
+                        </p>
+                    </div>
+
+                    <div class="media-column"
+                        style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 20px;">
+                        <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <div class="media-container glass-panel text-center"
+                                style="padding: 20px; flex: 1; min-width: 300px;">
+                                <img src="images/R2_3Dmodeling.png" alt="3D Modeling" class="content-media"
                                     loading="lazy">
-                                <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">제어기 구조 및 제어
-                                    성능</p>
+                                <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">3D
+                                    Modeling</p>
                             </div>
+                            <div class="media-container glass-panel text-center"
+                                style="padding: 20px; flex: 1; min-width: 300px;">
+                                <img src="images/R2_CNC_prototype.png" alt="CNC Prototype" class="content-media"
+                                    loading="lazy">
+                                <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">CNC 공정
+                                    프로토타입</p>
+                            </div>
+                        </div>
+                        <div class="media-container glass-panel text-center" style="padding: 20px;">
+                            <img src="images/R2_controller_Architucture_perdormance.png"
+                                alt="Controller Architecture and Performance" class="content-media bg-white"
+                                loading="lazy">
+                            <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">제어기 구조 및 제어
+                                성능</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal R3 -->
-        <div id="modal-r3" class="research-modal">
-            <div class="modal-inner">
-                <div class="modal-header">
-                    <h2>Pick & Place Automation System</h2>
-                    <button class="modal-close" onclick="closeModal('modal-r3')"><i class="fas fa-times"></i></button>
+    <!-- Modal R3 -->
+    <div id="modal-r3" class="research-modal">
+        <div class="modal-inner">
+            <div class="modal-header">
+                <h2>Pick & Place Automation System</h2>
+                <button class="modal-close" onclick="closeModal('modal-r3')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                        <span
+                            style="display: block; font-weight: 600; font-size: 1.25rem; color: #fff; margin-bottom: 10px;">비전
+                            센서 기반 고속 물류 자동화 및 제어 알고리즘 검증 시스템</span>
+                        농산물 산지유통센터(APC) 등 실제 산업 현장에 즉시 투입 가능한 비전 기반 고속 Pick-and-Place 물류
+                        자동화 시스템입니다.<br><br>
+                        이 시스템은 라이다(LiDAR) 같은 고가의 센서 장비 없이, 오직 <strong class="accent-text">Vision 센서</strong>
+                        하나만으로
+                        객체
+                        인식(Object Detection)과 깊이 추정(Depth Estimation)을 수행해 타겟의 3차원 위치를
+                        정밀하게 파악합니다. 특히 상용 임베디드
+                        보드(Jetson
+                        Nano)와 같은 제한된 하드웨어 환경 내에서 복잡한 이미지 프로세싱과 자동화 제어 로직을 통합적으로 처리할 수
+                        있도록 경량화 및 최적화되어 있습니다.<br><br>
+                        <span
+                            style="display: inline-block; background: rgba(255, 59, 0, 0.1); border: 1px solid rgba(255, 59, 0, 0.3); padding: 10px 15px; border-radius: 8px; margin-top: 10px;">
+                            그리핑 성공률 <strong class="accent-text">96.16%</strong> |
+                            분당 반복 속도 <strong class="accent-text">21.94회</strong> (총
+                            2,291회 P&P 수행 기준)
+                        </span>
+                    </p>
                 </div>
-                <div class="modal-body">
-                    <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
-                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
-                            <span
-                                style="display: block; font-weight: 600; font-size: 1.25rem; color: #fff; margin-bottom: 10px;">비전
-                                센서 기반 고속 물류 자동화 및 제어 알고리즘 검증 시스템</span>
-                            농산물 산지유통센터(APC) 등 실제 산업 현장에 즉시 투입 가능한 비전 기반 고속 Pick-and-Place 물류
-                            자동화 시스템입니다.<br><br>
-                            이 시스템은 라이다(LiDAR) 같은 고가의 센서 장비 없이, 오직 <strong class="accent-text">Vision 센서</strong>
-                            하나만으로
-                            객체
-                            인식(Object Detection)과 깊이 추정(Depth Estimation)을 수행해 타겟의 3차원 위치를
-                            정밀하게 파악합니다. 특히 상용 임베디드
-                            보드(Jetson
-                            Nano)와 같은 제한된 하드웨어 환경 내에서 복잡한 이미지 프로세싱과 자동화 제어 로직을 통합적으로 처리할 수
-                            있도록 경량화 및 최적화되어 있습니다.<br><br>
-                            <span
-                                style="display: inline-block; background: rgba(255, 59, 0, 0.1); border: 1px solid rgba(255, 59, 0, 0.3); padding: 10px 15px; border-radius: 8px; margin-top: 10px;">
-                                그리핑 성공률 <strong class="accent-text">96.16%</strong> |
-                                분당 반복 속도 <strong class="accent-text">21.94회</strong> (총
-                                2,291회 P&P 수행 기준)
-                            </span>
-                        </p>
-                    </div>
-                    <div class="media-container glass-panel text-center" style="padding: 20px;">
-                        <video class="content-media" controls loop muted preload="metadata">
-                            <source src="videos/R3_exp.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+                <div class="media-container glass-panel text-center" style="padding: 20px;">
+                    <video class="content-media" controls loop muted preload="metadata">
+                        <source src="videos/R3_exp.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal R4 -->
-        <div id="modal-r4" class="research-modal">
-            <div class="modal-inner">
-                <div class="modal-header">
-                    <h2>Aerial Manipulator System</h2>
-                    <button class="modal-close" onclick="closeModal('modal-r4')"><i class="fas fa-times"></i></button>
+    <!-- Modal R4 -->
+    <div id="modal-r4" class="research-modal">
+        <div class="modal-inner">
+            <div class="modal-header">
+                <h2>Aerial Manipulator System</h2>
+                <button class="modal-close" onclick="closeModal('modal-r4')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                        (추가 예정) 로봇팔이 장착된 드론의 비행 제어 및 매니퓰레이터 조작을 연동한 복합 동역학 시스템 연구
+                    </p>
                 </div>
-                <div class="modal-body">
-                    <div class="topic-intro glass-panel mb-4" style="padding: 20px;">
-                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
-                            (추가 예정) 로봇팔이 장착된 드론의 비행 제어 및 매니퓰레이터 조작을 연동한 복합 동역학 시스템 연구
-                        </p>
-                    </div>
-                    <div class="media-container glass-panel text-center"
-                        style="padding: 60px 20px; border: 1px dashed rgba(255,255,255,0.2);">
-                        <i class="fas fa-tools"
-                            style="font-size: 3rem; color: rgba(255,255,255,0.3); margin-bottom: 10px;"></i>
-                        <p style="color: rgba(255,255,255,0.5);">Contents will be updated
-                            soon.</p>
-                    </div>
+                <div class="media-container glass-panel text-center"
+                    style="padding: 60px 20px; border: 1px dashed rgba(255,255,255,0.2);">
+                    <i class="fas fa-tools"
+                        style="font-size: 3rem; color: rgba(255,255,255,0.3); margin-bottom: 10px;"></i>
+                    <p style="color: rgba(255,255,255,0.5);">Contents will be updated
+                        soon.</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        </div> <!-- End Modals Container -->
-    </section>
+    </div> <!-- End Modals Container -->
 
     <!-- Professor Section -->
     <section id="professor" class="section alt-bg page-section hidden-page">
@@ -603,7 +574,7 @@
                 <h3 class="subsection-title">Career</h3>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-date">2025. 03. - Present</div>
+                        <div class="timeline-date">2026. 03. - Present</div>
                         <div class="timeline-content glass-panel">
                             <h4>Assistant Professor</h4>
                             <p><strong>Pukyong National University (PKNU)</strong></p>
@@ -611,7 +582,7 @@
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-date">2023. 03. - 2025. 02.</div>
+                        <div class="timeline-date">2025. 03. - 2026. 02.</div>
                         <div class="timeline-content glass-panel">
                             <h4>Assistant Professor</h4>
                             <p><strong>Kunsan National University (KSNU)</strong></p>
@@ -619,7 +590,7 @@
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-date">2024. 03. - 2025. 02.</div>
+                        <div class="timeline-date">2024. 09. - 2025. 02.</div>
                         <div class="timeline-content glass-panel">
                             <h4>Postdoctoral Fellow</h4>
                             <p><strong>Gwangju Institute of Science and Technology (GIST)</strong></p>
@@ -627,7 +598,7 @@
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-date">2024. 02.</div>
+                        <div class="timeline-date">2024. 08.</div>
                         <div class="timeline-content glass-panel">
                             <h4>Ph.D.</h4>
                             <p><strong>Gwangju Institute of Science and Technology (GIST)</strong></p>
@@ -851,20 +822,16 @@
 
         <!-- Recruitment Banner (Global Footer Version) -->
         <div id="global-recruitment-banner" class="recruitment-banner"
-            style="display: none; background: linear-gradient(90deg, rgba(255,59,0,0.1) 0%, rgba(20,22,30,0.8) 50%, rgba(255,140,0,0.1) 100%); border-top: 1px solid rgba(255,59,0,0.2); border-bottom: 1px solid rgba(255,59,0,0.2); padding: 40px 20px; text-align: center; margin-top: -60px; margin-bottom: 60px; z-index: 5; position: relative; backdrop-filter: blur(10px); width: 100%; max-width: 100%;">
-            <div class="banner-content"
-                style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
-                <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-                    <span class="pulse-dot"
-                        style="width: 10px; height: 10px; background-color: #ff3b00; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px #ff3b00; animation: pulse 2s infinite;"></span>
-                    <h3 style="color: #fff; font-size: 1.5rem; margin: 0; letter-spacing: 0.5px;">학부 연구생 및 대학원생 상시 모집
-                    </h3>
+            style="display: none; margin-top: -60px; margin-bottom: 60px;">
+            <div class="banner-content">
+                <div class="banner-content-header">
+                    <span class="pulse-dot"></span>
+                    <h3 class="banner-title">학부 연구생 및 대학원생 상시 모집</h3>
                 </div>
-                <p style="color: var(--text-muted); font-size: 1.1rem; margin: 0;">MARS Lab에서 <strong
-                        style="color: #fff;">다개체 제어 및 로보틱스 연구</strong>를 함께 이끌어갈 열정적인 학생을 찾습니다.</p>
-                <a href="mailto:pnj@pknu.ac.kr" class="btn btn-primary"
-                    style="margin-top: 10px; padding: 10px 25px; font-size: 0.95rem;">Contact Professor <i
-                        class="fas fa-paper-plane" style="margin-left: 5px;"></i></a>
+                <p class="banner-desc">MARS Lab에서 <strong>다개체 제어 및 로보틱스 연구</strong>를 함께 이끌어갈 열정적인 학생을 찾습니다.</p>
+                <a href="mailto:pnj@pknu.ac.kr" class="btn btn-primary banner-btn">
+                    Contact Professor <i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
+                </a>
             </div>
         </div>
 
