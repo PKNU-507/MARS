@@ -1516,13 +1516,13 @@
 
         .bento-grid {
             /* allow larger mobile bento boxes to prevent content pushing up */
-            grid-auto-rows: minmax(280px, auto);
+            grid-auto-rows: minmax(240px, auto);
         }
 
         .bento-item {
             margin-top: 5px;
             /* Added spacing to stop mobile overlap from above text */
-            height: 280px;
+            height: 240px;
         }
 
         .profile-img {
