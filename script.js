@@ -159,7 +159,7 @@ function init() {
         let directionY = (Math.random() * 1.5) - 0.75;
 
         // Mars red/orange colors
-                let pr = getThemeColor('--theme-primary-r', '255');
+        let pr = getThemeColor('--theme-primary-r', '255');
         let pg = getThemeColor('--theme-primary-g', '59');
         let pb = getThemeColor('--theme-primary-b', '0');
         let sr = getThemeColor('--theme-secondary-r', '255');
@@ -190,10 +190,10 @@ function connect() {
             if (distance < maxDistance) {
                 opacityValue = 1 - (distance / divisor);
                 // Draw connecting line (Increased opacity multiplier from 0.2 to 0.55 for better emphasis)
-                                    let pr = getThemeColor('--theme-primary-r', '255');
-                    let pg = getThemeColor('--theme-primary-g', '59');
-                    let pb = getThemeColor('--theme-primary-b', '0');
-                    ctx.strokeStyle = 'rgba(' + pr + ', ' + pg + ', ' + pb + ', ' + (opacityValue * 0.55) + ')';
+                let pr = getThemeColor('--theme-primary-r', '255');
+                let pg = getThemeColor('--theme-primary-g', '59');
+                let pb = getThemeColor('--theme-primary-b', '0');
+                ctx.strokeStyle = 'rgba(' + pr + ', ' + pg + ', ' + pb + ', ' + (opacityValue * 0.55) + ')';
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
                 ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
