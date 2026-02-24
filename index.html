@@ -23,7 +23,6 @@
     <meta property="og:url" content="https://pknu-507.github.io/MARS/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://pknu-507.github.io/MARS/images/thumbnail.png">
-    <!-- 미리보기 썸네일로 보일 이미지 경로 지정 (필요시 추후 lab_logo 등으로 변경) -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,8 +46,9 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">
-                <span class="mars">MARS</span> <span class="lab">Lab</span>
+            <a href="#home" class="logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="images/pknu_logo.png" alt="PKNU Logo" style="height: 35px; width: auto;">
+                <div><span class="mars">MARS</span> <span class="lab">Lab</span></div>
             </a>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Overview</a></li>
@@ -67,7 +67,13 @@
     <div id="home" class="page-section">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-content">
+            <div class="hero-content" style="display: flex; flex-direction: column; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <img src="images/pknu_logo.png" alt="PKNU Logo" style="height: 50px; width: auto;">
+                    <span
+                        style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 500; color: var(--text-muted); letter-spacing: 1px;">Pukyong
+                        National University</span>
+                </div>
                 <h1 class="glitch" data-text="MARS LAB">MARS LAB</h1>
                 <h2><span class="highlight">M</span>ulti-<span class="highlight">A</span>gent <span
                         class="highlight">R</span>obotics & Control <span class="highlight">S</span>ystems Laboratory
@@ -177,7 +183,7 @@
                 <div class="research-details-grid">
                     <div class="details-list glass-panel">
                         <h3><i class="fas fa-laptop-code"></i> MARS Lab에서 무엇을 할 수 있나요?</h3>
-                        <ul class="styled-list">
+                        <ul class="custom-bullet-list">
                             <li>다개체 드론 편대제어 및 협력제어 시스템 설계</li>
                             <li>GPS/UWB 기반 협력 위치 추정(Localization) 시스템 개발</li>
                             <li>Vision/LiDAR 기반 환경 인지(Perception) 시스템 구현</li>
@@ -189,14 +195,13 @@
                     </div>
                     <div class="details-list glass-panel">
                         <h3><i class="fas fa-briefcase"></i> 졸업 후 진로 및 산업 분야</h3>
-                        <ul class="styled-list">
+                        <ul class="custom-bullet-list">
                             <li><strong>드론/UAM 및 자율 이동체 제어 알고리즘 엔지니어</strong> <br><span>(자율 드론, UAM, 자율주행, 모빌리티
-                                    기업)</span>
-                            </li>
+                                    분야)</span></li>
                             <li><strong>로봇 제어 및 스마트 자동화 시스템 개발자</strong> <br><span>(산업용 로봇, 물류-스마트팩토리 기업)</span></li>
                             <li><strong>AI 기반 로보틱스 소프트웨어 엔지니어</strong> <br><span>(로보틱스 스타트업, 임베디드-제어 소프트웨어 기업)</span>
                             </li>
-                            <li><strong>정부출연연구소 연구원</strong> <br><span>(항공우주, 국방, 로봇-자동화, 통신-네트워크 분야)</span></li>
+                            <li><strong>정부출연연구소 전문 연구원</strong> <br><span>(항공우주, 국방, 로봇-자동화, 통신-네트워크 분야)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -217,7 +222,7 @@
                 <div
                     style="text-align: right; color: var(--text-muted); font-size: 0.85rem; font-weight: 400; background: rgba(255, 255, 255, 0.02); padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05);">
                     <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 6px;"></i>
-                    본 페이지에 소개된 내용에는 연구 책임자가 이전 기관에서 수행한 프로젝트가 포함되어 있습니다.
+                    본 페이지에는 이전 기관에서 수행한 프로젝트가 포함되어 있습니다.
                 </div>
             </div>
 
@@ -410,38 +415,6 @@
                     </div>
                 </div>
 
-                <!-- R4: Aerial Manipulator -->
-                <div class="bento-wrapper bento-wide" id="item-r4">
-                    <div class="bento-item" onclick="toggleDetails('item-r4')">
-                        <img src="images/icon_aerial_manipulator_v4.png" class="bento-media"
-                            alt="Aerial Manipulator System">
-                        <div class="bento-overlay"></div>
-                        <div class="bento-content">
-                            <span class="bento-badge" style="background: var(--primary-color);">Future Work</span>
-                            <h3>Aerial Manipulator System</h3>
-                            <p>로봇팔이 장착된 드론의 비행 제어 및 매니퓰레이터 조작을 연동한 복합 동역학 시스템 연구</p>
-                            <div class="bento-action"><span class="action-text">View Details</span> <i
-                                    class="fas fa-chevron-down"></i></div>
-                        </div>
-                    </div>
-
-                    <div class="bento-details">
-                        <div class="details-inner glass-panel">
-                            <div class="topic-intro mb-4">
-                                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
-                                    (추가 예정) 로봇팔이 장착된 드론의 비행 제어 및 매니퓰레이터 조작을 연동한 복합 동역학 시스템 연구
-                                </p>
-                            </div>
-                            <div class="media-container text-center"
-                                style="padding: 60px 20px; border: 1px dashed rgba(255,255,255,0.2); border-radius: 16px;">
-                                <i class="fas fa-tools"
-                                    style="font-size: 3rem; color: rgba(255,255,255,0.3); margin-bottom: 10px;"></i>
-                                <p style="color: rgba(255,255,255,0.5);">Contents will be updated soon.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- R3: Pick & Place (Completed) -->
                 <div class="bento-wrapper bento-wide" id="item-r3">
                     <div class="bento-item" onclick="toggleDetails('item-r3')">
@@ -483,11 +456,75 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- R4: Aerial Manipulator -->
+                <div class="bento-wrapper bento-wide" id="item-r4">
+                    <div class="bento-item" onclick="toggleDetails('item-r4')">
+                        <img src="images/icon_aerial_manipulator_v4.png" class="bento-media"
+                            alt="Aerial Manipulator System">
+                        <div class="bento-overlay"></div>
+                        <div class="bento-content">
+                            <span class="bento-badge" style="background: var(--primary-color);">Future Work</span>
+                            <h3>Aerial Manipulator System</h3>
+                            <p>드론의 비행 제어 및 매니퓰레이터 조작을 연동한 다개체 드론 시스템 연구</p>
+                            <div class="bento-action"><span class="action-text">View Details</span> <i
+                                    class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="bento-details">
+                        <div class="details-inner glass-panel">
+                            <div class="topic-intro mb-4">
+                                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                                    (추가 예정) 경량 델타로봇이 장착된 다개체 드론의 비행 제어 및 매니퓰레이터 조작을 연동한 복합 동역학 시스템 연구
+                                </p>
+                            </div>
+                            <div class="media-container text-center"
+                                style="padding: 60px 20px; border: 1px dashed rgba(255,255,255,0.2); border-radius: 16px;">
+                                <i class="fas fa-tools"
+                                    style="font-size: 3rem; color: rgba(255,255,255,0.3); margin-bottom: 10px;"></i>
+                                <p style="color: rgba(255,255,255,0.5);">Contents will be updated soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R5: Physical AI -->
+                <div class="bento-wrapper bento-wide" id="item-r5">
+                    <div class="bento-item" onclick="toggleDetails('item-r5')">
+                        <img src="images/icon_ai.png" class="bento-media" alt="Physical AI System">
+                        <div class="bento-overlay"></div>
+                        <div class="bento-content">
+                            <span class="bento-badge" style="background: var(--primary-color);">Future Work</span>
+                            <h3>Physical AI</h3>
+                            <p>UAV, UGV, 휴머노이드의 환경 인지 기반 Physical AI 연구개발</p>
+                            <div class="bento-action"><span class="action-text">View Details</span> <i
+                                    class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="bento-details">
+                        <div class="details-inner glass-panel">
+                            <div class="topic-intro mb-4">
+                                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                                    (추가 예정) 무인항공기(UAV), 무인지상차량(UGV), 그리고 휴머노이드 로봇 등 다양한 플랫폼이 카메라, 라이다 등 센서를 통해 주변 환경을
+                                    실시간으로 인지하고 판단하여 능동적으로 행동하는 Physical AI 프레임워크 구축 연구
+                                </p>
+                            </div>
+                            <div class="media-container text-center"
+                                style="padding: 60px 20px; border: 1px dashed rgba(255,255,255,0.2); border-radius: 16px;">
+                                <i class="fas fa-tools"
+                                    style="font-size: 3rem; color: rgba(255,255,255,0.3); margin-bottom: 10px;"></i>
+                                <p style="color: rgba(255,255,255,0.5);">Contents will be updated soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
     </section>
 
     <!-- Professor Section -->
-    <section id="professor" class="section alt-bg page-section hidden-page">
+    <section id="professor" class="section page-section hidden-page">
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">Professor</h2>
@@ -500,8 +537,9 @@
                 </div>
                 <div class="profile-info">
                     <h2>Nam-Jin Park</h2>
-                    <h3 class="accent-text">Assistant Professor</h3>
-                    <p class="department">Department of Control & Instrumentation Engineering<br>Pukyong National
+                    <h3 class="accent-text" style="font-size: 1.4rem;">Assistant Professor</h3>
+                    <p class="department" style="font-size: 1.15rem;">Department of Control & Instrumentation
+                        Engineering<br>Pukyong National
                         University</p>
                     <div class="contact-badges">
                         <div class="badge"><i class="fas fa-envelope"></i> pnj@pknu.ac.kr</div>
@@ -518,42 +556,49 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2026. 03. - Present</div>
                         <div class="timeline-content glass-panel">
-                            <h4>Assistant Professor</h4>
-                            <p><strong>Pukyong National University (PKNU)</strong></p>
-                            <p class="small-text">Department of Control & Instrumentation Engineering</p>
+                            <h4 style="font-size: 1.25rem;">Assistant Professor</h4>
+                            <p style="font-size: 1.1rem;"><strong>Pukyong National University (PKNU)</strong></p>
+                            <p class="small-text" style="font-size: 0.95rem;">Department of Control & Instrumentation
+                                Engineering</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2025. 03. - 2026. 02.</div>
                         <div class="timeline-content glass-panel">
-                            <h4>Assistant Professor</h4>
-                            <p><strong>Kunsan National University (KSNU)</strong></p>
-                            <p class="small-text">Department of Electrical Engineering</p>
+                            <h4 style="font-size: 1.25rem;">Assistant Professor</h4>
+                            <p style="font-size: 1.1rem;"><strong>Kunsan National University (KSNU)</strong></p>
+                            <p class="small-text" style="font-size: 0.95rem;">Department of Electrical Engineering</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2024. 09. - 2025. 02.</div>
                         <div class="timeline-content glass-panel">
-                            <h4>Postdoctoral Fellow</h4>
-                            <p><strong>Gwangju Institute of Science and Technology (GIST)</strong></p>
-                            <p class="small-text">Distributed Control and Automation Systems Lab.</p>
+                            <h4 style="font-size: 1.25rem;">Postdoctoral Fellow</h4>
+                            <p style="font-size: 1.1rem;"><strong>Gwangju Institute of Science and Technology
+                                    (GIST)</strong></p>
+                            <p class="small-text" style="font-size: 0.95rem;">Distributed Control and Automation Systems
+                                Lab.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2024. 08.</div>
                         <div class="timeline-content glass-panel">
-                            <h4>Ph.D.</h4>
-                            <p><strong>Gwangju Institute of Science and Technology (GIST)</strong></p>
-                            <p class="small-text">Department of Mechanical Engineering - <span class="accent-text">Top
-                                    Student Award</span></p>
+                            <h4 style="font-size: 1.25rem;">Ph.D.</h4>
+                            <p style="font-size: 1.1rem;"><strong>Gwangju Institute of Science and Technology
+                                    (GIST)</strong></p>
+                            <p class="small-text" style="font-size: 0.95rem;">Department of Mechanical Engineering -
+                                <span class="accent-text">Top
+                                    Student Award</span>
+                            </p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2018. 02.</div>
                         <div class="timeline-content glass-panel">
-                            <h4>B.S.</h4>
-                            <p><strong>Pukyong National University (PKNU)</strong></p>
-                            <p class="small-text">Department of Control & Instrumentation Engineering</p>
+                            <h4 style="font-size: 1.25rem;">B.S.</h4>
+                            <p style="font-size: 1.1rem;"><strong>Pukyong National University (PKNU)</strong></p>
+                            <p class="small-text" style="font-size: 0.95rem;">Department of Control & Instrumentation
+                                Engineering</p>
                         </div>
                     </div>
                 </div>
@@ -565,37 +610,35 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2025. 10. - Present</div>
                         <div class="timeline-content glass-panel">
-                            <h4>Associate Editor</h4>
-                            <ul class="styled-list" style="margin-top: 15px;">
-                                <li style="margin-bottom: 5px;">International Journal of Control, Automation, and
-                                    Systems (IJCAS)</li>
+                            <h4 style="font-size: 1.25rem;">Associate Editor</h4>
+                            <ul class="custom-bullet-list">
+                                <li>International Journal of Control, Automation, and Systems (IJCAS)</li>
                             </ul>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2024. 08. - Present</div>
                         <div class="timeline-content glass-panel">
-                            <h4>Conference Reviewer</h4>
-                            <ul class="styled-list" style="margin-top: 15px;">
-                                <li style="margin-bottom: 5px;">Conference on Decision and Control (CDC)</li>
-                                <li style="margin-bottom: 5px;">Asian Control Conference (ASCC)</li>
-                                <li style="margin-bottom: 5px;">European Control Conference (ECC)</li>
-                                <li style="margin-bottom: 5px;">Chinese Control and Decision Conference (CCDC)</li>
+                            <h4 style="font-size: 1.25rem;">Conference Reviewer</h4>
+                            <ul class="custom-bullet-list">
+                                <li>Conference on Decision and Control (CDC)</li>
+                                <li>Asian Control Conference (ASCC)</li>
+                                <li>European Control Conference (ECC)</li>
+                                <li>Chinese Control and Decision Conference (CCDC)</li>
                             </ul>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2024. 08. - Present</div>
                         <div class="timeline-content glass-panel">
-                            <h4>Journal Reviewer</h4>
-                            <ul class="styled-list" style="margin-top: 15px;">
-                                <li style="margin-bottom: 5px;">IEEE Transactions on Automatic Control</li>
-                                <li style="margin-bottom: 5px;">IEEE Systems</li>
-                                <li style="margin-bottom: 5px;">Automatica</li>
-                                <li style="margin-bottom: 5px;">Journal of the Franklin Institute</li>
-                                <li style="margin-bottom: 5px;">IET Control Theory & Applications</li>
-                                <li style="margin-bottom: 5px;">International Journal of Control, Automation, and
-                                    Systems</li>
+                            <h4 style="font-size: 1.25rem;">Journal Reviewer</h4>
+                            <ul class="custom-bullet-list">
+                                <li>IEEE Transactions on Automatic Control</li>
+                                <li>IEEE Systems</li>
+                                <li>Automatica</li>
+                                <li>Journal of the Franklin Institute</li>
+                                <li>IET Control Theory & Applications</li>
+                                <li>International Journal of Control, Automation, and Systems</li>
                             </ul>
                         </div>
                     </div>
@@ -614,14 +657,12 @@
                     <span><strong>*</strong> : First author</span>
                     <span><strong>†</strong> : Corresponding author</span>
                 </div>
-                <!-- Last Update Label -->
                 <div style="text-align: right; margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
                     Last updated: 2026. 02. 23.
                 </div>
             </div>
 
             <div class="major-papers mb-5">
-                <!-- margin-bottom 숫자를 변경하여 Major Papers 아래 여백을 조절하세요 -->
                 <h3 class="subsection-title"
                     style="font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 30px;">Major Papers</h3>
                 <div class="paper-group glass-panel">
@@ -779,9 +820,11 @@
 
         <div class="footer-container">
             <div class="footer-info">
-                <!-- gap 조정: margin-bottom 숫자를 변경하시면 간격이 조절됩니다 -->
-                <div class="footer-logo" style="margin-bottom: -7px;">
-                    <span class="mars">MARS</span> <span class="lab">Lab</span>
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: -7px;">
+                    <img src="images/pknu_logo.png" alt="PKNU Logo" style="height: 50px; width: auto; opacity: 1;">
+                    <div class="footer-logo" style="margin-bottom: 0;">
+                        <span class="mars">MARS</span> <span class="lab">Lab</span>
+                    </div>
                 </div>
                 <p>
                     <strong style="color: var(--primary-color);">M</strong>ulti-<strong
@@ -798,8 +841,6 @@
                     <p><i class="fas fa-building"></i> <strong>Room 507, Gaon Building,
                             Pukyong National University</strong></p>
                 </div>
-            </div>
-            <div class="footer-map glass-panel hidden-page">
             </div>
         </div>
         <div class="footer-bottom">

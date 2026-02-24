@@ -89,6 +89,12 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+// Get theme colors from CSS dynamically
+const rootStyles = getComputedStyle(document.documentElement);
+function getThemeColor(varName, fallback) {
+    const val = rootStyles.getPropertyValue(varName).trim();
+    return val ? val : fallback;
+}
 // Interactive Particle Background (Network/Multi-Agent Theme)
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
@@ -153,7 +159,14 @@ function init() {
         let directionY = (Math.random() * 1.5) - 0.75;
 
         // Mars red/orange colors
-        let color = Math.random() > 0.5 ? 'rgba(255, 69, 0, 0.4)' : 'rgba(255, 140, 0, 0.3)';
+                let pr = getThemeColor('--theme-primary-r', '255');
+        let pg = getThemeColor('--theme-primary-g', '59');
+        let pb = getThemeColor('--theme-primary-b', '0');
+        let sr = getThemeColor('--theme-secondary-r', '255');
+        let sg = getThemeColor('--theme-secondary-g', '140');
+        let sb = getThemeColor('--theme-secondary-b', '0');
+
+        let color = Math.random() > 0.5 ? 'rgba(' + pr + ', ' + pg + ', ' + pb + ', 0.4)' : 'rgba(' + sr + ', ' + sg + ', ' + sb + ', 0.3)';
 
         particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
     }
@@ -177,7 +190,10 @@ function connect() {
             if (distance < maxDistance) {
                 opacityValue = 1 - (distance / divisor);
                 // Draw connecting line (Increased opacity multiplier from 0.2 to 0.55 for better emphasis)
-                ctx.strokeStyle = `rgba(255, 80, 0, ${opacityValue * 0.55})`;
+                                    let pr = getThemeColor('--theme-primary-r', '255');
+                    let pg = getThemeColor('--theme-primary-g', '59');
+                    let pb = getThemeColor('--theme-primary-b', '0');
+                    ctx.strokeStyle = 'rgba(' + pr + ', ' + pg + ', ' + pb + ', ' + (opacityValue * 0.55) + ')';
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
                 ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
@@ -304,3 +320,4 @@ window.addEventListener('resize', () => {
         details.style.maxHeight = newHeight + "px";
     });
 });
+
