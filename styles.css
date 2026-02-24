@@ -279,24 +279,25 @@
     /* Hero Section */
     .hero {
         min-height: 100vh;
-        /* Changed from fixed height to allow expansion */
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* Centers the content block */
         align-items: center;
         text-align: center;
         position: relative;
-        padding: 170px 20px 20px;
-        /* Added top padding to clear the navbar securely and balance spacing */
+        padding: 170px 0 20px;
+        /* Removed side padding from 20px to 0 */
         z-index: 10;
+        overflow-x: hidden;
+        /* Added to prevent horizontal scrollbars if elements overflow slightly */
     }
 
     .hero-content {
         max-width: 1000px;
         z-index: 2;
         margin-top: auto;
-        /* Pushes content down towards center dynamically */
+        padding: 0 20px;
+        /* Restored side padding here */
     }
 
     .glitch {
