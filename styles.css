@@ -460,6 +460,8 @@
     .section-container {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 24px;
+        /* Added left/right padding to prevent touching edges on mobile */
     }
 
     .section-header {
