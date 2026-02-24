@@ -237,36 +237,70 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// --- Research Modals (Bento Box Layout) ---
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (!modal) return;
+// --- Research Details Expandable Row (Accordion) ---
+function toggleDetails(wrapperId) {
+    const wrapper = document.getElementById(wrapperId);
+    if (!wrapper) return;
 
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    const details = wrapper.querySelector('.bento-details');
+    const item = wrapper.querySelector('.bento-item');
+    const actionText = wrapper.querySelector('.action-text');
+    const isExpanded = wrapper.classList.contains('expanded');
 
-    // Play any videos inside the modal
-    const videos = modal.querySelectorAll('video');
-    videos.forEach(v => {
-        if (v.paused) v.play().catch(e => console.log("Auto-play prevented", e));
+    // Close all other expanded wrappers first (Optional: distinct accordion behavior)
+    document.querySelectorAll('.bento-wrapper.expanded').forEach(w => {
+        if (w.id !== wrapperId) {
+            w.classList.remove('expanded');
+            w.querySelector('.bento-item').classList.remove('expanded');
+            w.querySelector('.bento-details').style.maxHeight = null;
+            w.querySelector('.action-text').textContent = 'View Details';
+            // Pause videos when collapsing
+            w.querySelectorAll('video').forEach(v => v.pause());
+        }
     });
-}
 
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (!modal) return;
+    // Toggle current wrapper
+    if (isExpanded) {
+        // Collapse
+        wrapper.classList.remove('expanded');
+        item.classList.remove('expanded');
+        details.style.maxHeight = null;
+        actionText.textContent = 'View Details';
+        // Pause videos
+        details.querySelectorAll('video').forEach(v => v.pause());
+    } else {
+        // Expand
+        wrapper.classList.add('expanded');
+        item.classList.add('expanded');
+        // Let the browser calculate the auto height then set it explicitly for CSS transition
+        details.style.maxHeight = details.scrollHeight + "px";
+        actionText.textContent = 'Close Details';
 
-    modal.classList.remove('active');
-    document.body.style.overflow = ''; // Restore background scrolling
+        // Play visible videos
+        details.querySelectorAll('video').forEach(v => {
+            // we rely on the IntersectionObserver to play them if in viewport, 
+            // but just in case, we can trigger weak load
+            if (v.paused) {
+                // optional: v.play().catch(e => console.log(e));
+            }
+        });
 
-    // Pause any videos inside the modal when closed
-    const videos = modal.querySelectorAll('video');
-    videos.forEach(v => v.pause());
-}
-
-// Close modal if user clicks outside the modal content area
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('research-modal')) {
-        closeModal(e.target.id);
+        // Small timeout to adjust scroll to make the top of the expanded item visible smoothly
+        setTimeout(() => {
+            const y = wrapper.getBoundingClientRect().top + window.scrollY - 100; // offset for navbar
+            window.scrollTo({ top: y, behavior: 'smooth' });
+            // Update max-height inside timeout just in case layout shifted from smooth scroll
+            details.style.maxHeight = details.scrollHeight + "px";
+        }, 50);
     }
+}
+
+// Window resize observer to recalculate expanding heights inside bento-details
+window.addEventListener('resize', () => {
+    document.querySelectorAll('.bento-wrapper.expanded .bento-details').forEach(details => {
+        // Reset and recalculate to fit new window dimensions
+        details.style.maxHeight = 'none';
+        let newHeight = details.scrollHeight;
+        details.style.maxHeight = newHeight + "px";
+    });
 });
