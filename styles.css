@@ -630,6 +630,8 @@
         position: relative;
         display: flex;
         flex-direction: column;
+        padding: 5px;
+        /* Added to secure border overlaps from breaking out of wrapper bounds */
     }
 
     /* Base Grid Placements */
@@ -1480,6 +1482,11 @@
 
         .bento-content h3 {
             font-size: 1.5rem;
+        }
+
+        .bento-item {
+            margin-top: 5px;
+            /* Added spacing to stop mobile overlap from above text */
         }
 
         .profile-img {
