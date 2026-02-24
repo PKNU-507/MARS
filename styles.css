@@ -520,7 +520,10 @@
     .bento-item {
         position: relative;
         width: 100%;
-        height: var(--bento-height);
+        min-height: var(--bento-height);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         border-radius: 24px;
         overflow: hidden;
         cursor: pointer;
@@ -573,9 +576,8 @@
     }
 
     .bento-content {
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        position: relative;
+        z-index: 2;
         width: 65%;
         /* Prevent text from overlapping right side image */
         padding: 35px;
@@ -583,6 +585,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        flex-grow: 1;
     }
 
     .bento-content h3 {
@@ -758,11 +761,11 @@
         }
 
         .bento-grid {
-            grid-auto-rows: minmax(300px, auto);
+            grid-auto-rows: auto;
         }
 
         .bento-item {
-            height: 300px;
+            min-height: 300px;
         }
 
         .bento-content {
@@ -1516,13 +1519,13 @@
 
         .bento-grid {
             /* allow larger mobile bento boxes to prevent content pushing up */
-            grid-auto-rows: minmax(290px, auto);
+            grid-auto-rows: auto;
         }
 
         .bento-item {
             margin-top: 5px;
             /* Added spacing to stop mobile overlap from above text */
-            height: 290px;
+            min-height: 290px;
         }
 
         .profile-img {
