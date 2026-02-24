@@ -51,8 +51,20 @@ function navigateToSection(targetId) {
         }
     }
 
-    // Scroll to top
-    window.scrollTo(0, 0);
+    // Scroll to section with padding offset
+    if (targetId === '#home') {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    } else {
+        // Find the top position of the section-container within the target section
+        const container = targetSection.querySelector('.section-container');
+        if (container) {
+            // Calculate absolute Y position, subtract 80px for the navbar height
+            const y = container.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({ top: y, behavior: 'instant' });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+    }
 
     // Close mobile menu if open
     if (document.querySelector('.nav-links').classList.contains('active')) {

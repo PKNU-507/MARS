@@ -449,6 +449,8 @@
     .section {
         padding: 100px 0;
         position: relative;
+        scroll-margin-top: 80px;
+        /* Offset for the fixed navbar */
     }
 
     .alt-bg {
@@ -909,8 +911,8 @@
     }
 
     .styled-list li::before {
-        content: '??;
- position: absolute;
+        content: '■';
+        position: absolute;
         left: 0;
         top: 2px;
         color: var(--primary-color);
@@ -1446,7 +1448,7 @@
         }
 
         .section {
-            padding: 60px 0;
+            padding: 100px 0 60px 0;
         }
 
         .section-title {
@@ -1500,3 +1502,4 @@
             height: 12px;
         }
     }
+}
