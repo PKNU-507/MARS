@@ -1225,6 +1225,16 @@
         font-style: italic;
     }
 
+    .paper-list li a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .paper-list li a:hover {
+        color: var(--primary-color);
+    }
+
     /* Tabs */
     .publications-tabs {
         display: flex;
