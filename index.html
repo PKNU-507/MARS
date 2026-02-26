@@ -46,8 +46,8 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo" style="display: flex; align-items: center; gap: 10px;">
-                <img src="images/pknu_logo.png" alt="PKNU Logo" style="height: 28px; width: auto;">
+            <a href="#home" class="logo flex-align-center logo-header">
+                <img src="images/pknu_logo.png" alt="PKNU Logo" class="logo-img">
                 <div><span class="mars">MARS</span> <span class="lab">Lab</span></div>
             </a>
             <ul class="nav-links">
@@ -67,8 +67,8 @@
     <div id="home" class="page-section">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-content" style="display: flex; flex-direction: column; align-items: center;">
-                <div style="margin-bottom: 20px; text-align: center; max-width: 90vw;">
+            <div class="hero-content flex-col-center">
+                <div class="univ-title-wrapper">
                     <span class="univ-title">
                         <img src="images/pknu_logo.png" alt="PKNU Logo" class="univ-logo">Pukyong
                         National University
@@ -78,11 +78,11 @@
                 <h2><span class="highlight">M</span>ulti-<span class="highlight">A</span>gent <span
                         class="highlight">R</span>obotics & Control <span class="highlight">S</span>ystems Laboratory
                 </h2>
-                <p class="kor-subtitle" style="font-weight: 500;">다개체 로보틱스 및 제어시스템 연구실</p>
+                <p class="kor-subtitle fw-500">다개체 로보틱스 및 제어시스템 연구실</p>
             </div>
 
             <!-- Recruitment Banner -->
-            <div class="recruitment-banner" style="margin-top: 40px; margin-bottom: 40px;">
+            <div class="recruitment-banner my-40">
                 <div class="banner-content">
                     <div class="banner-content-header">
                         <span class="pulse-dot"></span>
@@ -90,7 +90,7 @@
                     </div>
                     <p class="banner-desc">MARS Lab에서 <strong>다개체 제어 및 로보틱스 연구</strong>를 함께 이끌어갈 열정적인 학생을 찾습니다.</p>
                     <a href="#contact" class="btn btn-primary banner-btn" onclick="navigateToSection('#contact')">
-                        Join MARS Lab <i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
+                        Join MARS Lab <i class="fas fa-paper-plane ml-5"></i>
                     </a>
                 </div>
             </div>
@@ -104,7 +104,7 @@
         </section>
 
         <!-- Research Info Section -->
-        <section class="section" style="padding-top: 50px;">
+        <section class="section pt-50">
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">Research Overview</h2>
@@ -113,7 +113,7 @@
 
                 <div class="research-grid">
                     <!-- Area 1 -->
-                    <div class="research-card" onclick="navigateToSection('#research')" style="cursor: pointer;">
+                    <div class="research-card cursor-pointer" onclick="navigateToSection('#research')">
                         <img src="images/research1.jpg" alt="Multi-Agent Systems Diagram" class="research-img"
                             loading="lazy">
                         <h3>Multi-Agent System</h3>
@@ -125,7 +125,7 @@
                         </ul>
                     </div>
                     <!-- Area 2 -->
-                    <div class="research-card" onclick="navigateToSection('#research')" style="cursor: pointer;">
+                    <div class="research-card cursor-pointer" onclick="navigateToSection('#research')">
                         <img src="images/research2.jpg" alt="Integrated Robotic Systems Diagram" class="research-img"
                             loading="lazy">
                         <h3>Integrated Robotic System</h3>
@@ -137,7 +137,7 @@
                         </ul>
                     </div>
                     <!-- Area 3 -->
-                    <div class="research-card" onclick="navigateToSection('#research')" style="cursor: pointer;">
+                    <div class="research-card cursor-pointer" onclick="navigateToSection('#research')">
                         <img src="images/research3.jpg" alt="Network Control Systems Diagram" class="research-img"
                             loading="lazy">
                         <h3>Network Control System</h3>
@@ -150,7 +150,7 @@
                     </div>
                 </div> <!-- End research-grid -->
 
-                <div class="section-header" style="margin-top: 80px; margin-bottom: 40px;">
+                <div class="section-header my-80-40">
                     <h2 class="section-title">Lab Overview</h2>
                     <div class="underline"></div>
                 </div>
@@ -218,10 +218,9 @@
             </div>
 
             <!-- Pre-MARS Lab Research Disclaimer -->
-            <div style="display: flex; justify-content: flex-end; margin-bottom: 35px;">
-                <div
-                    style="text-align: right; color: var(--text-muted); font-size: 0.85rem; font-weight: 400; background: rgba(255, 255, 255, 0.02); padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05);">
-                    <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 6px;"></i>
+            <div class="disclaimer-wrapper">
+                <div class="disclaimer-box">
+                    <i class="fas fa-info-circle disclaimer-icon"></i>
                     본 페이지에는 이전 기관에서 수행한 프로젝트가 포함되어 있습니다.
                 </div>
             </div>
@@ -247,9 +246,8 @@
                     <div class="bento-details">
                         <div class="details-inner glass-panel">
                             <div class="topic-intro mb-4">
-                                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
-                                    <span
-                                        style="display: block; font-weight: 600; font-size: 1.25rem; color: #fff; margin-bottom: 15px;">
+                                <p class="topic-intro-text">
+                                    <span class="topic-intro-title">
                                         다수 드론의 협력 임무 수행을 위한 <strong class="accent-text">편대 제어(Formation
                                             Control)</strong> 및 <strong class="accent-text">측위(Localization)</strong> 기술
                                         연구
@@ -270,26 +268,24 @@
                             </div>
 
                             <!-- R1_1. Position-based Control -->
-                            <div class="sub-topic mb-4 pl-4"
-                                style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
-                                <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 0.5px;">
+                            <div class="sub-topic mb-4 pl-4 sub-topic-border">
+                                <h4 class="sub-topic-title">
                                     Position-based Control</h4>
-                                <p
-                                    style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.6;">
+                                <p class="sub-topic-desc">
                                     전역 정보(GPS)를 이용한 사전 정의 경로(Predetermined Trajectory) 기반 자율 편대 비행 시스템입니다.<br>
                                     각 드론에 장착된 LED 패턴 또한 사전에 프로그래밍되어 야간 <strong>군집 비행(Drone Show)</strong> 등에 응용될 수 있습니다.
                                     전체 시스템은 중앙 지상 통제국(GCS, Ground Control Station) 서버를 통해 제어되며, GCS의 단일 명령(모드 변경)으로 전체
                                     편대 시스템을 한 번에 제어할 수 있습니다. 또한 직관적인 GUI 상태 모니터링 툴을 통해 비행 중인 모든 드론의 개별 상태를 실시간으로 확인할 수
                                     있습니다.
                                 </p>
-                                <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                    <div class="media-container text-center" style="flex: 1; min-width: 300px;">
+                                <div class="media-row flex-row-wrap">
+                                    <div class="media-container text-center flex-1-min-300">
                                         <video class="content-media" controls loop muted preload="metadata">
                                             <source src="videos/R1_1_one.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
                                     </div>
-                                    <div class="media-container text-center" style="flex: 1; min-width: 300px;">
+                                    <div class="media-container text-center flex-1-min-300">
                                         <video class="content-media" controls loop muted preload="metadata">
                                             <source src="videos/R1_1_two.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
@@ -299,13 +295,11 @@
                             </div>
 
                             <!-- R1_2. Distance-based Control -->
-                            <div class="sub-topic mb-4 pl-4"
-                                style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
-                                <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 0.5px;">
+                            <div class="sub-topic mb-4 pl-4 sub-topic-border">
+                                <h4 class="sub-topic-title">
                                     Distance-based Control</h4>
-                                <p
-                                    style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.6;">
-                                    <span style="display: block; font-weight: 500; margin-bottom: 15px;">지역 정보 및 거리 측정을
+                                <p class="sub-topic-desc">
+                                    <span class="sub-topic-desc-title">지역 정보 및 거리 측정을
                                         활용한 협력 측위 시스템 (GPS-Denied 환경 대응)</span>
                                     이 시스템은 고정된 위치 기준점이 되는 <strong class="accent-text">4대의 앵커(Anchor) 드론</strong>과 측위의
                                     대상이 되는 <strong class="accent-text">1대의 태그(Tag) 드론</strong>으로 구성됩니다. 직관적으로 비유하자면, 4대의
@@ -315,14 +309,14 @@
                                     비행 제어기(FC) 내부에서 실시간으로 계산해 냅니다. 이를 통해 지상 통제국(GCS) 시스템의 개입 없이도 5대의 드론이 <strong
                                         class="accent-text">ROS 기반 분산 제어</strong>를 통해 정밀한 군집 편대를 형성할 수 있습니다.
                                 </p>
-                                <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                    <div class="media-container text-center" style="flex: 1; min-width: 300px;">
+                                <div class="media-row flex-row-wrap">
+                                    <div class="media-container text-center flex-1-min-300">
                                         <video class="content-media" controls loop muted preload="metadata">
                                             <source src="videos/R1_2_one.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
                                     </div>
-                                    <div class="media-container text-center" style="flex: 1; min-width: 300px;">
+                                    <div class="media-container text-center flex-1-min-300">
                                         <video class="content-media" controls loop muted preload="metadata">
                                             <source src="videos/R1_2_two.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
@@ -332,13 +326,11 @@
                             </div>
 
                             <!-- R1_3. Network-based Control -->
-                            <div class="sub-topic mb-4 pl-4"
-                                style="border-left: 3px solid var(--primary-color); padding-left: 20px;">
-                                <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 0.5px;">
+                            <div class="sub-topic mb-4 pl-4 sub-topic-border">
+                                <h4 class="sub-topic-title">
                                     Network-based Control</h4>
-                                <p
-                                    style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.6;">
-                                    <span style="display: block; font-weight: 500; margin-bottom: 15px;">인접 드론 간 상대 정보를
+                                <p class="sub-topic-desc">
+                                    <span class="sub-topic-desc-title">인접 드론 간 상대 정보를
                                         활용한 <strong class="accent-text">분산 최적화(Distributed Optimization)</strong> 및 자율
                                         네트워크 제어 시스템</span>
                                     드론 간의 물리적 통신 거리 제약과 통신 강도 등 다양한 네트워크 변수들을 목적 함수(Objective Function)로 구성하여 제어하는
@@ -366,7 +358,7 @@
                         <img src="images/icon_delta_robot_v3.png" class="bento-media" alt="Delta Robot System">
                         <div class="bento-overlay"></div>
                         <div class="bento-content">
-                            <span class="bento-badge" style="background: var(--primary-color);">Ongoing</span>
+                            <span class="bento-badge">Ongoing</span>
                             <h3>Delta Robot System</h3>
                             <p>고속 병렬로봇 설계 및 다개체 작업할당 알고리즘 연구</p>
                             <div class="bento-action"><span class="action-text">View Details</span> <i
@@ -377,9 +369,8 @@
                     <div class="bento-details">
                         <div class="details-inner glass-panel">
                             <div class="topic-intro mb-4">
-                                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
-                                    <span
-                                        style="display: block; font-weight: 600; font-size: 1.25rem; color: #fff; margin-bottom: 15px;">델타
+                                <p class="topic-intro-text">
+                                    <span class="topic-intro-title">델타
                                         로봇 전주기(A to Z) 자체 개발 및 다개체 작업 할당(Task Assignment) 연구 (진행 중)</span>
                                     본 연구는 고속 병렬 로봇인 델타 로봇의 3D 모델링 설계부터 정밀 제어기 개발, 시뮬레이션, CNC 공정을 통한 프로토타입 제작, 그리고 실제 제어
                                     성능 평가까지 시스템 구축의 <strong class="accent-text">A to Z</strong>를 독자적으로 수행합니다. 나아가 단일 로봇
@@ -389,14 +380,14 @@
                             </div>
 
                             <div class="media-column" style="display: flex; flex-direction: column; gap: 20px;">
-                                <div class="media-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                    <div class="media-container text-center" style="flex: 1; min-width: 300px;">
+                                <div class="media-row flex-row-wrap">
+                                    <div class="media-container text-center flex-1-min-300">
                                         <img src="images/R2_3Dmodeling.png" alt="3D Modeling" class="content-media"
                                             loading="lazy">
                                         <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">3D
                                             Modeling</p>
                                     </div>
-                                    <div class="media-container text-center" style="flex: 1; min-width: 300px;">
+                                    <div class="media-container text-center flex-1-min-300">
                                         <img src="images/R2_CNC_prototype.png" alt="CNC Prototype" class="content-media"
                                             loading="lazy">
                                         <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">CNC 공정
@@ -421,7 +412,7 @@
                         <img src="images/icon_pick_place_v3.png" class="bento-media" alt="Pick & Place Automation">
                         <div class="bento-overlay"></div>
                         <div class="bento-content">
-                            <span class="bento-badge" style="background: var(--primary-color);">Completed</span>
+                            <span class="bento-badge">Completed</span>
                             <h3>Pick & Place Automation System</h3>
                             <p>비전 센서 기반 산업용 고속 물류 자동화 시스템</p>
                             <div class="bento-action"><span class="action-text">View Details</span> <i
@@ -432,9 +423,8 @@
                     <div class="bento-details">
                         <div class="details-inner glass-panel">
                             <div class="topic-intro mb-4">
-                                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
-                                    <span
-                                        style="display: block; font-weight: 600; font-size: 1.25rem; color: #fff; margin-bottom: 15px;">비전
+                                <p class="topic-intro-text">
+                                    <span class="topic-intro-title">비전
                                         센서 기반 고속 물류 자동화 및 제어 알고리즘 검증 시스템</span>
                                     농산물 산지유통센터(APC) 등 실제 산업 현장에 즉시 투입 가능한 비전 기반 고속 Pick-and-Place 물류 자동화 시스템입니다.<br><br>
                                     이 시스템은 라이다(LiDAR) 같은 고가의 센서 장비 없이, 오직 <strong class="accent-text">Vision 센서</strong>
@@ -464,7 +454,7 @@
                             alt="Aerial Manipulator System">
                         <div class="bento-overlay"></div>
                         <div class="bento-content">
-                            <span class="bento-badge" style="background: #555555;">Future Work</span>
+                            <span class="bento-badge future-work-badge">Future Work</span>
                             <h3>Aerial Manipulator System</h3>
                             <p>드론의 비행 제어 및 매니퓰레이터 조작을 연동한 다개체 드론 시스템 연구</p>
                             <div class="bento-action"><span class="action-text">View Details</span> <i
@@ -475,15 +465,13 @@
                     <div class="bento-details">
                         <div class="details-inner glass-panel">
                             <div class="topic-intro mb-4">
-                                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                                <p class="topic-intro-text">
                                     (추가 예정) 경량 델타로봇이 장착된 다개체 드론의 비행 제어 및 매니퓰레이터 조작을 연동한 복합 동역학 시스템 연구
                                 </p>
                             </div>
-                            <div class="media-container text-center"
-                                style="padding: 60px 20px; border: 1px dashed rgba(255,255,255,0.2); border-radius: 16px;">
-                                <i class="fas fa-tools"
-                                    style="font-size: 3rem; color: rgba(255,255,255,0.3); margin-bottom: 10px;"></i>
-                                <p style="color: rgba(255,255,255,0.5);">Contents will be updated soon.</p>
+                            <div class="media-container text-center future-box">
+                                <i class="fas fa-tools future-icon"></i>
+                                <p class="future-text">Contents will be updated soon.</p>
                             </div>
                         </div>
                     </div>
@@ -495,7 +483,7 @@
                         <img src="images/icon_ai.png" class="bento-media" alt="Physical AI System">
                         <div class="bento-overlay"></div>
                         <div class="bento-content">
-                            <span class="bento-badge" style="background: #555555;">Future Work</span>
+                            <span class="bento-badge future-work-badge">Future Work</span>
                             <h3>Physical AI</h3>
                             <p>UAV, UGV, 휴머노이드의 환경 인지 기반 Physical AI 연구개발</p>
                             <div class="bento-action"><span class="action-text">View Details</span> <i
@@ -506,16 +494,14 @@
                     <div class="bento-details">
                         <div class="details-inner glass-panel">
                             <div class="topic-intro mb-4">
-                                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                                <p class="topic-intro-text">
                                     (추가 예정) 무인항공기(UAV), 무인지상차량(UGV), 그리고 휴머노이드 로봇 등 다양한 플랫폼이 카메라, 라이다 등 센서를 통해 주변 환경을
                                     실시간으로 인지하고 판단하여 능동적으로 행동하는 Physical AI 프레임워크 구축 연구
                                 </p>
                             </div>
-                            <div class="media-container text-center"
-                                style="padding: 60px 20px; border: 1px dashed rgba(255,255,255,0.2); border-radius: 16px;">
-                                <i class="fas fa-tools"
-                                    style="font-size: 3rem; color: rgba(255,255,255,0.3); margin-bottom: 10px;"></i>
-                                <p style="color: rgba(255,255,255,0.5);">Contents will be updated soon.</p>
+                            <div class="media-container text-center future-box">
+                                <i class="fas fa-tools future-icon"></i>
+                                <p class="future-text">Contents will be updated soon.</p>
                             </div>
                         </div>
                     </div>
@@ -537,8 +523,8 @@
                 </div>
                 <div class="profile-info">
                     <h2>Nam-Jin Park</h2>
-                    <h3 class="accent-text" style="font-size: 1.4rem;">Assistant Professor</h3>
-                    <p class="department" style="font-size: 1.15rem;">Department of Control & Instrumentation
+                    <h3 class="accent-text prof-role">Assistant Professor</h3>
+                    <p class="department prof-dept">Department of Control & Instrumentation
                         Engineering<br>Pukyong National
                         University</p>
                     <div class="contact-badges">
@@ -555,37 +541,37 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2026. 03. - Present</div>
                         <div class="timeline-content glass-panel">
-                            <h4 style="font-size: 1.25rem;">Assistant Professor</h4>
-                            <p style="font-size: 1.1rem;"><strong>Pukyong National University (PKNU)</strong></p>
-                            <p class="small-text" style="font-size: 0.95rem;">Department of Control & Instrumentation
+                            <h4 class="timeline-title">Assistant Professor</h4>
+                            <p class="timeline-desc"><strong>Pukyong National University (PKNU)</strong></p>
+                            <p class="small-text timeline-subdesc">Department of Control & Instrumentation
                                 Engineering</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2025. 03. - 2026. 02.</div>
                         <div class="timeline-content glass-panel">
-                            <h4 style="font-size: 1.25rem;">Assistant Professor</h4>
-                            <p style="font-size: 1.1rem;"><strong>Kunsan National University (KSNU)</strong></p>
-                            <p class="small-text" style="font-size: 0.95rem;">Department of Electrical Engineering</p>
+                            <h4 class="timeline-title">Assistant Professor</h4>
+                            <p class="timeline-desc"><strong>Kunsan National University (KSNU)</strong></p>
+                            <p class="small-text timeline-subdesc">Department of Electrical Engineering</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2024. 09. - 2025. 02.</div>
                         <div class="timeline-content glass-panel">
-                            <h4 style="font-size: 1.25rem;">Postdoctoral Fellow</h4>
-                            <p style="font-size: 1.1rem;"><strong>Gwangju Institute of Science and Technology
+                            <h4 class="timeline-title">Postdoctoral Fellow</h4>
+                            <p class="timeline-desc"><strong>Gwangju Institute of Science and Technology
                                     (GIST)</strong></p>
-                            <p class="small-text" style="font-size: 0.95rem;">Distributed Control and Automation Systems
+                            <p class="small-text timeline-subdesc">Distributed Control and Automation Systems
                                 Lab.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2024. 08.</div>
                         <div class="timeline-content glass-panel">
-                            <h4 style="font-size: 1.25rem;">Ph.D.</h4>
-                            <p style="font-size: 1.1rem;"><strong>Gwangju Institute of Science and Technology
+                            <h4 class="timeline-title">Ph.D.</h4>
+                            <p class="timeline-desc"><strong>Gwangju Institute of Science and Technology
                                     (GIST)</strong></p>
-                            <p class="small-text" style="font-size: 0.95rem;">Department of Mechanical Engineering -
+                            <p class="small-text timeline-subdesc">Department of Mechanical Engineering -
                                 <span class="accent-text">Top
                                     Student Award</span>
                             </p>
@@ -594,9 +580,9 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2018. 02.</div>
                         <div class="timeline-content glass-panel">
-                            <h4 style="font-size: 1.25rem;">B.S.</h4>
-                            <p style="font-size: 1.1rem;"><strong>Pukyong National University (PKNU)</strong></p>
-                            <p class="small-text" style="font-size: 0.95rem;">Department of Control & Instrumentation
+                            <h4 class="timeline-title">B.S.</h4>
+                            <p class="timeline-desc"><strong>Pukyong National University (PKNU)</strong></p>
+                            <p class="small-text timeline-subdesc">Department of Control & Instrumentation
                                 Engineering</p>
                         </div>
                     </div>
@@ -605,11 +591,11 @@
 
             <div class="academic-activities mt-5">
                 <h3 class="subsection-title">Academic Activities</h3>
-                <div class="timeline" style="margin-top: 30px;">
+                <div class="timeline mt-30">
                     <div class="timeline-item">
                         <div class="timeline-date">2025. 10. - Present</div>
                         <div class="timeline-content glass-panel">
-                            <h4 style="font-size: 1.25rem;">Associate Editor</h4>
+                            <h4 class="timeline-title">Associate Editor</h4>
                             <ul class="custom-bullet-list">
                                 <li>International Journal of Control, Automation, and Systems (IJCAS)</li>
                             </ul>
@@ -618,7 +604,7 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2024. 08. - Present</div>
                         <div class="timeline-content glass-panel">
-                            <h4 style="font-size: 1.25rem;">Conference Reviewer</h4>
+                            <h4 class="timeline-title">Conference Reviewer</h4>
                             <ul class="custom-bullet-list">
                                 <li>Conference on Decision and Control (CDC)</li>
                                 <li>Asian Control Conference (ASCC)</li>
@@ -630,7 +616,7 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2024. 08. - Present</div>
                         <div class="timeline-content glass-panel">
-                            <h4 style="font-size: 1.25rem;">Journal Reviewer</h4>
+                            <h4 class="timeline-title">Journal Reviewer</h4>
                             <ul class="custom-bullet-list">
                                 <li>IEEE Transactions on Automatic Control</li>
                                 <li>IEEE Systems</li>
@@ -656,14 +642,13 @@
                     <span><strong>*</strong> : First author</span>
                     <span><strong>†</strong> : Corresponding author</span>
                 </div>
-                <div style="text-align: right; margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
+                <div class="text-right mt-10 last-updated">
                     Last updated: 2026. 02. 23.
                 </div>
             </div>
 
             <div class="major-papers mb-5">
-                <h3 class="subsection-title"
-                    style="font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 30px;">Major Papers</h3>
+                <h3 class="subsection-title">Major Papers</h3>
                 <div class="paper-group glass-panel">
                     <div class="group-header">
                         <h4>IEEE Transactions on Automatic Control</h4>
@@ -819,17 +804,16 @@
 
         <div class="footer-container">
             <div class="footer-info">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: -5px;">
-                    <img src="images/pknu_logo.png" alt="PKNU Logo" style="height: 45px; width: auto; opacity: 1;">
-                    <div class="footer-logo" style="margin-bottom: 0;">
+                <div class="footer-logo-wrapper">
+                    <img src="images/pknu_logo.png" alt="PKNU Logo" class="footer-logo-img">
+                    <div class="footer-logo mb-0">
                         <span class="mars">MARS</span> <span class="lab">Lab</span>
                     </div>
                 </div>
                 <p>
-                    <strong style="color: var(--primary-color);">M</strong>ulti-<strong
-                        style="color: var(--primary-color);">A</strong>gent
-                    <strong style="color: var(--primary-color);">R</strong>obotics & Control
-                    <strong style="color: var(--primary-color);">S</strong>ystems Laboratory
+                    <strong class="primary-text">M</strong>ulti-<strong class="primary-text">A</strong>gent
+                    <strong class="primary-text">R</strong>obotics & Control
+                    <strong class="primary-text">S</strong>ystems Laboratory
                 </p>
                 <div class="contact-details mt-4">
                     <h3>Contact Information</h3>
