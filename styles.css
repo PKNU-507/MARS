@@ -1531,7 +1531,7 @@
         .bento-item {
             margin-top: 5px;
             /* Added spacing to stop mobile overlap from above text */
-            min-height: 250px;
+            min-height: 240px;
         }
 
         .profile-img {
