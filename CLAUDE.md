@@ -12,7 +12,7 @@
 
 ## ⭐ 핵심 워크플로우 — CV 기반 업데이트
 - **단일 진실 공급원(source of truth)은 교수님 CV:**
-  `C:\Users\user\OneDrive\Journal\_CV_Nam-Jin Park\CV_namjin.tex`
+  `C:\Users\user\OneDrive\_Lab\CV_Prof\CV_namjin.tex`
 - 교수님이 **CV를 직접 업데이트**한 뒤 "CV 보고 홈페이지 업데이트해줘"라고 요청하면,
   CV(.tex)를 읽고 → `index.html`과 대조 → 차이를 반영하면 됩니다.
 - 진행 순서: ① CV와 index.html 비교해 변경점 목록화 → ② 사용자에게 범위 확인(중요/선택 구분) →

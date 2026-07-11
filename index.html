@@ -49,8 +49,10 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Overview</a></li>
+                <li><a href="#news">News</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#professor">Professor</a></li>
+                <li><a href="#members">Members</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -665,7 +667,7 @@
                                 Fulfillment Center</h4>
                             <p class="timeline-desc"><strong>Korea Institute of Planning and Evaluation for Technology
                                     in Food, Agriculture and Forestry</strong> (₩800,000,000)</p>
-                            <p class="small-text timeline-subdesc">Role: Principal Manager</p>
+                            <p class="small-text timeline-subdesc">Role: <span class="accent-text">Principal Manager</span></p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -675,7 +677,7 @@
                                 Stable Control of End-Effector Drones</h4>
                             <p class="timeline-desc"><strong>National Research Foundation of Korea</strong>
                                 (₩123,030,000)</p>
-                            <p class="small-text timeline-subdesc">Role: Researcher</p>
+                            <p class="small-text timeline-subdesc">Role: <span class="accent-text">Researcher</span></p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -685,7 +687,7 @@
                                 Multi-UAVs</h4>
                             <p class="timeline-desc"><strong>National Research Foundation of Korea</strong>
                                 (₩125,000,000)</p>
-                            <p class="small-text timeline-subdesc">Role: Principal Manager</p>
+                            <p class="small-text timeline-subdesc">Role: <span class="accent-text">Principal Manager</span></p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -695,7 +697,7 @@
                                 Security</h4>
                             <p class="timeline-desc"><strong>National Research Foundation of Korea</strong>
                                 (₩100,000,000)</p>
-                            <p class="small-text timeline-subdesc">Role: Researcher</p>
+                            <p class="small-text timeline-subdesc">Role: <span class="accent-text">Researcher</span></p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -705,7 +707,7 @@
                                 Module Integrating 3D Image Sensors and Micro LiDAR</h4>
                             <p class="timeline-desc"><strong>Korea Aerospace Research Institute</strong> (₩170,000,000)
                             </p>
-                            <p class="small-text timeline-subdesc">Role: Researcher</p>
+                            <p class="small-text timeline-subdesc">Role: <span class="accent-text">Researcher</span></p>
                         </div>
                     </div>
                 </div>
@@ -767,6 +769,127 @@
         </div>
     </section>
 
+    <!-- Members Section -->
+    <style>
+        /* ===== Members (Style 3 — photo card, photo left) ===== */
+        .member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(370px, 1fr)); gap: 18px; margin-top: 20px; }
+        .member-card { display: flex; flex-direction: row; align-items: center; gap: 20px; padding: 20px; border-radius: 16px; }
+        .member-photo { width: 104px; height: 104px; border-radius: 14px; flex: none; overflow: hidden;
+            display: flex; align-items: center; justify-content: center; font-size: 40px;
+            color: rgba(255, 255, 255, 0.3); background: linear-gradient(135deg, #2b3140, #171b24); }
+        .member-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .member-name { font-family: 'Outfit', sans-serif; font-size: 1.06rem; color: #fff; }
+        .member-kor { opacity: 0.5; font-size: 0.8rem; margin-left: 6px; }
+        .member-role { font-weight: 600; font-size: 0.88rem; margin-top: 2px; }
+        .member-desc { opacity: 0.82; font-size: 0.84rem; line-height: 1.5; margin-top: 6px; }
+        .member-recruit { opacity: 0.4; font-size: 0.9rem; margin: 8px 0 4px; }
+        @media (max-width: 480px) { .member-grid { grid-template-columns: 1fr; } }
+    </style>
+    <section id="members" class="section page-section hidden-page">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Members</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="members-group">
+                <h3 class="subsection-title">Ph.D. Students</h3>
+                <p class="member-recruit">— Recruiting —</p>
+            </div>
+
+            <div class="members-group mt-5">
+                <h3 class="subsection-title">M.S. Students</h3>
+                <div class="member-grid">
+                    <div class="member-card glass-panel">
+                        <div class="member-photo"><i class="fas fa-user-graduate"></i></div>
+                        <div class="member-info">
+                            <div><span class="member-name">Tien N. Le</span><span class="member-kor">레 녓 띠엔</span></div>
+                            <div class="member-role accent-text">M.S. Student</div>
+                            <div class="member-desc">Control Theory · Embedded Systems</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-group mt-5">
+                <h3 class="subsection-title">Undergraduate</h3>
+                <div class="member-grid">
+                    <div class="member-card glass-panel">
+                        <div class="member-photo"><i class="fas fa-user"></i></div>
+                        <div class="member-info">
+                            <div><span class="member-name">Hyeon-Bo Sim</span><span class="member-kor">심현보</span></div>
+                            <div class="member-role accent-text">Intern</div>
+                            <div class="member-desc">Localization (IMU/GPS Fusion) · Perception (YOLO)</div>
+                        </div>
+                    </div>
+                    <div class="member-card glass-panel">
+                        <div class="member-photo"><i class="fas fa-user"></i></div>
+                        <div class="member-info">
+                            <div><span class="member-name">Won-Jin Jang</span><span class="member-kor">장원진</span></div>
+                            <div class="member-role accent-text">Intern</div>
+                            <div class="member-desc">SLAM · Vision-based Localization · Smart Factory &amp; Automation</div>
+                        </div>
+                    </div>
+                    <div class="member-card glass-panel">
+                        <div class="member-photo"><i class="fas fa-user"></i></div>
+                        <div class="member-info">
+                            <div><span class="member-name">Jeong-Hyeon Lee</span><span class="member-kor">이정현</span></div>
+                            <div class="member-role accent-text">Intern</div>
+                            <div class="member-desc">Physical AI · Aerial Manipulator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <style>
+        #news .timeline-title { color: var(--primary-color); }
+    </style>
+    <section id="news" class="section page-section hidden-page">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">News</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="timeline mt-30">
+                <div class="timeline-item">
+                    <div class="timeline-date">2026. 07.</div>
+                    <div class="timeline-content glass-panel">
+                        <h4 class="timeline-title">New M.S. Student</h4>
+                        <p class="timeline-desc"><strong>Tien N. Le</strong> joins MARS Lab as a master's student.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026. 07.</div>
+                    <div class="timeline-content glass-panel">
+                        <h4 class="timeline-title">New Undergraduate Interns</h4>
+                        <p class="timeline-desc"><strong>Hyeon-Bo Sim</strong>, <strong>Won-Jin Jang</strong>, and
+                            <strong>Jeong-Hyeon Lee</strong> join the lab as undergraduate interns.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026. 03.</div>
+                    <div class="timeline-content glass-panel">
+                        <h4 class="timeline-title">MARS Lab Established</h4>
+                        <p class="timeline-desc">Multi-Agent Robotics &amp; Control Systems Laboratory is established at
+                            <strong>Pukyong National University</strong>.</p>
+                    </div>
+                </div>
+                <!-- 새 소식은 최신순으로 맨 위에 추가. 예시(학회/수상/과제) — 필요 시 주석 해제해 복사:
+                <div class="timeline-item">
+                    <div class="timeline-date">2026. 09.</div>
+                    <div class="timeline-content glass-panel">
+                        <h4 class="timeline-title">Conference Presentation</h4>
+                        <p class="timeline-desc">Presented "<strong>Paper Title</strong>" at <strong>Conference Name</strong>.</p>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
     <!-- Publications Section -->
     <section id="publications" class="section page-section hidden-page">
         <div class="section-container">
@@ -778,7 +901,7 @@
                     <span><strong>†</strong> : Corresponding author</span>
                 </div>
                 <div class="text-right mt-10 last-updated">
-                    Last updated: 2026. 06. 23.
+                    Last updated: 2026. 07. 10.
                 </div>
             </div>
 
@@ -837,6 +960,8 @@
 
             <div id="under-review" class="tab-content glass-panel" style="display: none;">
                 <ul class="paper-list">
+                    <li>J.-H. Yang*, S.-W. Kang, and <strong>N.-J. Park†</strong>, "An Online Matheuristic Scheduling
+                        Framework for Multi-Robot Pick-and-Place Systems".</li>
                     <li><strong>N.-J. Park*</strong>, and K.-H. Lee†, "Target Controllability of Hierarchical Directed
                         Acyclic Networks".</li>
                     <li>Y.-U. Kim* and <strong>N.-J. Park†</strong>, "Energy-Optimal Target Control via Edge Optimization
@@ -845,14 +970,12 @@
                         Systems: Bridging Consensus and Functional Target Control".</li>
                     <li>S.-B. Won* and <strong>N.-J. Park†</strong>, "FoRCE: Scalable Energy-Efficient Target Control of
                         Complex Networks".</li>
-                    <li>S.-H. Kwon* and <strong>N.-J. Park†</strong>, "Platoon Control of Virtually Coupled Trains under
-                        Time-Varying Disturbances: A Distance Rigidity Approach".</li>
+                    <li>S.-H. Kwon* and <strong>N.-J. Park†</strong>, "Platoon Control of Virtually Coupled Trains: A Distance Rigidity Approach".</li>
                     <li>T.-W. Um* and <strong>N.-J. Park†</strong>, "Deployable Onboard Vision-based Pick-and-Place
                         Automation System for Unstructured Environments".</li>
                     <li>S.-B. Won* and <strong>N.-J. Park†</strong>, "A Construction of Connected Dominating Set with
                         Predetermined Nodes".</li>
-                    <li>K.-H. Lee* and <strong>N.-J. Park†</strong>, "An Exact Gamma–Beta Scale-Mixture Law for Fully
-                        Distributed Space–Time Block Codes with Hyperspherical Signatures".</li>
+                    <li>K.-H. Lee* and <strong>N.-J. Park†</strong>, "An Exact Gamma–Beta Scale-Mixture Law for Distributed Space–Time Block Codes".</li>
                 </ul>
             </div>
 
