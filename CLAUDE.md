@@ -33,6 +33,9 @@
 - **Publications**: 저자 범례는 `*` = First author, `†` = Corresponding author.
   교수 본인 이름은 `<strong>N.-J. Park</strong>` 로 굵게. 역할에 따라 `N.-J. Park*` 또는 `N.-J. Park†`.
   ⚠️ 주의: CV(.tex)의 각주 `*`는 **Corresponding Author**를 뜻함(범례가 반대). 홈페이지 규칙으로 변환할 것.
+- **⭐ Under Review 저자 표기 범위**: 홈페이지는 **1저자 + 교신저자만** 적는다(중간 공저자 생략, 단 Park가 중간 공저자면 Park는 유지).
+  **CV는 전체 저자를 그대로** 유지 — 즉 CV와 홈페이지의 저자 목록은 의도적으로 다르다.
+  각 항목 끝에 **제출년도** `, YYYY.` 표기, **최신순 정렬**(오래된 것이 아래). 제목이 두 줄로 넘어가면 한 줄에 맞게 축약 가능(CV는 원제 유지).
 - **Patents**: 범례 `*` = Primary inventor. 주발명자는 `<strong class="accent-text">N.-J. Park*</strong>`.
 - 새 항목은 **최신순(내림차순)** 으로 배치. 이름 표기는 `N.-J. Park`, `H.-G. Lee` 처럼 이니셜+하이픈 일관 유지.
 - 새 섹션을 만들 땐 기존 클래스 재사용: `timeline` / `timeline-item` / `timeline-content glass-panel` /
