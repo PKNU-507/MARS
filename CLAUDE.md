@@ -42,6 +42,13 @@
   `timeline-title` / `timeline-desc` / `small-text timeline-subdesc` / `subsection-title` / `accent-text`.
 - 발표 논문을 갱신하면 Publications 섹션의 `Last updated: YYYY. MM. DD.` 도 함께 갱신.
 
+## 🌐 언어 토글 (KO/EN) — 이중 유지보수 규칙
+- 우측 상단 네비에 `KO | EN` 토글. 기본 **KO**, `localStorage('mars-lang')`에 저장.
+- 방식: **한국어는 HTML에 그대로**(기본값·SEO), **영어는 `</body>` 직전 인라인 `<script>`의 `I18N_EN` 사전**에만 둔다. 대상 요소에는 `data-i18n="키"` 속성이 붙어 있고, JS가 언어에 맞춰 `innerHTML`을 스왑한다.
+- ⭐ **한국어 서술 콘텐츠를 추가·수정하면 반드시 EN 사전(`I18N_EN`)도 같이 갱신**할 것. 새 번역 요소는 ① 요소에 `data-i18n="새키"` 추가 ② `I18N_EN`에 `"새키": \`English…\`` 추가 (백틱 문자열, `<strong>` 등 마크업 그대로 포함 가능).
+- 교수·News·Publications 섹션은 원래 영어라 토글 대상 아님(번역 불필요).
+- EN 표기 규칙: em-dash 금지(교수님 스타일), 학술 영어로 담백하게. Hero 부제는 EN에서 학과명으로 대체(H2 랩명과 중복 방지).
+
 ## ⚠️ Git 주의사항 (이 저장소 특이사항 — Windows + OneDrive)
 1. **commit 실패** `cannot update the ref 'HEAD' ... Invalid argument` 가 뜨면:
    `git config windows.appendAtomically false` 실행 (이미 로컬 설정돼 있으나 재발 시 재적용).

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ko" data-lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -35,6 +35,16 @@
     </noscript>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css?v=1.1">
+    <style id="i18n-style">
+        .lang-switch { display: inline-flex; align-items: center; gap: 2px; margin-left: 18px;
+            border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; padding: 2px; background: rgba(255,255,255,0.04); }
+        .lang-btn { -webkit-appearance: none; appearance: none; border: 0; background: transparent;
+            color: rgba(255,255,255,0.6); font: 600 0.72rem/1 'Outfit', sans-serif; letter-spacing: .04em;
+            padding: 5px 11px; border-radius: 999px; cursor: pointer; transition: all .18s; }
+        .lang-btn:hover { color: #fff; }
+        .lang-btn.active { background: var(--primary-color, #3b82f6); color: #fff; }
+        @media (max-width: 900px) { .lang-switch { margin-left: auto; margin-right: 12px; } }
+    </style>
 </head>
 
 <body>
@@ -56,6 +66,10 @@
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="lang-switch" role="group" aria-label="Language">
+                <button type="button" class="lang-btn active" data-lang="ko">KO</button>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -77,7 +91,7 @@
                 <h2><span class="highlight">M</span>ulti-<span class="highlight">A</span>gent <span
                         class="highlight">R</span>obotics & Control <span class="highlight">S</span>ystems Laboratory
                 </h2>
-                <p class="kor-subtitle fw-500">다개체 로보틱스 및 제어시스템 연구실</p>
+                <p class="kor-subtitle fw-500" data-i18n="hero_subtitle">다개체 로보틱스 및 제어시스템 연구실</p>
             </div>
 
             <!-- Recruitment Banner -->
@@ -85,9 +99,9 @@
                 <div class="banner-content">
                     <div class="banner-content-header">
                         <span class="pulse-dot"></span>
-                        <h3 class="banner-title">학부생 및 대학원생 상시 모집</h3>
+                        <h3 class="banner-title" data-i18n="banner_title">학부생 및 대학원생 상시 모집</h3>
                     </div>
-                    <p class="banner-desc">MARS Lab에서 <strong>다개체 제어 및 로보틱스 연구</strong>를 함께 이끌어갈 열정적인 학생을 찾습니다.</p>
+                    <p class="banner-desc" data-i18n="banner_desc">MARS Lab에서 <strong>다개체 제어 및 로보틱스 연구</strong>를 함께 이끌어갈 열정적인 학생을 찾습니다.</p>
                     <a href="#contact" class="btn btn-primary banner-btn" onclick="navigateToSection('#contact')">
                         Join MARS Lab <i class="fas fa-paper-plane ml-5"></i>
                     </a>
@@ -154,7 +168,7 @@
                     <div class="underline"></div>
                 </div>
 
-                <div class="research-description glass-panel">
+                <div class="research-description glass-panel" data-i18n="lab_overview">
                     <p>
                         <strong>MARS Lab</strong>은 여러 대의 드론과 로봇이 협력하여 하나의 통합된 시스템으로 동작하도록 만드는 연구를 수행합니다. 단일 로봇 중심 접근의
                         한계를
@@ -180,7 +194,7 @@
                 </div>
 
                 <div class="research-details-grid">
-                    <div class="details-list glass-panel">
+                    <div class="details-list glass-panel" data-i18n="do_block">
                         <h3><i class="fas fa-laptop-code"></i> MARS Lab에서 무엇을 할 수 있나요?</h3>
                         <ul class="custom-bullet-list">
                             <li>다개체 드론 편대제어 및 협력제어 시스템 설계</li>
@@ -192,7 +206,7 @@
                             <li>국제 학회 참가 및 논문 발표</li>
                         </ul>
                     </div>
-                    <div class="details-list glass-panel">
+                    <div class="details-list glass-panel" data-i18n="career_block">
                         <h3><i class="fas fa-briefcase"></i> 졸업 후 진로 및 산업 분야</h3>
                         <ul class="custom-bullet-list">
                             <li><strong>드론/UAM 및 자율 이동체 제어 알고리즘 엔지니어</strong> <br><span>(자율 드론, UAM, 자율주행, 모빌리티
@@ -218,7 +232,7 @@
 
             <!-- Pre-MARS Lab Research Disclaimer -->
             <div class="disclaimer-wrapper">
-                <div class="disclaimer-box">
+                <div class="disclaimer-box" data-i18n="disclaimer">
                     <i class="fas fa-info-circle disclaimer-icon"></i>
                     본 페이지에는 이전 기관에서 수행한 프로젝트가 포함되어 있습니다.
                 </div>
@@ -236,7 +250,7 @@
                         <div class="bento-content">
                             <span class="bento-badge">Core Project</span>
                             <h3>Multi-Drone Formation Control System</h3>
-                            <p>다수 드론의 편대제어 및 자율비행 시스템 연구</p>
+                            <p data-i18n="r1_card">다수 드론의 편대제어 및 자율비행 시스템 연구</p>
                             <div class="bento-action"><span class="action-text">View Details</span> <i
                                     class="fas fa-chevron-down"></i></div>
                         </div>
@@ -245,7 +259,7 @@
                     <div class="bento-details">
                         <div class="details-inner glass-panel">
                             <div class="topic-intro mb-4">
-                                <p class="topic-intro-text">
+                                <p class="topic-intro-text" data-i18n="r1_intro">
                                     <span class="topic-intro-title">
                                         다수 드론의 협력 임무 수행을 위한 <strong class="accent-text">편대 제어(Formation
                                             Control)</strong> 및 <strong class="accent-text">측위(Localization)</strong> 기술
@@ -270,7 +284,7 @@
                             <div class="sub-topic mb-4 pl-4 sub-topic-border">
                                 <h4 class="sub-topic-title">
                                     Position-based Control</h4>
-                                <p class="sub-topic-desc">
+                                <p class="sub-topic-desc" data-i18n="r1_pos">
                                     전역 정보(GPS)를 이용한 사전 정의 경로(Predetermined Trajectory) 기반 자율 편대 비행 시스템입니다.<br>
                                     각 드론에 장착된 LED 패턴 또한 사전에 프로그래밍되어 야간 <strong>군집 비행(Drone Show)</strong> 등에 응용될 수 있습니다.
                                     전체 시스템은 중앙 지상 통제국(GCS, Ground Control Station) 서버를 통해 제어되며, GCS의 단일 명령(모드 변경)으로 전체
@@ -297,7 +311,7 @@
                             <div class="sub-topic mb-4 pl-4 sub-topic-border">
                                 <h4 class="sub-topic-title">
                                     Distance-based Control</h4>
-                                <p class="sub-topic-desc">
+                                <p class="sub-topic-desc" data-i18n="r1_dist">
                                     <span class="sub-topic-desc-title">지역 정보 및 거리 측정을
                                         활용한 협력 측위 시스템 (GPS-Denied 환경 대응)</span>
                                     이 시스템은 고정된 위치 기준점이 되는 <strong class="accent-text">4대의 앵커(Anchor) 드론</strong>과 측위의
@@ -328,7 +342,7 @@
                             <div class="sub-topic mb-4 pl-4 sub-topic-border">
                                 <h4 class="sub-topic-title">
                                     Network-based Control</h4>
-                                <p class="sub-topic-desc">
+                                <p class="sub-topic-desc" data-i18n="r1_net">
                                     <span class="sub-topic-desc-title">인접 드론 간 상대 정보를
                                         활용한 <strong class="accent-text">분산 최적화(Distributed Optimization)</strong> 및 자율
                                         네트워크 제어 시스템</span>
@@ -359,7 +373,7 @@
                         <div class="bento-content">
                             <span class="bento-badge">Ongoing</span>
                             <h3>Delta Robot System</h3>
-                            <p>고속 병렬로봇 설계 및 다개체 작업할당 알고리즘 연구</p>
+                            <p data-i18n="r2_card">고속 병렬로봇 설계 및 다개체 작업할당 알고리즘 연구</p>
                             <div class="bento-action"><span class="action-text">View Details</span> <i
                                     class="fas fa-chevron-down"></i></div>
                         </div>
@@ -368,7 +382,7 @@
                     <div class="bento-details">
                         <div class="details-inner glass-panel">
                             <div class="topic-intro mb-4">
-                                <p class="topic-intro-text">
+                                <p class="topic-intro-text" data-i18n="r2_intro">
                                     <span class="topic-intro-title">델타
                                         로봇 전주기(A to Z) 자체 개발 및 다개체 작업 할당(Task Assignment) 연구 (진행 중)</span>
                                     본 연구는 고속 병렬 로봇인 델타 로봇의 3D 모델링 설계부터 정밀 제어기 개발, 시뮬레이션, CNC 공정을 통한 프로토타입 제작, 그리고 실제 제어
@@ -389,7 +403,7 @@
                                     <div class="media-container text-center flex-1-min-300">
                                         <img src="images/R2_CNC_prototype.png" alt="CNC Prototype" class="content-media"
                                             loading="lazy">
-                                        <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">CNC 공정
+                                        <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;" data-i18n="r2_cap1">CNC 공정
                                             프로토타입</p>
                                     </div>
                                 </div>
@@ -397,7 +411,7 @@
                                     <img src="images/R2_controller_Architucture_perdormance.png"
                                         alt="Controller Architecture and Performance" class="content-media bg-white"
                                         loading="lazy">
-                                    <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;">제어기 구조 및 제어
+                                    <p style="color: var(--text-muted); font-size: 1rem; margin-top: 10px;" data-i18n="r2_cap2">제어기 구조 및 제어
                                         성능</p>
                                 </div>
                             </div>
@@ -413,7 +427,7 @@
                         <div class="bento-content">
                             <span class="bento-badge">Completed</span>
                             <h3>Pick & Place Automation System</h3>
-                            <p>비전 센서 기반 산업용 고속 물류 자동화 시스템</p>
+                            <p data-i18n="r3_card">비전 센서 기반 산업용 고속 물류 자동화 시스템</p>
                             <div class="bento-action"><span class="action-text">View Details</span> <i
                                     class="fas fa-chevron-down"></i></div>
                         </div>
@@ -422,7 +436,7 @@
                     <div class="bento-details">
                         <div class="details-inner glass-panel">
                             <div class="topic-intro mb-4">
-                                <p class="topic-intro-text">
+                                <p class="topic-intro-text" data-i18n="r3_intro">
                                     <span class="topic-intro-title">비전
                                         센서 기반 고속 물류 자동화 및 제어 알고리즘 검증 시스템</span>
                                     농산물 산지유통센터(APC) 등 실제 산업 현장에 즉시 투입 가능한 비전 기반 고속 Pick-and-Place 물류 자동화 시스템입니다.<br><br>
@@ -431,7 +445,7 @@
                                     특히 상용 임베디드 보드(Jetson Nano)와 같은 제한된 하드웨어 환경 내에서 복잡한 이미지 프로세싱과 자동화 제어 로직을 통합적으로 처리할 수
                                     있도록 경량화 및 최적화되어 있습니다.
                                 </p>
-                                <div class="bento-highlight-box">
+                                <div class="bento-highlight-box" data-i18n="r3_highlight">
                                     그리핑 성공률 <strong class="accent-text">96.16%</strong> | 분당 반복 속도 <strong
                                         class="accent-text">21.94회</strong> (총 2,291회 P&P 수행 기준)
                                 </div>
@@ -455,7 +469,7 @@
                         <div class="bento-content">
                             <span class="bento-badge future-work-badge">Future Work</span>
                             <h3>Aerial Manipulator System</h3>
-                            <p>드론의 비행 제어 및 매니퓰레이터 조작을 연동한 다개체 드론 시스템 연구</p>
+                            <p data-i18n="r4_card">드론의 비행 제어 및 매니퓰레이터 조작을 연동한 다개체 드론 시스템 연구</p>
                             <div class="bento-action"><span class="action-text">View Details</span> <i
                                     class="fas fa-chevron-down"></i></div>
                         </div>
@@ -464,7 +478,7 @@
                     <div class="bento-details">
                         <div class="details-inner glass-panel">
                             <div class="topic-intro mb-4">
-                                <p class="topic-intro-text">
+                                <p class="topic-intro-text" data-i18n="r4_intro">
                                     (추가 예정) 경량 델타로봇이 장착된 다개체 드론의 비행 제어 및 매니퓰레이터 조작을 연동한 복합 동역학 시스템 연구
                                 </p>
                             </div>
@@ -484,7 +498,7 @@
                         <div class="bento-content">
                             <span class="bento-badge future-work-badge">Future Work</span>
                             <h3>Physical AI</h3>
-                            <p>UAV, UGV, 휴머노이드의 환경 인지 기반 Physical AI 연구개발</p>
+                            <p data-i18n="r5_card">UAV, UGV, 휴머노이드의 환경 인지 기반 Physical AI 연구개발</p>
                             <div class="bento-action"><span class="action-text">View Details</span> <i
                                     class="fas fa-chevron-down"></i></div>
                         </div>
@@ -493,7 +507,7 @@
                     <div class="bento-details">
                         <div class="details-inner glass-panel">
                             <div class="topic-intro mb-4">
-                                <p class="topic-intro-text">
+                                <p class="topic-intro-text" data-i18n="r5_intro">
                                     (추가 예정) 무인항공기(UAV), 무인지상차량(UGV), 그리고 휴머노이드 로봇 등 다양한 플랫폼이 카메라, 라이다 등 센서를 통해 주변 환경을
                                     실시간으로 인지하고 판단하여 능동적으로 행동하는 Physical AI 프레임워크 구축 연구
                                 </p>
@@ -1105,9 +1119,9 @@
             <div class="banner-content">
                 <div class="banner-content-header">
                     <span class="pulse-dot"></span>
-                    <h3 class="banner-title">학부생 및 대학원생 상시 모집</h3>
+                    <h3 class="banner-title" data-i18n="banner_title">학부생 및 대학원생 상시 모집</h3>
                 </div>
-                <p class="banner-desc">MARS Lab에서 <strong>다개체 제어 및 로보틱스 연구</strong>를 함께 이끌어갈 열정적인 학생을 찾습니다.</p>
+                <p class="banner-desc" data-i18n="banner_desc">MARS Lab에서 <strong>다개체 제어 및 로보틱스 연구</strong>를 함께 이끌어갈 열정적인 학생을 찾습니다.</p>
                 <a href="mailto:pnj@pknu.ac.kr" class="btn btn-primary banner-btn">
                     Contact Professor <i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
                 </a>
@@ -1139,6 +1153,67 @@
 
     <!-- Custom Script -->
     <script src="script.js?v=1.1" defer></script>
+    <!-- i18n language toggle (KO default) -->
+    <script>
+    (function () {
+      var I18N_EN = {
+  "hero_subtitle": `Department of Control &amp; Instrumentation Engineering, PKNU`,
+  "banner_title": `Now Recruiting Undergraduate &amp; Graduate Students`,
+  "banner_desc": `MARS Lab is looking for motivated students to advance <strong>multi-agent control and robotics research</strong> together.`,
+  "lab_overview": `<p><strong>MARS Lab</strong> studies how multiple drones and robots can cooperate to operate as a single, integrated system. We push the limits of single-robot approaches toward the cooperation of multi-agent and heterogeneous systems, and our core goal is to <strong>design and solve, at the system level</strong>, the many interaction and integration problems that arise in the process.</p><p>We work on <strong>multi-agent formation control</strong>, <strong>cooperative localization</strong>, <strong>perception</strong>, and <strong>robotic systems (Robotics, Physical AI)</strong>, integrating these individual technologies into one system and validating them through experiments. Along the way, students experience the entire pipeline from theoretical foundations to <strong>integrated HW/SW design, implementation, and experimental validation</strong>. They also learn to design and analyze complex systems more efficiently using <strong>generative AI</strong>, AI-based development tools, and intelligent-agent technologies.</p><p>In the coming AI era of autonomous drones, smart robots, UAM, and autonomous mobility, the ability to <strong>design diverse heterogeneous systems in an integrated way</strong> is becoming ever more important. MARS Lab connects theory with real-world demonstration and actively leverages AI-based development environments to cultivate <strong>integrated-system engineers who can scale and adapt without limit</strong> to new systems and changing environments.</p>`,
+  "do_block": `<h3><i class="fas fa-laptop-code"></i> What can you do at MARS Lab?</h3><ul class="custom-bullet-list"><li>Design of multi-agent drone formation and cooperative control systems</li><li>Development of GPS/UWB-based cooperative localization systems</li><li>Implementation of Vision/LiDAR-based perception systems</li><li>Design of robot control algorithms based on 3D modeling and dynamics</li><li>Building real hardware prototypes and validating them through experiments</li><li>Physical-AI-based intelligent robot control (humanoids, robotic arms, etc.)</li><li>Participation in international conferences and paper publication</li></ul>`,
+  "career_block": `<h3><i class="fas fa-briefcase"></i> Career Paths &amp; Industries After Graduation</h3><ul class="custom-bullet-list"><li><strong>Control-algorithm engineer for drones/UAM and autonomous vehicles</strong> <br><span>(autonomous drones, UAM, self-driving, mobility)</span></li><li><strong>Robot-control and smart-automation systems developer</strong> <br><span>(industrial robotics, logistics &amp; smart-factory companies)</span></li><li><strong>AI-based robotics software engineer</strong> <br><span>(robotics startups, embedded &amp; control-software companies)</span></li><li><strong>Research scientist at government-funded institutes</strong> <br><span>(aerospace, defense, robotics &amp; automation, communications &amp; networks)</span></li></ul>`,
+  "disclaimer": `<i class="fas fa-info-circle disclaimer-icon"></i> This page includes projects carried out at previous institutions.`,
+  "r1_card": `Formation control and autonomous flight of multiple drones`,
+  "r2_card": `High-speed parallel-robot design and multi-agent task-assignment algorithms`,
+  "r3_card": `A vision-based high-speed industrial logistics-automation system`,
+  "r4_card": `A multi-agent drone system coupling flight control with manipulator operation`,
+  "r5_card": `Perception-based Physical AI for UAVs, UGVs, and humanoids`,
+  "r1_intro": `<span class="topic-intro-title">Research on <strong class="accent-text">formation control</strong> and <strong class="accent-text">localization</strong> for cooperative missions of multiple drones</span>Multi-agent formation control is the key technology that keeps several drones in a fixed geometry while they carry out a cooperative mission. This requires localization: estimating and controlling each drone's position in real time.<br><br>Localization comes in two broad types. The first uses <strong class="accent-text">global information</strong>, such as GPS latitude/longitude. Here the absolute position of each drone is known as clearly as if seen by eye, making it relatively easy to steer the desired formation and trajectory.<br><br>In <strong class="accent-text">GPS-denied environments</strong> such as tunnels, urban canyons, or low-altitude flight, where the GPS signal drops out or its error grows, a different approach is needed. There, the formation must be maintained using only <strong class="accent-text">local information</strong>, such as inter-drone distances and communication strength.<br><br>To respond flexibly to such extreme situations, MARS Lab develops optimal solutions that fuse global and local information as the situation demands. Building on in-house expertise spanning drone hardware design, the communication network for swarm supervision, and the mathematical/network-system software for distributed control, we pursue this along three lines of research: <strong>Position-, Distance-, and Network-based</strong>.`,
+  "r1_pos": `An autonomous formation-flight system based on predetermined trajectories using global information (GPS).<br>The LED pattern mounted on each drone is also pre-programmed, enabling applications such as nighttime <strong>drone shows</strong>. The whole system is controlled through a central Ground Control Station (GCS) server, and a single GCS command (a mode change) drives the entire formation at once. An intuitive GUI monitoring tool also shows the individual status of every drone in flight in real time.`,
+  "r1_dist": `<span class="sub-topic-desc-title">A cooperative localization system using local information and distance measurement (for GPS-denied environments)</span>This system consists of <strong class="accent-text">four anchor drones</strong> that act as fixed position references and <strong class="accent-text">one tag drone</strong> whose position is to be estimated. As an intuitive analogy, the four anchor drones serve as ‘satellites’ put up in the air, while the tag drone plays the role of a <strong>‘smartphone that receives the satellite signals and shows its current position on a map app’</strong>.<br><br>Without any GPS sensor of its own (no global information), the tag drone fuses the position information of neighboring anchor drones with distance measurements from UWB sensors to compute its own position in real time inside its flight controller (FC). In this way, five drones can form a precise swarm formation through <strong class="accent-text">ROS-based distributed control</strong>, with no intervention from a Ground Control Station (GCS).`,
+  "r1_net": `<span class="sub-topic-desc-title">A <strong class="accent-text">distributed-optimization</strong> and autonomous network-control system using relative information between neighboring drones</span>This system encodes various network variables, such as the physical communication-range limits and signal strength between drones, into an objective function for control. Each drone determines its own position solely through information exchange with its neighbors, with no central authority overseeing the whole system (distributed optimization).<br><br>This resembles the way a multi-joint robotic arm moves, and the drone carrying out the mission at the very tip of the formation is defined as the <strong class="accent-text">end-effector</strong>. Even when both communication and GPS are unstable, as in tunnels or low-altitude environments, this technology builds an ad-hoc network through relay drones to enable seamless, stable localization and swarm control.`,
+  "r2_intro": `<span class="topic-intro-title">In-house end-to-end (A-to-Z) development of a delta robot and research on multi-agent task assignment (ongoing)</span>This project independently carries out the <strong class="accent-text">A to Z</strong> of building the delta robot, a high-speed parallel robot: from 3D modeling and precise controller development, through simulation and CNC-machined prototyping, to evaluation of real control performance. Beyond single-robot control, the scope is expanding to the multi-agent task-assignment problem, in which several delta robots cooperate to handle a process.`,
+  "r2_cap1": `CNC-machined Prototype`,
+  "r2_cap2": `Controller Architecture &amp; Performance`,
+  "r3_intro": `<span class="topic-intro-title">Vision-based high-speed logistics automation and a control-algorithm validation system</span>A vision-based high-speed pick-and-place logistics-automation system ready for immediate deployment in real industrial settings such as agricultural processing centers (APCs).<br><br>Without expensive sensors such as LiDAR, this system performs object detection and depth estimation with a single <strong class="accent-text">vision sensor</strong> to pinpoint a target’s 3D position. It is lightened and optimized so that complex image processing and automation-control logic can run together within a constrained hardware environment such as a commercial embedded board (Jetson Nano).`,
+  "r3_highlight": `Gripping success rate <strong class="accent-text">96.16%</strong> | Throughput <strong class="accent-text">21.94 cycles/min</strong> (over 2,291 total P&amp;P operations)`,
+  "r4_intro": `(Coming soon) Research on a coupled-dynamics system that links the flight control of multi-agent drones equipped with lightweight delta robots to manipulator operation`,
+  "r5_intro": `(Coming soon) Research on building a Physical AI framework in which diverse platforms such as UAVs, UGVs, and humanoid robots perceive their surroundings in real time through cameras, LiDAR, and other sensors, reason about them, and act autonomously`
+      };
+      var origKO = {};
+      function cacheKO() {
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          var k = el.getAttribute('data-i18n');
+          if (!(k in origKO)) origKO[k] = el.innerHTML;
+        });
+      }
+      function applyLang(l) {
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          var k = el.getAttribute('data-i18n');
+          if (l === 'en' && I18N_EN[k] != null) el.innerHTML = I18N_EN[k];
+          else if (origKO[k] != null) el.innerHTML = origKO[k];
+        });
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.lang = l;
+        document.querySelectorAll('.lang-btn').forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-lang') === l);
+        });
+        try { localStorage.setItem('mars-lang', l); } catch (e) {}
+      }
+      function init() {
+        cacheKO();
+        var saved = 'ko';
+        try { saved = localStorage.getItem('mars-lang') || 'ko'; } catch (e) {}
+        applyLang(saved);
+        document.querySelectorAll('.lang-btn').forEach(function (b) {
+          b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); });
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
+    })();
+    </script>
 </body>
 
 </html>
