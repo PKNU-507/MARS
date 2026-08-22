@@ -49,6 +49,19 @@
 - 교수·News·Publications 섹션은 원래 영어라 토글 대상 아님(번역 불필요).
 - EN 표기 규칙: em-dash 금지(교수님 스타일), 학술 영어로 담백하게. Hero 부제는 EN에서 학과명으로 대체(H2 랩명과 중복 방지).
 
+## 📚 Lecture 탭 — 강의자료 배포 (2026-08-22 신설)
+- 네비 `Lecture` → `#lecture` 섹션. **과목별 카드**(`.course-card`) 안에 자료 목록(`.material-item`)을 둔다.
+  현재 과목은 `Linear Systems (Graduate)` 하나.
+- 파일은 `files/` 에 두고, **파일명에 날짜를 넣지 않는다.** 갱신 시 같은 이름으로 덮어써야 공개 링크가 안 깨진다.
+  날짜·버전은 파일명이 아니라 **화면 텍스트로만** 보여준다.
+- 링크에 `download` 속성을 붙여 클릭 시 브라우저 뷰어가 아니라 바로 저장되게 한다.
+- ⭐ **자료를 갱신할 때마다 반드시 같이 고칠 두 곳:**
+  1. `.material-meta` — `Version <v> (draft) · updated YYYY. MM. DD. · <N> pp · <size> MB`
+  2. 섹션 헤더의 `Last updated: YYYY. MM. DD.`
+- 강의노트 책의 버전 단일 출처는 책 쪽 `main.tex` 의 `\bookversion` / `\bookdate` 이다
+  (`선형시스템 (대학원)\LectureNotes\AGENT_BRIEF.md` §1.5의 루틴). **사이트 표기와 표지 표기가 달라지면 안 된다.**
+- 새 과목 추가는 `.course-card` 블록을 복제하고 `data-i18n` 키를 새로 만들어 `I18N_EN` 에도 영어를 추가한다.
+
 ## ⚠️ Git 주의사항 (이 저장소 특이사항 — Windows + OneDrive)
 1. **commit 실패** `cannot update the ref 'HEAD' ... Invalid argument` 가 뜨면:
    `git config windows.appendAtomically false` 실행 (이미 로컬 설정돼 있으나 재발 시 재적용).
