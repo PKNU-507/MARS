@@ -1127,33 +1127,52 @@
             <p class="course-desc" data-i18n="lecture_intro">담당 과목의 강의자료를 과목별로 모아 둡니다. 자료는
                 학기 중에도 계속 보완되므로, 받기 전에 아래의 <strong>버전과 갱신 날짜</strong>를 확인하세요.</p>
 
-            <div class="course-list">
-                <article class="course-card glass-panel">
-                    <h3 class="course-title">Linear Systems <span class="course-level">Graduate</span></h3>
-                    <p class="course-meta" data-i18n="course_linsys_meta">선형시스템 · 2026 가을학기 ·
-                        제어계측공학전공</p>
-                    <p class="course-desc" data-i18n="course_linsys_desc">전반부는 상태공간 모델, 가제어성과
-                        가관측성 등 고전 선형시스템 이론을 다룹니다. 후반부는 이를 <strong>네트워크로 확장</strong>해,
-                        연결 구조만 알고 가중치는 모를 때 제어가 가능한지를 묻는 <strong>구조적 가제어성</strong>과
-                        <strong>강한 구조적 가제어성</strong>을 그래프 관점에서 다룹니다. 일반적인 선형시스템
-                        교과목보다 그래프와 네트워크의 비중이 큽니다.</p>
+            <div class="publications-tabs course-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'course-linalg')">Linear Algebra</button>
+                <button class="tab-btn" onclick="openTab(event, 'course-linsys')">Linear Systems</button>
+            </div>
 
-                    <div class="material-list">
-                        <div class="material-item">
-                            <div class="material-info">
-                                <span class="material-name">Linear Systems on Graphs: Controllability of
-                                    Structured Networks</span>
-                                <span class="material-tag">Lecture notes</span>
-                                <span class="material-meta">Version 1.6 (draft) &middot; updated 2026. 08. 31.
-                                    &middot; 106 pp &middot; 1.5 MB</span>
-                            </div>
-                            <a class="note-download" href="files/Linear_Systems_on_Graphs.pdf"
-                                download="Linear_Systems_on_Graphs.pdf">
-                                <span class="note-download-icon">&#8681;</span> Download PDF
-                            </a>
+            <div id="course-linalg" class="tab-content course-panel glass-panel" style="display: block;">
+                <h3 class="course-title">Linear Algebra <span class="course-level">Undergraduate</span></h3>
+                <p class="course-meta" data-i18n="course_linalg_meta">선형대수학 · 2026 가을학기 ·
+                    제어계측공학전공 2학년</p>
+                <p class="course-desc" data-i18n="course_linalg_desc">연립일차방정식에서 출발해 행렬과
+                    행렬식, <strong>벡터공간</strong>, 선형변환, 고윳값과 고유벡터, 복소벡터공간까지 다룹니다.
+                    계산 절차를 익히는 데 그치지 않고 <strong>왜 그렇게 되는지</strong>를 함께 봅니다.
+                    여기서 다루는 벡터공간과 고윳값은 뒤에 이어지는 <strong>선형시스템</strong>의
+                    상태공간 모델과 안정성 해석이 그대로 올라앉는 토대입니다.</p>
+
+                <div class="material-list">
+                    <p class="material-pending" data-i18n="course_linalg_pending">강의자료는 학기 진행에 맞춰
+                        순차적으로 올립니다.</p>
+                </div>
+            </div>
+
+            <div id="course-linsys" class="tab-content course-panel glass-panel" style="display: none;">
+                <h3 class="course-title">Linear Systems <span class="course-level">Graduate</span></h3>
+                <p class="course-meta" data-i18n="course_linsys_meta">선형시스템 · 2026 가을학기 ·
+                    제어계측공학전공</p>
+                <p class="course-desc" data-i18n="course_linsys_desc">전반부는 상태공간 모델, 가제어성과
+                    가관측성 등 고전 선형시스템 이론을 다룹니다. 후반부는 이를 <strong>네트워크로 확장</strong>해,
+                    연결 구조만 알고 가중치는 모를 때 제어가 가능한지를 묻는 <strong>구조적 가제어성</strong>과
+                    <strong>강한 구조적 가제어성</strong>을 그래프 관점에서 다룹니다. 일반적인 선형시스템
+                    교과목보다 그래프와 네트워크의 비중이 큽니다.</p>
+
+                <div class="material-list">
+                    <div class="material-item">
+                        <div class="material-info">
+                            <span class="material-name">Linear Systems on Graphs: Controllability of
+                                Structured Networks</span>
+                            <span class="material-tag">Lecture notes</span>
+                            <span class="material-meta">Version 1.6 (draft) &middot; updated 2026. 08. 31.
+                                &middot; 106 pp &middot; 1.5 MB</span>
                         </div>
+                        <a class="note-download" href="files/Linear_Systems_on_Graphs.pdf"
+                            download="Linear_Systems_on_Graphs.pdf">
+                            <span class="note-download-icon">&#8681;</span> Download PDF
+                        </a>
                     </div>
-                </article>
+                </div>
             </div>
 
             <p class="course-empty" data-i18n="lecture_more">다른 과목의 자료는 개설에 맞춰 추가됩니다.</p>
@@ -1162,8 +1181,8 @@
 
     <style>
         /* ===== Lecture (course materials) ===== */
-        .course-list { display: flex; flex-direction: column; gap: 22px; margin-top: 30px; }
-        .course-card { padding: 26px 28px; border-radius: 16px; }
+        .course-tabs { margin-top: 30px; flex-wrap: wrap; }
+        .course-panel { padding: 26px 28px; border-radius: 16px; }
         .course-title { font-family: 'Outfit', sans-serif; font-size: 1.22rem; color: #fff; margin: 0; }
         .course-level { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em;
             text-transform: uppercase; color: var(--primary-color); border: 1px solid var(--primary-color);
@@ -1187,8 +1206,11 @@
         .note-download:hover { background: var(--primary-color); box-shadow: 0 0 18px var(--primary-glow); }
         .note-download-icon { font-size: 1.02rem; line-height: 1; }
         .course-empty { color: var(--text-muted); font-size: 0.88rem; margin-top: 30px; text-align: center; }
+        .material-pending { color: var(--text-muted); font-size: 0.86rem; margin: 0; font-style: italic; }
         @media (max-width: 600px) {
-            .course-card { padding: 20px; }
+            .course-panel { padding: 20px; }
+            .course-tabs { gap: 10px; }
+            .course-tabs .tab-btn { padding: 9px 18px; font-size: 0.86rem; }
             .material-item { flex-direction: column; align-items: flex-start; gap: 12px; }
         }
     </style>
@@ -1241,6 +1263,9 @@
     (function () {
       var I18N_EN = {
   "lecture_intro": `Course materials, grouped by course. They keep being revised during the semester, so check the <strong>version and update date</strong> below before downloading.`,
+  "course_linalg_meta": `Linear Algebra &middot; Fall 2026 &middot; Major of Control and Instrumentation Engineering, 2nd year`,
+  "course_linalg_desc": `From systems of linear equations to matrices and determinants, <strong>vector spaces</strong>, linear transformations, eigenvalues and eigenvectors, and complex vector spaces. The course does not stop at computational procedure; it keeps asking <strong>why each step works</strong>. The vector spaces and eigenvalues introduced here are the foundation that the state-space models and stability analysis of <strong>Linear Systems</strong> are built directly on.`,
+  "course_linalg_pending": `Materials will be posted as the semester progresses.`,
   "course_linsys_meta": `Linear Systems &middot; Fall 2026 &middot; Major of Control and Instrumentation Engineering`,
   "course_linsys_desc": `The first half covers classical linear system theory: state-space models, controllability and observability. The second half <strong>extends it to networks</strong>, asking when control is possible from the interconnection structure alone, with unknown weights: <strong>structural controllability</strong> and <strong>strong structural controllability</strong>, read off the graph. Graphs and networks carry more weight here than in a standard linear systems course.`,
   "lecture_more": `Materials for other courses will be added as they are offered.`,

@@ -95,22 +95,21 @@
         });
     });
 
-    // Publication Tabs
+    // Tabs (Publications, Lecture). Scoped to the enclosing .section-container so that
+    // switching tabs in one section does not reset the tab state of another.
     function openTab(evt, tabName) {
-        let i, tabcontent, tablinks;
+        const btn = evt.currentTarget;
+        const scope = btn.closest('.section-container') || document;
 
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
+        scope.querySelectorAll('.tab-content').forEach(function (el) {
+            el.style.display = "none";
+        });
+        scope.querySelectorAll('.tab-btn').forEach(function (el) {
+            el.classList.remove('active');
+        });
 
         document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
+        btn.classList.add('active');
     }
 
     // Get theme colors from CSS dynamically
