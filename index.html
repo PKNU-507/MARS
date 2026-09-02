@@ -1120,7 +1120,7 @@
                 <h2 class="section-title">Lecture</h2>
                 <div class="underline"></div>
                 <div class="text-right mt-10 last-updated">
-                    Last updated: 2026. 09. 01.
+                    Last updated: 2026. 09. 02.
                 </div>
             </div>
 
@@ -1129,6 +1129,7 @@
 
             <div class="publications-tabs course-tabs">
                 <button class="tab-btn active" onclick="openTab(event, 'course-linalg')">Linear Algebra</button>
+                <button class="tab-btn" onclick="openTab(event, 'course-robotics')">Robotics</button>
                 <button class="tab-btn" onclick="openTab(event, 'course-linsys')">Linear Systems</button>
             </div>
 
@@ -1143,8 +1144,43 @@
                     상태공간 모델과 안정성 해석이 그대로 올라앉는 토대입니다.</p>
 
                 <div class="material-list">
-                    <p class="material-pending" data-i18n="course_linalg_pending">강의자료는 학기 진행에 맞춰
-                        순차적으로 올립니다.</p>
+                    <div class="material-item">
+                        <div class="material-info">
+                            <span class="material-name">Orientation</span>
+                            <span class="material-tag">Lecture slides</span>
+                            <span class="material-meta">updated 2026. 09. 02. &middot; 10 pp &middot; 0.15 MB</span>
+                        </div>
+                        <a class="note-download" href="files/LinearAlgebra_0_Orientation.pdf"
+                            download="LinearAlgebra_0_Orientation.pdf">
+                            <span class="note-download-icon">&#8681;</span> Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="course-robotics" class="tab-content course-panel glass-panel" style="display: none;">
+                <h3 class="course-title">Applied Robotics &amp; Design <span class="course-level">Undergraduate</span>
+                </h3>
+                <p class="course-meta" data-i18n="course_robotics_meta">응용로봇공학및설계 · 2026 가을학기 ·
+                    제어계측공학전공 4학년 · 이론 2 + 실습 2</p>
+                <p class="course-desc" data-i18n="course_robotics_desc">산업용 <strong>매니퓰레이터</strong>를
+                    중심으로 로봇 시스템을 해석·설계·제어하는 전 과정을 다룹니다. 좌표계를 이용한 위치·방향
+                    표현에서 시작해 <strong>기구학과 역기구학</strong>, 속도 기구학, 정역학과 동역학, 궤적 계획,
+                    로봇 제어로 이어지고, 마지막에 <strong>컴퓨터 비전과 인공지능 제어</strong>를 다룹니다.
+                    실습이 함께 있어 이론을 코드와 장비로 확인합니다.</p>
+
+                <div class="material-list">
+                    <div class="material-item">
+                        <div class="material-info">
+                            <span class="material-name">Orientation</span>
+                            <span class="material-tag">Lecture slides</span>
+                            <span class="material-meta">updated 2026. 09. 02. &middot; 8 pp &middot; 0.11 MB</span>
+                        </div>
+                        <a class="note-download" href="files/Robotics_0_Orientation.pdf"
+                            download="Robotics_0_Orientation.pdf">
+                            <span class="note-download-icon">&#8681;</span> Download PDF
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -1169,6 +1205,17 @@
                         </div>
                         <a class="note-download" href="files/Linear_Systems_on_Graphs.pdf"
                             download="Linear_Systems_on_Graphs.pdf">
+                            <span class="note-download-icon">&#8681;</span> Download PDF
+                        </a>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-info">
+                            <span class="material-name">Orientation</span>
+                            <span class="material-tag">Lecture slides</span>
+                            <span class="material-meta">updated 2026. 09. 02. &middot; 12 pp &middot; 0.07 MB</span>
+                        </div>
+                        <a class="note-download" href="files/LinearSystem_0_Orientation.pdf"
+                            download="LinearSystem_0_Orientation.pdf">
                             <span class="note-download-icon">&#8681;</span> Download PDF
                         </a>
                     </div>
@@ -1206,7 +1253,6 @@
         .note-download:hover { background: var(--primary-color); box-shadow: 0 0 18px var(--primary-glow); }
         .note-download-icon { font-size: 1.02rem; line-height: 1; }
         .course-empty { color: var(--text-muted); font-size: 0.88rem; margin-top: 30px; text-align: center; }
-        .material-pending { color: var(--text-muted); font-size: 0.86rem; margin: 0; font-style: italic; }
         @media (max-width: 600px) {
             .course-panel { padding: 20px; }
             .course-tabs { gap: 10px; }
@@ -1265,7 +1311,8 @@
   "lecture_intro": `Course materials, grouped by course. They keep being revised during the semester, so check the <strong>version and update date</strong> below before downloading.`,
   "course_linalg_meta": `Linear Algebra &middot; Fall 2026 &middot; Major of Control and Instrumentation Engineering, 2nd year`,
   "course_linalg_desc": `From systems of linear equations to matrices and determinants, <strong>vector spaces</strong>, linear transformations, eigenvalues and eigenvectors, and complex vector spaces. The course does not stop at computational procedure; it keeps asking <strong>why each step works</strong>. The vector spaces and eigenvalues introduced here are the foundation that the state-space models and stability analysis of <strong>Linear Systems</strong> are built directly on.`,
-  "course_linalg_pending": `Materials will be posted as the semester progresses.`,
+  "course_robotics_meta": `Applied Robotics &amp; Design &middot; Fall 2026 &middot; Major of Control and Instrumentation Engineering, 4th year &middot; 2 h lecture + 2 h lab`,
+  "course_robotics_desc": `Analysis, design and control of robot systems, centred on the industrial <strong>manipulator</strong>. Starting from position and orientation in coordinate frames, the course moves through <strong>forward and inverse kinematics</strong>, velocity kinematics, statics and dynamics, trajectory planning and control, and closes with <strong>computer vision and AI-based control</strong>. A lab component runs alongside, so the theory is checked against code and hardware.`,
   "course_linsys_meta": `Linear Systems &middot; Fall 2026 &middot; Major of Control and Instrumentation Engineering`,
   "course_linsys_desc": `The first half covers classical linear system theory: state-space models, controllability and observability. The second half <strong>extends it to networks</strong>, asking when control is possible from the interconnection structure alone, with unknown weights: <strong>structural controllability</strong> and <strong>strong structural controllability</strong>, read off the graph. Graphs and networks carry more weight here than in a standard linear systems course.`,
   "lecture_more": `Materials for other courses will be added as they are offered.`,

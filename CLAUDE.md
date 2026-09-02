@@ -49,9 +49,14 @@
 - 교수·News·Publications 섹션은 원래 영어라 토글 대상 아님(번역 불필요).
 - EN 표기 규칙: em-dash 금지(교수님 스타일), 학술 영어로 담백하게. Hero 부제는 EN에서 학과명으로 대체(H2 랩명과 중복 방지).
 
-## 📚 Lecture 탭 — 강의자료 배포 (2026-08-22 신설)
-- 네비 `Lecture` → `#lecture` 섹션. **과목별 카드**(`.course-card`) 안에 자료 목록(`.material-item`)을 둔다.
-  현재 과목은 `Linear Systems (Graduate)` 하나.
+## 📚 Lecture 탭 — 강의자료 배포 (2026-08-22 신설 · 2026-09-02 탭 구조로 개편)
+- 네비 `Lecture` → `#lecture` 섹션. **과목별 탭**(`.course-tabs` + `.tab-btn`)으로 나누고,
+  각 탭 패널(`.tab-content.course-panel`) 안에 자료 목록(`.material-item`)을 둔다.
+  현재 과목 3개, **학년 오름차순**으로 배치: `Linear Algebra`(학부 2) · `Applied Robotics & Design`(학부 4) ·
+  `Linear Systems`(대학원).
+- ⚠️ 탭 전환 함수 `openTab()`(script.js)은 **`.section-container` 스코프**로 동작한다.
+  Publications도 같은 `.tab-btn`/`.tab-content` 클래스를 쓰므로, 스코프를 없애면 한쪽 탭을 누를 때
+  다른 쪽 탭 상태가 초기화된다. 이 스코프를 절대 되돌리지 말 것.
 - 파일은 `files/` 에 두고, **파일명에 날짜를 넣지 않는다.** 갱신 시 같은 이름으로 덮어써야 공개 링크가 안 깨진다.
   날짜·버전은 파일명이 아니라 **화면 텍스트로만** 보여준다.
 - 링크에 `download` 속성을 붙여 클릭 시 브라우저 뷰어가 아니라 바로 저장되게 한다.
@@ -60,7 +65,11 @@
   2. 섹션 헤더의 `Last updated: YYYY. MM. DD.`
 - 강의노트 책의 버전 단일 출처는 책 쪽 `main.tex` 의 `\bookversion` / `\bookdate` 이다
   (`선형시스템 (대학원)\LectureNotes\AGENT_BRIEF.md` §1.5의 루틴). **사이트 표기와 표지 표기가 달라지면 안 된다.**
-- 새 과목 추가는 `.course-card` 블록을 복제하고 `data-i18n` 키를 새로 만들어 `I18N_EN` 에도 영어를 추가한다.
+- 새 과목 추가는 ① `.course-tabs` 에 `<button class="tab-btn" onclick="openTab(event, 'course-xxx')">` 추가
+  ② `<div id="course-xxx" class="tab-content course-panel glass-panel" style="display:none;">` 패널 복제
+  ③ `data-i18n` 키를 새로 만들어 `I18N_EN` 에도 영어를 추가한다.
+- 강의자료 원본은 `C:\Users\user\OneDrive\__강의\2학기\<과목폴더>\` 에 있다
+  (`선형대수학` · `선형시스템 (대학원)` · `응용로봇공학및설계`). 여기서 `files/` 로 복사해 쓴다.
 
 ## ⚠️ Git 주의사항 (이 저장소 특이사항 — Windows + OneDrive)
 1. **commit 실패** `cannot update the ref 'HEAD' ... Invalid argument` 가 뜨면:
