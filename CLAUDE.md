@@ -95,6 +95,23 @@
 
 > 7번을 빼먹으면 다음 배포 때 대조가 어긋난다. 커밋과 이력 기록은 한 세트다.
 
+## ⭐ 커밋 전 검토 — 크롬에 직접 띄운다 (2026-09-02 확립)
+
+**교수가 눈으로 확인할 것이 있는 변경은, commit 전에 로컬 파일을 크롬에 띄워 보여준다.**
+
+```bash
+Start-Process "chrome.exe" -ArgumentList "file:///C:/Users/user/OneDrive/_MARS/mars-lab-homepage/index.html#news"
+```
+
+- **`#섹션` 앵커를 반드시 붙인다.** `script.js` 가 로드 시 `window.location.hash` 를 읽어
+  해당 섹션으로 바로 이동한다(`#home` `#news` `#research` `#professor` `#members`
+  `#publications` `#lecture` `#contact`). 앵커가 없으면 Hero부터 보게 된다.
+- **인앱 미리보기 창(Browser pane)이 아니라 교수의 실제 크롬**에 띄운다.
+  미리보기는 `data:` URL로 열려 `styles.css` 같은 상대경로가 안 잡히고 화면이 검게 나온다.
+  `file://` 로 열면 상대경로가 정상 동작한다.
+- 띄운 뒤 **무엇을 봐 달라는 것인지 한 줄로 말하고, 확인을 받은 뒤 commit** 한다.
+- 문구 오타 수정처럼 눈으로 볼 것이 없는 변경은 그냥 진행해도 된다.
+
 ## ⚠️ Git 주의사항 (이 저장소 특이사항 — Windows + OneDrive)
 1. **commit 실패** `cannot update the ref 'HEAD' ... Invalid argument` 가 뜨면:
    `git config windows.appendAtomically false` 실행 (이미 로컬 설정돼 있으나 재발 시 재적용).
