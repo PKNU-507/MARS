@@ -1133,7 +1133,8 @@
                 <button class="tab-btn" onclick="openTab(event, 'course-linsys')">Linear Systems</button>
             </div>
 
-            <div id="course-linalg" class="tab-content course-panel glass-panel" style="display: block;">
+            <div id="course-linalg" class="tab-content" style="display: block;">
+                <article class="course-panel glass-panel">
                 <h3 class="course-title">Linear Algebra <span class="course-level">Undergraduate</span></h3>
                 <p class="course-meta" data-i18n="course_linalg_meta">선형대수학 · 2026 가을학기 ·
                     제어계측공학전공 2학년</p>
@@ -1143,6 +1144,10 @@
                     여기서 다루는 벡터공간과 고윳값은 뒤에 이어지는 <strong>선형시스템</strong>의
                     상태공간 모델과 안정성 해석이 그대로 올라앉는 토대입니다.</p>
 
+                </article>
+
+                <article class="course-panel glass-panel">
+                <h4 class="material-heading" data-i18n="lecture_materials">강의자료</h4>
                 <div class="material-list">
                     <div class="material-item">
                         <div class="material-info">
@@ -1156,9 +1161,11 @@
                         </a>
                     </div>
                 </div>
+                </article>
             </div>
 
-            <div id="course-robotics" class="tab-content course-panel glass-panel" style="display: none;">
+            <div id="course-robotics" class="tab-content" style="display: none;">
+                <article class="course-panel glass-panel">
                 <h3 class="course-title">Applied Robotics &amp; Design <span class="course-level">Undergraduate</span>
                 </h3>
                 <p class="course-meta" data-i18n="course_robotics_meta">응용로봇공학및설계 · 2026 가을학기 ·
@@ -1169,6 +1176,10 @@
                     로봇 제어로 이어지고, 마지막에 <strong>컴퓨터 비전과 인공지능 제어</strong>를 다룹니다.
                     실습이 함께 있어 이론을 코드와 장비로 확인합니다.</p>
 
+                </article>
+
+                <article class="course-panel glass-panel">
+                <h4 class="material-heading" data-i18n="lecture_materials">강의자료</h4>
                 <div class="material-list">
                     <div class="material-item">
                         <div class="material-info">
@@ -1194,9 +1205,11 @@
                         </a>
                     </div>
                 </div>
+                </article>
             </div>
 
-            <div id="course-linsys" class="tab-content course-panel glass-panel" style="display: none;">
+            <div id="course-linsys" class="tab-content" style="display: none;">
+                <article class="course-panel glass-panel">
                 <h3 class="course-title">Linear Systems <span class="course-level">Graduate</span></h3>
                 <p class="course-meta" data-i18n="course_linsys_meta">선형시스템 · 2026 가을학기 ·
                     제어계측공학전공</p>
@@ -1206,6 +1219,10 @@
                     <strong>강한 구조적 가제어성</strong>을 그래프 관점에서 다룹니다. 일반적인 선형시스템
                     교과목보다 그래프와 네트워크의 비중이 큽니다.</p>
 
+                </article>
+
+                <article class="course-panel glass-panel">
+                <h4 class="material-heading" data-i18n="textbook_heading">교재</h4>
                 <div class="material-list">
                     <div class="material-item">
                         <div class="material-info">
@@ -1220,18 +1237,25 @@
                             <span class="note-download-icon">&#8681;</span> Download PDF
                         </a>
                     </div>
+                </div>
+                </article>
+
+                <article class="course-panel glass-panel">
+                <h4 class="material-heading" data-i18n="lecture_materials">강의자료</h4>
+                <div class="material-list">
                     <div class="material-item">
                         <div class="material-info">
                             <span class="material-name">Orientation</span>
                             <span class="material-tag">Lecture slides</span>
-                            <span class="material-meta">Version 1 &middot; updated 2026. 09. 02. &middot; 12 pp &middot; 0.07 MB</span>
+                            <span class="material-meta">Version 2 &middot; updated 2026. 09. 02. &middot; 12 pp &middot; 0.07 MB</span>
                         </div>
-                        <a class="note-download" href="files/LinearSystem_0_Orientation_v1.pdf"
-                            download="LinearSystem_0_Orientation_v1.pdf">
+                        <a class="note-download" href="files/LinearSystem_0_Orientation_v2.pdf"
+                            download="LinearSystem_0_Orientation_v2.pdf">
                             <span class="note-download-icon">&#8681;</span> Download PDF
                         </a>
                     </div>
                 </div>
+                </article>
             </div>
 
             <p class="course-empty" data-i18n="lecture_more">다른 과목의 자료는 개설에 맞춰 추가됩니다.</p>
@@ -1248,7 +1272,10 @@
             border-radius: 999px; padding: 3px 10px; margin-left: 10px; vertical-align: middle; }
         .course-meta { color: var(--text-muted); font-size: 0.86rem; margin: 6px 0 0; }
         .course-desc { font-size: 0.92rem; line-height: 1.7; opacity: 0.88; margin: 16px 0 0; }
-        .material-list { margin-top: 22px; border-top: 1px solid var(--surface-border); padding-top: 18px;
+        .course-panel + .course-panel { margin-top: 20px; }
+        .material-heading { font-family: 'Outfit', sans-serif; font-size: 1.05rem; color: #fff;
+            margin: 0; letter-spacing: 0.01em; }
+        .material-list { margin-top: 18px; border-top: 1px solid var(--surface-border); padding-top: 18px;
             display: flex; flex-direction: column; gap: 14px; }
         .material-item { display: flex; align-items: center; justify-content: space-between;
             gap: 20px; flex-wrap: wrap; }
@@ -1327,6 +1354,8 @@
   "course_robotics_desc": `Analysis, design and control of robot systems, centred on the industrial <strong>manipulator</strong>. Starting from position and orientation in coordinate frames, the course moves through <strong>forward and inverse kinematics</strong>, velocity kinematics, statics and dynamics, trajectory planning and control, and closes with <strong>computer vision and AI-based control</strong>. A lab component runs alongside, so the theory is checked against code and hardware.`,
   "course_linsys_meta": `Linear Systems &middot; Fall 2026 &middot; Major of Control and Instrumentation Engineering`,
   "course_linsys_desc": `The first half covers classical linear system theory: state-space models, controllability and observability. The second half <strong>extends it to networks</strong>, asking when control is possible from the interconnection structure alone, with unknown weights: <strong>structural controllability</strong> and <strong>strong structural controllability</strong>, read off the graph. Graphs and networks carry more weight here than in a standard linear systems course.`,
+  "lecture_materials": `Lecture Materials`,
+  "textbook_heading": `Textbook`,
   "lecture_more": `Materials for other courses will be added as they are offered.`,
   "hero_subtitle": `Department of Control &amp; Instrumentation Engineering, PKNU`,
   "banner_title": `Now Recruiting Undergraduate &amp; Graduate Students`,
