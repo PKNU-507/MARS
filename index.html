@@ -881,53 +881,59 @@
                 <div class="timeline-item">
                     <div class="timeline-date">2026. 09. 01.</div>
                     <div class="timeline-content glass-panel">
-                        <h4 class="timeline-title">Selected for the PKNU Growth Pathway Program</h4>
-                        <p class="timeline-desc">Undergraduate students of MARS Lab
-                            (<strong>Hyeon-Bo Sim</strong>, <strong>Won-Jin Jang</strong>,
-                            <strong>Jeong-Hyeon Lee</strong> and <strong>Sung-Yun Song</strong>) have been
-                            selected for the <strong>2026 Growth Pathway Program for Outstanding Talent in
-                            Science and Engineering</strong> (PKNU BK21 FOUR). <strong>Each receives KRW 12
-                            million</strong> in scholarship, together with support for structured training
-                            programs, from <strong>September 2026 through August 2027</strong>.</p>
+                        <h4 class="timeline-title" data-i18n="news_bk21_title">이공 우수인재 성장경로
+                            지원사업 선정 &mdash; 2026. 09. ~ 2027. 08.</h4>
+                        <p class="timeline-desc" data-i18n="news_bk21_desc">MARS Lab 학부생(<strong>심현보</strong>,
+                            <strong>장원진</strong>, <strong>이정현</strong>, <strong>송성윤</strong>)이
+                            <strong>2026학년도 이공 우수인재 성장경로 지원 시범사업</strong>(PKNU BK21 FOUR)에
+                            선정되었습니다. 1인당 <strong>12,000,000원</strong>의 연구장학금과 <strong>핵심역량 강화
+                            교육&middot;연구 프로그램</strong>을 지원받습니다.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2026. 09. 01.</div>
                     <div class="timeline-content glass-panel">
-                        <h4 class="timeline-title">New Undergraduate Intern</h4>
-                        <p class="timeline-desc"><strong>Sung-Yun Song</strong> joins MARS Lab as an
-                            undergraduate intern, working on system integration and image processing.</p>
+                        <h4 class="timeline-title" data-i18n="news_song_title">신규 학부연구생</h4>
+                        <p class="timeline-desc" data-i18n="news_song_desc"><strong>송성윤</strong> 학생이
+                            학부연구생으로 MARS Lab에 합류했습니다. 시스템 통합과 영상처리를 맡습니다.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2026. 07.</div>
                     <div class="timeline-content glass-panel">
-                        <h4 class="timeline-title">New M.S. Student</h4>
-                        <p class="timeline-desc"><strong>Tien N. Le</strong> joins MARS Lab as a master's student.</p>
+                        <h4 class="timeline-title" data-i18n="news_tien_title">신규 석사과정</h4>
+                        <p class="timeline-desc" data-i18n="news_tien_desc"><strong>레 녓 띠엔</strong>(Tien N. Le)
+                            학생이 석사과정으로 MARS Lab에 합류했습니다.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2026. 07.</div>
                     <div class="timeline-content glass-panel">
-                        <h4 class="timeline-title">New Undergraduate Interns</h4>
-                        <p class="timeline-desc"><strong>Hyeon-Bo Sim</strong>, <strong>Won-Jin Jang</strong>, and
-                            <strong>Jeong-Hyeon Lee</strong> join the lab as undergraduate interns.</p>
+                        <h4 class="timeline-title" data-i18n="news_interns_title">신규 학부연구생</h4>
+                        <p class="timeline-desc" data-i18n="news_interns_desc"><strong>심현보</strong>,
+                            <strong>장원진</strong>, <strong>이정현</strong> 학생이 학부연구생으로
+                            합류했습니다.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2026. 06.</div>
                     <div class="timeline-content glass-panel">
-                        <h4 class="timeline-title">MARS Lab Established</h4>
-                        <p class="timeline-desc">Multi-Agent Robotics &amp; Control Systems Laboratory is established at
-                            <strong>Pukyong National University</strong>.</p>
+                        <h4 class="timeline-title" data-i18n="news_founded_title">MARS Lab 개설</h4>
+                        <p class="timeline-desc" data-i18n="news_founded_desc">부경대학교에 <strong>다개체 로보틱스
+                            및 제어시스템 연구실</strong>(Multi-Agent Robotics &amp; Control Systems
+                            Laboratory)이 개설되었습니다.</p>
                     </div>
                 </div>
-                <!-- 새 소식은 최신순으로 맨 위에 추가. 예시(학회/수상/과제) — 필요 시 주석 해제해 복사:
+                <!-- 새 소식은 최신순으로 맨 위에 추가.
+                     ⚠️ 본문은 한글로 쓰고, data-i18n 키를 붙인 뒤 아래 I18N_EN 사전에 영문을 넣을 것.
+                        키는 순서가 바뀌어도 안 깨지도록 번호가 아닌 의미 기반으로(news_<주제>_title/_desc).
+                     예시(학회 발표) — 필요 시 주석 해제해 복사:
                 <div class="timeline-item">
                     <div class="timeline-date">2026. 09.</div>
                     <div class="timeline-content glass-panel">
-                        <h4 class="timeline-title">Conference Presentation</h4>
-                        <p class="timeline-desc">Presented "<strong>Paper Title</strong>" at <strong>Conference Name</strong>.</p>
+                        <h4 class="timeline-title" data-i18n="news_conf_title">학회 발표</h4>
+                        <p class="timeline-desc" data-i18n="news_conf_desc"><strong>논문 제목</strong>을
+                            <strong>학회명</strong>에서 발표했습니다.</p>
                     </div>
                 </div>
                 -->
@@ -1389,6 +1395,18 @@
     <script>
     (function () {
       var I18N_EN = {
+  "news_bk21_title": `Selected for the PKNU Growth Pathway Program &mdash; 2026. 09. ~ 2027. 08.`,
+  "news_bk21_desc": `Undergraduate students of MARS Lab (<strong>Hyeon-Bo Sim</strong>, <strong>Won-Jin Jang</strong>, <strong>Jeong-Hyeon Lee</strong> and <strong>Sung-Yun Song</strong>) have been selected for the <strong>2026 Growth Pathway Program for Outstanding Talent in Science and Engineering</strong> (PKNU BK21 FOUR). <strong>Each receives KRW 12,000,000</strong> in research scholarship, along with participation in the university's <strong>core-competency training and research program</strong>.`,
+  "news_song_title": `New Undergraduate Intern`,
+  "news_song_desc": `<strong>Sung-Yun Song</strong> joins MARS Lab as an undergraduate intern, working on system integration and image processing.`,
+  "news_tien_title": `New M.S. Student`,
+  "news_tien_desc": `<strong>Tien N. Le</strong> joins MARS Lab as a master's student.`,
+  "news_interns_title": `New Undergraduate Interns`,
+  "news_interns_desc": `<strong>Hyeon-Bo Sim</strong>, <strong>Won-Jin Jang</strong>, and <strong>Jeong-Hyeon Lee</strong> join the lab as undergraduate interns.`,
+  "news_founded_title": `MARS Lab Established`,
+  "news_founded_desc": `Multi-Agent Robotics &amp; Control Systems Laboratory is established at <strong>Pukyong National University</strong>.`,
+  "news_conf_title": `Conference Presentation`,
+  "news_conf_desc": `Presented "<strong>Paper Title</strong>" at <strong>Conference Name</strong>.`,
   "lecture_intro": `Course materials, grouped by course. They keep being revised during the semester, so check the <strong>version and update date</strong> below before downloading.`,
   "course_linalg_meta": `Linear Algebra &middot; Fall 2026 &middot; Major of Control and Instrumentation Engineering, 2nd year`,
   "course_linalg_desc": `From systems of linear equations to matrices and determinants, <strong>vector spaces</strong>, linear transformations, eigenvalues and eigenvectors, and complex vector spaces. The course does not stop at computational procedure; it keeps asking <strong>why each step works</strong>. The vector spaces and eigenvalues introduced here are the foundation that the state-space models and stability analysis of <strong>Linear Systems</strong> are built directly on.`,
