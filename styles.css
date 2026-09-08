@@ -1041,6 +1041,18 @@
         color: var(--primary-color);
     }
 
+    /* CV download (Professor tab) */
+    .cv-download {
+        margin-top: 18px;
+    }
+
+    .cv-updated {
+        display: block;
+        margin-top: 8px;
+        color: var(--text-muted);
+        font-size: 0.8rem;
+    }
+
     /* Timeline */
     .timeline {
         position: relative;

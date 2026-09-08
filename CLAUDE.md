@@ -60,6 +60,9 @@
 - 파일은 `files/` 에 둔다. **파일명에 버전을 붙인다** (`..._v1.pdf`, `..._v2.pdf` — 2026-09-02 변경).
   갱신하면 새 버전으로 올리고 **이전 PDF는 `git rm` 으로 지운다.** `index.html` 의 `href`·`download` 도 함께 바꾼다.
   ※ **강의노트 책만 예외** — `Linear_Systems_on_Graphs.pdf` 고정명이며 책 세션(`_MARS\_Book\CLAUDE.md`)이 직접 배포한다.
+  ※ **CV도 예외** — `files/CV_Nam-Jin_Park.pdf` 고정명. Professor 탭 프로필 카드의 `Download CV` 버튼이
+  가리키며, 단일 출처는 `_MARS\CV_Prof\CV_namjin.tex` 다. CV를 재컴파일했으면 이 파일로 덮어쓰고
+  `.cv-updated` 날짜를 함께 고친다 (운영 허브 `_MARS\CLAUDE.md` 워크플로우 A 4번).
 - 링크에 `download` 속성을 붙여 클릭 시 브라우저 뷰어가 아니라 바로 저장되게 한다.
 - ⭐ **자료를 갱신할 때마다 반드시 같이 고칠 두 곳:**
   1. `.material-meta` — `Version <v> (draft) · updated YYYY. MM. DD. · <N> pp · <size> MB`
