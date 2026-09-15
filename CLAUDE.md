@@ -4,7 +4,7 @@
 홈페이지 소스입니다. 다른 세션에서도 이 문서를 읽고 동일한 방식으로 작업을 이어가세요.
 
 ## 사이트 개요
-- **로컬 경로:** `C:\Users\user\OneDrive\_Lab\mars-lab-homepage`
+- **로컬 경로:** `%OneDrive%\_MARS\mars-lab-homepage`
 - **파일 구성:** `index.html`(단일 페이지, 모든 콘텐츠), `styles.css`, `script.js`, `images/`, `videos/`
 - **GitHub:** `github.com/PKNU-507/MARS` (remote `origin`, branch `main`)
 - **배포:** GitHub Pages 자동 배포 → https://pknu-507.github.io/MARS/ (push 후 약 1~2분 뒤 반영)
@@ -12,7 +12,7 @@
 
 ## ⭐ 핵심 워크플로우 — CV 기반 업데이트
 - **단일 진실 공급원(source of truth)은 교수님 CV:**
-  `C:\Users\user\OneDrive\_Lab\CV_Prof\CV_namjin.tex`
+  `%OneDrive%\_MARS\CV_Prof\CV_namjin.tex`
 - 교수님이 **CV를 직접 업데이트**한 뒤 "CV 보고 홈페이지 업데이트해줘"라고 요청하면,
   CV(.tex)를 읽고 → `index.html`과 대조 → 차이를 반영하면 됩니다.
 - 진행 순서: ① CV와 index.html 비교해 변경점 목록화 → ② 사용자에게 범위 확인(중요/선택 구분) →
@@ -72,13 +72,13 @@
 - 새 과목 추가는 ① `.course-tabs` 에 `<button class="tab-btn" onclick="openTab(event, 'course-xxx')">` 추가
   ② `<div id="course-xxx" class="tab-content course-panel glass-panel" style="display:none;">` 패널 복제
   ③ `data-i18n` 키를 새로 만들어 `I18N_EN` 에도 영어를 추가한다.
-- 강의자료 원본은 `C:\Users\user\OneDrive\__강의\2학기\<과목폴더>\` 에 있다
+- 강의자료 원본은 `%OneDrive%\__강의\2학기\<과목폴더>\` 에 있다
   (`선형대수학` · `선형시스템 (대학원)` · `응용로봇공학및설계`). 여기서 `files/` 로 복사해 쓴다.
 
 ### ⭐ 강의자료 배포 루틴 (2026-09-02 확립)
 
 과목별로 **별도 세션**이 자료를 만들고, **이 세션이 배포**한다. 접점은 학기 폴더의
-**`C:\Users\user\OneDrive\__강의\2학기\홈페이지_배포이력.md`** 하나다 (3개 과목 통합).
+**`%OneDrive%\__강의\2학기\홈페이지_배포이력.md`** 하나다 (3개 과목 통합).
 
 - **과목 세션**: **이미 배포된** 자료를 고칠 때만 `_v2`, `_v3` … 를 붙인다(이전 판 보존).
   아직 배포 전인 자료는 몇 번을 고치든 **같은 파일명에 덮어쓴다** — 버전 번호는 "밖에 나간 판"을 센다.
@@ -103,7 +103,7 @@
 **교수가 눈으로 확인할 것이 있는 변경은, commit 전에 로컬 파일을 크롬에 띄워 보여준다.**
 
 ```bash
-Start-Process "chrome.exe" -ArgumentList "file:///C:/Users/user/OneDrive/_MARS/mars-lab-homepage/index.html#news"
+Start-Process "chrome.exe" -ArgumentList "file:///$env:OneDrive/_MARS/mars-lab-homepage/index.html#news"
 ```
 
 - **`#섹션` 앵커를 반드시 붙인다.** `script.js` 가 로드 시 `window.location.hash` 를 읽어
