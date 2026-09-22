@@ -72,6 +72,11 @@
 - 새 과목 추가는 ① `.course-tabs` 에 `<button class="tab-btn" onclick="openTab(event, 'course-xxx')">` 추가
   ② `<div id="course-xxx" class="tab-content course-panel glass-panel" style="display:none;">` 패널 복제
   ③ `data-i18n` 키를 새로 만들어 `I18N_EN` 에도 영어를 추가한다.
+- **과제·Quiz 풀이**(2026-09-23 신설)는 그 과목 탭의 `강의자료` 패널 **아래에 별도 `<article class="course-panel glass-panel">`** 로 둔다:
+  제목 `<h4 class="material-heading" data-i18n="solutions_heading">과제·Quiz 풀이</h4>`(EN `Solutions`) + 한 줄 설명(`solutions_desc`) + `.material-list`.
+  항목 표시명은 `Homework #N Solutions` / `Quiz #N Solutions`, 태그는 `Homework solutions` / `Quiz solutions`,
+  파일명은 `<과목접두>_HWn_Solution_vN.pdf` / `<과목접두>_QuizN_Solution_vN.pdf`. 문제지 자체는 LMS 전용이라 올리지 않는다.
+  다른 과목에 풀이가 생기면 같은 블록을 그 과목 탭에 복제한다 (i18n 키는 재사용).
 - 강의자료 원본은 `%OneDrive%\__강의\2학기\<과목폴더>\` 에 있다
   (`선형대수학` · `선형시스템 (대학원)` · `응용로봇공학및설계`). 여기서 `files/` 로 복사해 쓴다.
 
@@ -97,6 +102,9 @@
 7. **그 파일의 해당 과목 이력 표에 커밋 해시와 함께 한 줄 추가**하고, 처리한 `배포 대기` 항목을 지운다.
 
 > 7번을 빼먹으면 다음 배포 때 대조가 어긋난다. 커밋과 이력 기록은 한 세트다.
+
+> 4~7 과 라이브 확인은 `__강의\2학기\_tools\deploy_lecture.py` 가 한 번에 한다 (여러 건 = 커밋 하나, 신규는 `--old -`,
+> `--dry-run` 미리보기, 커밋 전 `href="files/…"` 링크 무결성 검사). 사용법은 `홈페이지_배포이력.md` 끝의 「갱신할 때 같이 고칠 곳」.
 
 ## ⭐ 커밋 전 검토 — 크롬에 직접 띄운다 (2026-09-02 확립)
 
