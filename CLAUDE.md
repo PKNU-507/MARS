@@ -73,10 +73,10 @@
 - 새 과목 추가는 ① `.course-tabs` 에 `<button class="tab-btn" onclick="openTab(event, 'course-xxx')">` 추가
   ② `<div id="course-xxx" class="tab-content course-panel glass-panel" style="display:none;">` 패널 복제
   ③ `data-i18n` 키를 새로 만들어 `I18N_EN` 에도 영어를 추가한다.
-- **과제·Quiz 풀이**(2026-09-23 신설)는 그 과목 탭의 `강의자료` 패널 **아래에 별도 `<article class="course-panel glass-panel">`** 로 둔다:
-  제목 `<h4 class="material-heading" data-i18n="solutions_heading">과제·Quiz 풀이</h4>`(EN `Solutions`) + 한 줄 설명(`solutions_desc`) + `.material-list`.
-  항목 표시명은 `Homework #N Solutions` / `Quiz #N Solutions`, 태그는 `Homework solutions` / `Quiz solutions`,
-  파일명은 `<과목접두>_HWn_Solution_vN.pdf` / `<과목접두>_QuizN_Solution_vN.pdf`. 문제지 자체는 LMS 전용이라 올리지 않는다.
+- **과제 풀이**(2026-09-23 「과제·Quiz 풀이」로 신설 → 2026-11-01 과제 전용)는 그 과목 탭의 `강의자료` 패널 **아래에 별도 `<article class="course-panel glass-panel">`** 로 둔다:
+  제목 `<h4 class="material-heading" data-i18n="solutions_heading">과제 풀이</h4>`(EN `Homework Solutions`) + 한 줄 설명(`solutions_desc`) + `.material-list`.
+  항목 표시명은 `Homework #N Solutions`, 태그는 `Homework solutions`, 파일명은 `<과목접두>_HWn_Solution_vN.pdf`. 문제지 자체는 LMS 전용이라 올리지 않는다.
+  ⚠️ **Quiz 풀이는 올리지 않는다** (2026-11-01 교수: "퀴즈 솔루션은 안 올릴 거임. HW 솔루션만"). Quiz #1 풀이도 이날 내렸다.
   다른 과목에 풀이가 생기면 같은 블록을 그 과목 탭에 복제한다 (i18n 키는 재사용).
 - 강의자료 원본은 `%OneDrive%\__강의\2학기\<과목폴더>\` 에 있다
   (`선형대수학` · `선형시스템 (대학원)` · `응용로봇공학및설계`). 여기서 `files/` 로 복사해 쓴다.
